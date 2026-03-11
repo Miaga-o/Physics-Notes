@@ -266,9 +266,7 @@ $
     a_t = (dif v) / (dif t)
   $
 
-- *Angular velocity* is the rate of change of an object's angular displacement, measured in radians per second.
-  - Denoted $omega$.
-  - This concept will be explored in later chapters, but can be useful given that one revolution is $theta = 2pi$.
+
 - *Frequency* is the number of revolutions (full rotations) per second.
   - Denoted $f$.
 - *Period* is the number of seconds needed to make one revolution.
@@ -278,11 +276,9 @@ T= 1 / f
 $
 - Given radius of the circular motion $R$
 $
-  omega &= (2 pi ) / T = 2pi f
+  v &= (2 pi R) / T
   \
-  v &= omega R
-  \
-  a_c &= omega^2 R = v^2 / R
+  a_c &= v^2 / R
 $
 
 
@@ -360,6 +356,8 @@ $
   $
 ])
 
+- For example, when two objects collide, they experience the same magnitude of force from the collision.
+
 
 
 
@@ -383,7 +381,7 @@ $
   - Microscopic
 - The *weight* force is from gravity. On Earth, it is defined as follows:
 $
-  w=m g
+  arrow(w)=m arrow(g)
 $
 - However, there are also exists a general definition for weight force, the *Universal Law of Gravitation* using the gravitational constant $G$
 $
@@ -399,23 +397,44 @@ $
 - The *spring force* is from compressing a spring.
   - Springs have differing *spring constants* usually denoted as $k$, and they define the ratio between the force exerted by the spring and the distance compressed from the equilibrium position.
 $
-  F_"spr" = -k x
+  arrow(F)_"spr" = -k arrow(x)
 $
 - The *normal force* is exerted by a surface on an object.
-  - Generally denoted $n$.
+  - Generally denoted $arrow(n)$.
 - The *tension force* is the pulling force exerted equally throughout a rope, cable, etc.
-  - Generally denoted $T$.
-- The *friction force* is exerted by opposite the direction of motion.
-  - 
+  - Generally denoted $arrow(T)$.
+- The *friction force* is exerted by a surface on an object and acts perpendicular to the normal force. It depends on the roughness of the surface (expressed by the coefficient of friction).
+  - *Kinetic friction*, denoted $arrow(f)_k$ with coefficient of kinetic friction $mu_k$, acts on objects sliding across a surface.
+  $
+    arrow(f)_k = mu_k arrow(n)
+  $
+  - *Static friction*, denoted  $arrow(f)_s$ with coefficient of static friction $mu_s$, acts on still objects until the applied force exceeds the maximum static friction.
+  $
+    arrow(f)_s <= arrow(f)_(s",max") = mu_s arrow(n)
+  $
 
 
 
 
 == Forces in Equilibrium
+- Objects are in equilibrium when they are at rest or moving with constant velocity, meaning that the net force acting on those objects must be zero.
+$
+  Sigma arrow(F) &= 0 \
+  &=> \
+  Sigma F_x &= 0 \
+  Sigma F_y &= 0
+$
+- Thus, unknown forces can be solved in terms of other forces very easily.
 
 
 
 == Dynamics of Circular Motion
+- Based on Newton's Second Law, circular motion can result from many different forces.
+$
+  Sigma F = m a_c = (m v^2) / R
+$
+- As a result, denoting a singular "centrifugal force" is generally not accurate. 
+- Additionally, direction should be considered relative to the center of rotation.
 
 
 

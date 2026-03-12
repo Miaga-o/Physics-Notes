@@ -29,7 +29,7 @@
     inset: 8pt,
     radius: 10pt,
     width: 100%,
-    [#text(fill: blue, size: 14pt, [*Definition:* #title]) \
+    [#text(fill: blue, size: 14pt, [*Definition:* #title]) \  
     #body]
   )
 }
@@ -251,6 +251,32 @@ $
   supplement: none,
   caption: [Constant $g$ is the acceleration due to Earth's gravity, $9.81 "m"slash"s"^2$. Note that $y$ is generally the vertical direction when dealing with two dimensions.]
 )
+- Given these equations, we can also derive a general formula for a projectile's *range.*
+#derivation([Range Formula], [
+  Let $Delta x$ equal $R$ and let $Delta y$ equal 0.
+  $
+
+    v_y &= v_(0y) -g t 
+    \
+    g t &= v_(0y) - v_y
+    \
+    t &= (v_0sin theta - v sin theta) /g
+    \
+    t &= (v_0sin theta - (-v_0 sin theta)) / g
+    \
+    t &= (2v_0sin theta) / g
+    \
+    &"By substitution"
+    \
+    R&=v_(0x)t 
+    \
+    R &= v_0 cos theta t
+    \
+    R &= v_0 cos theta (2v_0 sin theta) / g
+    \
+    R &= (v_0^2 sin (2theta)) / g
+  $
+])
 
 
 
@@ -433,7 +459,8 @@ $
 $
   Sigma F = m a_c = (m v^2) / R
 $
-- As a result, denoting a singular "centrifugal force" is generally not accurate. 
+- As a result, denoting a singular "centrifugal force" is generally not accurate.
+  - For example, if an object is moving vertically with uniform circular motion, the weight force points toward the center of rotation at the top, but away from the center of rotation at the bottom.
 - Additionally, direction should be considered relative to the center of rotation.
 
 
@@ -494,7 +521,7 @@ $
 
 
 
-\ \
+\
 == Work and Energy with Varying Force
 - If an object is experiencing a varying net force, then the total work can be approximated using the average force per increment of the total displacement.
 - Thus, as the increment tends to zero, work may be defined as follows:
@@ -573,6 +600,19 @@ $
 )
 
 == Power
+- *Power* is the rate that work is done, measured in watts $"(W)"$ or joules per second $("J"slash"s")$.
+  - Denoted $P$.
+- Thus, average power is defined as follows:
+$
+  P_"av" = (Delta W) / (Delta t)
+$
+
+#definition([Power], [
+  Given power $P$, work $W$, velocity $arrow(v)$, and force $arrow(F)$
+  $
+    P = (dif W) / (dif t) = arrow(F) dot arrow(v) = F v cos theta
+  $
+])
 
 
 
@@ -585,7 +625,100 @@ $
 
 #pagebreak()
 = Potential Energy and Energy Conservation
+- *Potential energy* is energy based on position, and may be _converted_ into other forms of energy depending on the change in position.
+  - For example, a fruit hanging from a tall tree has the _potential_ to reach a higher speed (and therefore kinetic energy) before it hits the ground than a fruit hanging from a smaller tree.
 
-#example([Rollercoaster], [
-  A rollercoaster starts at a height of 
+== Gravitational Potential Energy
+- *Gravitational potential energy* is potential energy dependent on an object's mass and height about the ground.
+  - Denoted $U_g$.
+#definition([Gravitational Potential Energy], [
+  Given gravitational potential energy $U_g$, object's mass $m$, acceleration due to gravity $g$, and height above the ground $h$
+  $
+    U_g = m g h
+  $
 ])
+
+- Notice how an object's gravitational potential energy _decreases_ as its height above the ground decreases even though the work done by the weight force on a falling object is _positive_.
+- Thus, the work done by gravity is equal to the negative change in gravitational potential energy.
+$
+  W_g = - Delta U_g
+$
+
+
+
+== Elastic Potential Energy
+- *Elastic potential energy* is potential energy stored in deformable objects such as springs when they are stretched or compressed from equilibrium.
+  - Denoted $U_s$.
+#definition([Elastic Potential Energy], [
+  Given elastic potential energy $U_s$, spring constant $k$, and elongation of object $x$
+  $
+    U_s = 1/2 k x^2 
+  $
+])
+
+- Similarly to work done by gravity, because an object's elastic potential energy increases the more it is displaced from equilibrium, the work done by the spring force is equal to the negative change in elastic potential energy.
+$
+  W_s = - Delta U_s
+$
+
+
+
+== Conservative and Nonconservative forces
+- *Mechanical energy* is energy that is either kinetic or potential, and the total mechanical energy of a system is only constant
+- *Conservative forces* do work independent of the path, meaning that they only depend on the endpoints of the displacement.
+  - The work done by conservative forces is reversible because they convert between forms of mechanical energy.
+- *Nonconservative forces* do work dependent on the path.
+  - The work done by nonconservative forces is irreversible because they convert forms of mechanical energy to other forms of energy.
+
+=== The Law of Conservation of Energy
+- Thus, as long as the net work done by nonconservative forces in a system is zero, the change in total mechanical energy is zero.
+- As a result, we can equate the total mechanical energy at different points in a system.
+- Thus, work done by nonconservative forces should be subtracted.
+#definition([Law of Conservation of Energy], [
+  Given kinetic energy $K$, potential energy $U$, and work from nonconservative forces $W_"nc"$
+  $
+    Delta K + Delta U - W_"nc" = 0
+  $
+])
+
+- For conservation of energy problems, the following form is often used:
+$
+  K_1 + U_1 + W_"nc" = K_2 + U_2
+$
+- Nonconservative forces may also be represented using *internal energy* $U_"int"$ such that the internal energy changes when external forces do work on the system.
+$
+  Delta U_"int" = -W_"nc"
+$
+#example([Block on a Globe], [
+  A small block of mass $m$ sits on top of a globe with radius $R$. The small block begins sliding from the top of the globe to with negligible speed. The block leaves the surface of the globe when it reaches a height $h_"crit"$ above the ground.
+  Derive a formula for $v_"crit"$, the speed of the block the moment it falls off the globe, in terms of $R$, $h_"crit"$, and $g$.
+  #figure(image("/images/MWE_we_9.jpg", width: 34%))
+  
+  The first step is to identify two points in the system that would include the desired terms. One of them should be when the block is falling off because it is at height $h_"crit"$. The other point should be at the top of the globe because the height above the ground is just the diameter of the globe.
+  $
+    1/2 m v_"crit"^2 + m g h_"crit" &= m g (2R)
+    \
+    1/2 m v_"crit"^2 &= m g (2R) - m g h_"crit"
+    \
+    v_"crit"^2 &= 4g R - 2 g h_"crit"
+    \
+    v_"crit" &= sqrt(4g R - 2 g h_"crit")
+  $
+])
+
+
+
+== Force and Potential Energy
+- Recall that the work done by a conservative force equals the negative change in potential energy.
+$
+  W = -Delta U
+$
+
+- Thus, given force $arrow(F)$ and potential energy $U$:
+#figure(
+  $
+    arrow(F) = -arrow(nabla) U= -(diff U) / (diff x) hat(i) -(diff U) / (diff y) hat(j) -(diff U) / (diff z) hat(k) 
+  $
+  , supplement: none,
+  caption: [The "$diff$" symbol refers to taking a derivative with respect to one variable, holding everything else constant, known as a _partial derivative_. Essentially, the gradient vector is a vector that takes the partial derivative of every component.]
+)

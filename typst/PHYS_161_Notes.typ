@@ -56,7 +56,7 @@
   )
 }
 
-#let continue_example = figure([_Continued on next page_])
+#let continue_example = align(center, [_Continued on next page_])
 
 #let author = text(size: 16pt, [Miagao])
 
@@ -170,7 +170,7 @@ $
   \
   a_("av") &= (Delta v) / (Delta t)
   \
-  a &= lim_(Delta t -> 0)(Delta v) / (Delta t) = (dif v) / (dif t)
+  a &= lim_(Delta t -> 0)(Delta v) / (Delta t) = (dif v) / (dif t) = (dif^2 x) / (dif t^2)
 $
 
 
@@ -213,11 +213,11 @@ $
 == Vector Quantities
 - Many of the definitions from one-dimensional motion hold true in two or three dimensions, albeit using vectors.
 $
-  arrow(r) &= x hat(i) + y hat(j) + z hat(k)
+  arrow(r) &= x hat(i) + y hat(j) + z hat(k) wide wide &r&= sqrt(x+y+z)
   \
-  arrow(v) &= v_x hat(i) + v_y hat(j) + v_z hat(k)
+  arrow(v) &= v_x hat(i) + v_y hat(j) + v_z hat(k) wide wide &v&= sqrt(v_x+v_y+v_z)
   \
-  arrow(a) &= a_x hat(i) + a_y hat(j) + a_z hat(k)
+  arrow(a) &= a_x hat(i) + a_y hat(j) + a_z hat(k) wide wide &a&= sqrt(a_x+a_y+a_z)
 $
 
 
@@ -251,7 +251,12 @@ $
   supplement: none,
   caption: [Constant $g$ is the acceleration due to Earth's gravity, $9.81 "m"slash"s"^2$. Note that $y$ is generally the vertical direction when dealing with two dimensions.]
 )
-- Given these equations, we can also derive a general formula for a projectile's *range.*
+- A common application of these formulas is finding the _air time_ of a projectile. Thus, sometimes the quadratic equation may be necessary to solve for the time.
+  - In this case, either the negative time or the later time will be disregarded.
+$
+  (-b plus.minus sqrt(b^2 - 4a c)) / (2a)
+$
+- Given these equations, we can also derive a general formula for a projectile's *range* and *maximum height.*
 #derivation([Range Formula], [
   Let $Delta x$ equal $R$ and let $Delta y$ equal 0.
   $
@@ -266,7 +271,13 @@ $
     \
     t &= (2v_0sin theta) / g
     \
-    &"By substitution"
+  $
+  #continue_example
+])
+
+#derivation([Range Formula _continued_], [
+  Now, we can plug this value for $t$ into a horizontal kinematic equation.
+  $
     \
     R&=v_(0x)t 
     \
@@ -277,6 +288,23 @@ $
     R &= (v_0^2 sin (2theta)) / g
   $
 ])
+
+#derivation([Maximum Height Formula], [
+  Let $Delta y$ equal $h_"max"$ and $v_y = 0$.
+  $
+    
+  $
+  $
+    0 &= v_(0y)^2 - 2g h_"max"
+    \
+    2 g h_"max" &= v_(0y)^2
+    \
+    h_"max" &= (v_(0y)^2) / (2g h)
+    \
+    h_"max" &= (v_0^2 sin^2 theta) / (2g h)
+  $
+])
+- In later chapters, there will be other ways of finding the range or maximum height of a projectile, but these may still be useful depending on what is known in a problem.
 
 
 
@@ -308,7 +336,7 @@ $
 $
 
 
-
+\ \
 == Relative Motion
 - Given reference frames $A$, $B$, and $C$ where $A B$ means "$A$ in the reference frame of $B$"
 $
@@ -407,7 +435,7 @@ $
   - Microscopic
 - The *weight* force is from gravity. On Earth, it is defined as follows:
 $
-  arrow(w)=m arrow(g)
+  w=m g
 $
 - However, there are also exists a general definition for weight force, the *Universal Law of Gravitation* using the gravitational constant $G$
 $
@@ -430,7 +458,7 @@ $
 - The *tension force* is the pulling force exerted equally throughout a rope, cable, etc.
   - Generally denoted $arrow(T)$.
 - The *friction force* is exerted by a surface on an object and acts perpendicular to the normal force. It depends on the roughness of the surface (expressed by the coefficient of friction).
-  - *Kinetic friction*, denoted $arrow(f)_k$ with coefficient of kinetic friction $mu_k$, acts on objects sliding across a surface.
+  - *Kinetic   friction*, denoted $arrow(f)_k$ with coefficient of kinetic friction $mu_k$, acts on objects sliding across a surface.
   $
     arrow(f)_k = mu_k arrow(n)
   $
@@ -599,6 +627,11 @@ $
   }),
 )
 
+- In more than one dimension:
+$
+  W = integral_(r_1)^(r_2) arrow(F) dot dif arrow(r)
+$
+
 == Power
 - *Power* is the rate that work is done, measured in watts $"(W)"$ or joules per second $("J"slash"s")$.
   - Denoted $P$.
@@ -692,7 +725,8 @@ $
 #example([Block on a Globe], [
   A small block of mass $m$ sits on top of a globe with radius $R$. The small block begins sliding from the top of the globe to with negligible speed. The block leaves the surface of the globe when it reaches a height $h_"crit"$ above the ground.
   Derive a formula for $v_"crit"$, the speed of the block the moment it falls off the globe, in terms of $R$, $h_"crit"$, and $g$.
-  #figure(image("/images/MWE_we_9.jpg", width: 34%))
+  #figure(image("/images/MWE_we_9.jpg", width: 31%))
+  #line(length: 100%)
   
   The first step is to identify two points in the system that would include the desired terms. One of them should be when the block is falling off because it is at height $h_"crit"$. The other point should be at the top of the globe because the height above the ground is just the diameter of the globe.
   $
@@ -702,7 +736,51 @@ $
     \
     v_"crit"^2 &= 4g R - 2 g h_"crit"
     \
-    v_"crit" &= sqrt(4g R - 2 g h_"crit")
+    bold(v_"crit" &= sqrt(4g R - 2 g h_"crit"))
+  $
+])
+
+#example([Throwing a  Baseball], [
+  The maximum horizontal distance you can throw a $0.145 "kg"$ baseball is $25 "m"$ at an angle of $alpha = 45 degree$ above the horizontal.
+  
+  + Ignoring air resistance and the small distance the baseball is above the ground when it is thrown, what is the kinetic energy of the baseball the moment it is thrown?
+  + At the ball's maximum height, what fraction of its total mechanical energy is kinetic energy?
+
+  #line(length: 100%)
+  1) Because we are given the range of the baseball but not the initial velocity, we can use our previously derived range formula to find the initial velocity.
+  $
+    R &= (v_0^2 sin (2 alpha)) / g
+    \
+    v_0^2 &= (R g) / sin(2 alpha)
+    \
+    v_0 &= sqrt((R g) / sin(2 alpha))
+    \
+    v_0 &= sqrt(((25 "m")(9.81 "m"slash"s"^2)) / (sin 90 degree))
+    \
+    v_0 &= 15.7 "m"slash"s"
+  $
+  Now we can plug this back into the kinetic energy formula.
+  $
+    K_0 &= 1/2 m v_0 ^2
+    \
+    K_0 &= 1/2 (0.145 "kg")(15.7 "m"slash"s")^2
+    \
+    bold(K_0 &= 17.8 "J")
+  $
+
+
+
+  2) Because we know that the vertical component of the velocity vector is zero at the highest point in its trajectory, the velocity at the maximum height is just the horizontal component.
+  $
+    K_1 &= 1/2 m v_1^2
+    \
+    K_1 &= 1/2 m v_0^2 cos^2 (45 degree)
+    \
+    K_1 &= 1/2 m v_0^2 (1/2)
+    \
+    K_1 &= 1/2 K_0 = 1/2 E_"tot"
+    \
+    bold(K_1 / E_"tot" &= 1/2)
   $
 ])
 
@@ -720,5 +798,5 @@ $
     arrow(F) = -arrow(nabla) U= -(diff U) / (diff x) hat(i) -(diff U) / (diff y) hat(j) -(diff U) / (diff z) hat(k) 
   $
   , supplement: none,
-  caption: [The "$diff$" symbol refers to taking a derivative with respect to one variable, holding everything else constant, known as a _partial derivative_. Essentially, the gradient vector is a vector that takes the partial derivative of every component.]
+  caption: [The "$diff$" symbol refers to taking a derivative with respect to one variable, holding everything else constant, known as a _partial derivative_. The nabla vector is known as the gradient vector, and is a vector consisting of all partial derivatives.]
 )

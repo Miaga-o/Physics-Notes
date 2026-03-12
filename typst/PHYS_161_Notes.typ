@@ -121,7 +121,7 @@ $
 
 == Significant Figures
 - The *uncertainty* of a measurement is often indicated by the number of important digits, known as the *significant figures.*
-  - In provided values, all non-zero digits are significant figures.
+  - All non-zero digits are significant figures.
   $
     525 => "three significant figures"
   $
@@ -131,7 +131,7 @@ $
     120.0 &=> "four significant figures"
   $
 \
-- When adding quantities, the significant figures of the sum is equal to the operand with the least significant figures.
+- When adding quantities, the significant figures of the sum are equal to the operand with the fewest significant figures.
 $
   25.7 + 13 = 38.7 approx 39 => "two significant figures"
 $
@@ -139,7 +139,7 @@ $
 $
   (13.7)(20.95)=287.015 approx 287 => "three significant figures"
 $
-- In longer physics problems with numerous equations, using the actual values in calculations and only converting the final answer to the correct amount of significant figures is best practice.
+- In longer physics problems with numerous equations, using the actual values in calculations and only converting the final answer to the correct number of significant figures is best practice.
 
 
 
@@ -159,7 +159,7 @@ $
   - Denoted $ Delta x$ and $x$, respectively, along the $x$-axis.
 - *Velocity* is measured in meters per second.
   - Denoted $v$.
-- *Acceleration* is measured in meters per square second.
+- *Acceleration* is measured in meters per second squared.
   - Denoted $a$.
 $
   Delta x &= x_2 - x_1
@@ -321,7 +321,7 @@ $
   $
 
 
-- *Frequency* is the number of revolutions (full rotations) per second.
+- *Frequency* is the number of revolutions (full rotations) per second, also known as hertz $("Hz")$.
   - Denoted $f$.
 - *Period* is the number of seconds needed to make one revolution.
   - Denoted $T$.
@@ -362,6 +362,34 @@ $
     b^2 = a^2 + c^2 - 2a c cos B
     \
     c^2 = a^2 + b^2 - 2a b cos C
+  $
+])
+
+#example([Metro Trains],[
+  Two metro trains pass by each other on the red line. 
+  The northbound train is moving at a speed of $25.0 "m"slash"s"$ and the southbound train is moving at a speed of $20.0 "m"slash"s"$.
+  In the northbound train, Cecilia is walking toward the front of the train at $2.0 "m"slash"s"$ and in the southbound one Jack is moving toward the front of the train also at $2.0 "m"slash"s"$.
+  What is the magnitude of Jack's velocity relative to Cecilia?
+  #line(length:100%)
+  We can start by finding both of their speeds relative to the Earth.
+  $
+    arrow(v)_"Jack,Earth" &= arrow(v)_"Jack,North" + arrow(v)_"North,Earth"
+    \
+    arrow(v)_"Jack,Earth" &= (4 "m"slash"s") + (25 "m"slash"s") = 29 "m"slash"s"
+    \
+    arrow(v)_"Cecilia,Earth" &= arrow(v)_"Cecilia,South" + arrow(v)_"South,Earth"
+    \
+    arrow(v)_"Cecilia,Earth" &= (4 "m"slash"s") + (-20  "m"slash"s") = -16 "m"slash"s"
+  $
+  Now, we can solve for Jack's velocity relative to Cecilia.
+  $
+    arrow(v)_"Jack,Cecilia" &= arrow(v)_"Jack,Earth" + arrow(v)_"Earth,Cecilia"
+    \
+    arrow(v)_"Jack,Cecilia" &= arrow(v)_"Jack,Earth" - arrow(v)_"Cecilia,Earth"
+    \
+    arrow(v)_"Jack,Cecilia" &= (29 "m"slash"s") - (-16 "m"slash"s")
+    \
+    bold(arrow(v)_"Jack,Cecilia" &= 45.0 "m"slash"s")
   $
 ])
 
@@ -437,12 +465,12 @@ $
 $
   w=m g
 $
-- However, there are also exists a general definition for weight force, the *Universal Law of Gravitation* using the gravitational constant $G$
+- However, there also exists a general definition for weight force, the *Universal Law of Gravitation* using the gravitational constant $G$
 $
   G = 6.6743 times 10^(-11) space "m"^3 dot "kg"^(-1) dot "s"^(-1)
 $
 #definition([Universal Law of Gravitation], [
-  The force between any two objects is defined as follows (given that $r$ is the distance between the objects' centers):
+  The force between any two objects is defined as follows, given that $r$ is the _distance between the objects' centers_
   $
     F_1 = F_2 = G (m_1 m_2) / r^2
   $
@@ -457,11 +485,13 @@ $
   - Generally denoted $arrow(n)$.
 - The *tension force* is the pulling force exerted equally throughout a rope, cable, etc.
   - Generally denoted $arrow(T)$.
+  - In pulley problems, the direction of motion should be decided relative to the direction of the pulley's tension.
 - The *friction force* is exerted by a surface on an object and acts perpendicular to the normal force. It depends on the roughness of the surface (expressed by the coefficient of friction).
   - *Kinetic   friction*, denoted $arrow(f)_k$ with coefficient of kinetic friction $mu_k$, acts on objects sliding across a surface.
   $
     arrow(f)_k = mu_k arrow(n)
   $
+  \ \
   - *Static friction*, denoted  $arrow(f)_s$ with coefficient of static friction $mu_s$, acts on still objects until the applied force exceeds the maximum static friction.
   $
     arrow(f)_s <= arrow(f)_(s",max") = mu_s arrow(n)
@@ -478,7 +508,12 @@ $
   Sigma F_x &= 0 \
   Sigma F_y &= 0
 $
-- Thus, unknown forces can be solved in terms of other forces very easily.
+- A common example of forces in equilibrium is an object sitting on a horizontal surface. The net vertical force is zero because the magnitude of the normal force and weight force are equal.
+
+
+
+== Dynamics of Particles
+- Using Newton's second law, 
 
 
 
@@ -529,7 +564,7 @@ $
   $
 ])
 
-- Because kinetic energy is based off of speed, it is either positive or zero.
+- Because kinetic energy is based on speed, it is either positive or zero.
 - Additionally, work may be expressed as the *change in kinetic energy.*
 $
   W = Delta K
@@ -631,10 +666,19 @@ $
 $
   W = integral_(r_1)^(r_2) arrow(F) dot dif arrow(r)
 $
+- This is also the definition for work done by a spring because it varies depending on the displacement.
+$
+  W_s &= integral_(x_1)^(x_2) (-k x) dif x \
+  W_s &= -1/2 k Delta x^2
+$
 
 == Power
-- *Power* is the rate that work is done, measured in watts $"(W)"$ or joules per second $("J"slash"s")$.
+- *Power* is the rate at which work is done, measured in watts $"(W)"$ or joules per second $("J"slash"s")$.
   - Denoted $P$.
+  - Power is also sometimes give in horsepower $("hp")$. The conversion rate is as follows:
+  $
+    1 "hp" = 745.7 "W"
+  $
 - Thus, average power is defined as follows:
 $
   P_"av" = (Delta W) / (Delta t)
@@ -671,7 +715,7 @@ $
   $
 ])
 
-- Notice how an object's gravitational potential energy _decreases_ as its height above the ground decreases even though the work done by the weight force on a falling object is _positive_.
+- Notice how an object's gravitational potential energy _decreases_ as its height above the ground decreases, even though the work done by the weight force on a falling object is _positive_.
 - Thus, the work done by gravity is equal to the negative change in gravitational potential energy.
 $
   W_g = - Delta U_g
@@ -723,7 +767,7 @@ $
   Delta U_"int" = -W_"nc"
 $
 #example([Block on a Globe], [
-  A small block of mass $m$ sits on top of a globe with radius $R$. The small block begins sliding from the top of the globe to with negligible speed. The block leaves the surface of the globe when it reaches a height $h_"crit"$ above the ground.
+  A small block of mass $m$ sits on top of a globe with radius $R$. The small block begins sliding from the top of the globe with negligible speed. The block leaves the surface of the globe when it reaches a height $h_"crit"$ above the ground.
   Derive a formula for $v_"crit"$, the speed of the block the moment it falls off the globe, in terms of $R$, $h_"crit"$, and $g$.
   #figure(image("/images/MWE_we_9.jpg", width: 31%))
   #line(length: 100%)
@@ -784,8 +828,55 @@ $
   $
 ])
 
+#example([Rough Patch], [
+  A small block is sent through point A with a speed of $7 "m"slash"s"$. 
+  Point A is at height $h_1 = 6 "m"$.
+  The block then slides down to point B, which is at a height of zero. 
+  After that, the block slides up to point C at a height of $h_2 = 2 "m"$.
+  Past point C is a rough patch of length $L = 12 "m"$ with a coefficient of kinetic friction $mu_k = 0.7$.
+
+  If point D is just beyond the rough section, will the block be able to reach it? If not, how far through the rough patch can it travel?
+  #line(length: 100%)
+
+  The total mechanical energy at points A, B, and C are all equal. 
+  We know the block can reach point D if the friction requires a longer distance than $12 "m"$ for the kinetic energy by point C to be totally dissipated.
+
+  We can start by finding the velocity at point C because the gravitational potential energy of the block is constant between point C and point D.
+  $
+    E_A &= E_C
+    \
+    1/2 m v_A^2 + m g h_1 &=  1/2m v_C^2 + m g h_2 
+    \
+    1/2 v_A^2 + g h_1 &=  1/2 v_C^2 + g h_2 
+    \
+    1/2 v_A^2 + g (h_1 - h_2) &=  1/2 v_C^2
+    \
+    v_A^2 + 2g (h_1 - h_2) &=  v_C^2
+    \
+    v_C^2 &= (7 "m"slash"s")^2 + 2(9.81 "m"slash"s"^2)(6 "m" - 2 "m")
+    \
+    v_C^2 &= 127.48 space "m"^2slash"s"^2
+  $
+  Now, we can equate the kinetic energy at point C to the work done by friction and solve for the distance needed to fully dissipate it.
+  $
+    K_C &= W_f
+    \
+    1/2 m v_C^2 &= mu_k m g d
+    \
+    d &= (v_C^2) / (2mu_k g)
+    \
+    d &= (127.48 space "m"^2slash"s"^2) / (2(0.7)(9.81 "m"slash"s"^2))
+    \
+    d &= (127.48 space "m"^2slash"s"^2) / (2(0.7)(9.81 "m"slash"s"^2))
+    \
+    d &= 9.28 "m"
+  $
+  *Thus, the block cannot reach point D, and will instead travel $9.28 "m"$ across the rough patch.*
+])
 
 
+
+\ \
 == Force and Potential Energy
 - Recall that the work done by a conservative force equals the negative change in potential energy.
 $

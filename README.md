@@ -1,2 +1,2 @@
 # Physics Notes
-Repository for my PHYS 161 notes.
+My personal notes for my college physics (mechanics) course, written in Typst.

@@ -29,7 +29,7 @@
     inset: 8pt,
     radius: 10pt,
     width: 100%,
-    [#text(fill: blue, size: 14pt, [*Definition:* #title]) \  
+    [#text(fill: blue, size: 14pt, [*Definition:*]) #text(fill: black, size: 14pt, [*#title*]) \  
     #body]
   )
 }
@@ -40,7 +40,7 @@
     inset: 8pt,
     radius: 10pt,
     width: 100%,
-    [#text(fill: orange, size: 14pt, [*Example:* #title]) \
+    [#text(fill: orange, size: 14pt, [*Example:*]) #text(fill: black, size: 14pt, [*#title*]) \
     #body]
   )
 }
@@ -51,7 +51,7 @@
     inset: 8pt,
     radius: 10pt,
     width: 100%,
-    [#text(fill: purple, size: 14pt, [*Derivation:* #title]) \
+    [#text(fill: purple, size: 14pt, [*Derivation:*]) #text(fill: black, size: 14pt, [*#title*]) \
     #body]
   )
 }
@@ -161,7 +161,8 @@ $
   - Denoted $v$.
 - *Acceleration* is measured in meters per second squared.
   - Denoted $a$.
-$
+
+  $
   Delta x &= x_2 - x_1
   \
   v_("av") &= (Delta x) / (Delta t)
@@ -175,15 +176,18 @@ $
 
 
 
+
 == Motion with Constant Acceleration
-- With constant acceleration, the following *kinematic equations* hold true:
-$
-  v = v_0 + a Delta t
-  \
-  Delta x = v_0 Delta t + 1 /2 a Delta t^2
-  \
-  v ^2 = v_0^2 + 2a Delta x
-$
+#definition([Kinematic Equations], [
+With constant acceleration, the following *kinematic equations* hold true:
+  $
+    v = v_0 + a Delta t
+    \
+    Delta x = v_0 Delta t + 1 /2 a Delta t^2
+    \
+    v ^2 = v_0^2 + 2a Delta x
+  $
+])
 
 #derivation([Displacement Kinematic Equation], [
   $
@@ -321,19 +325,25 @@ $
   $
 
 
-- *Frequency* is the number of revolutions (full rotations) per second, also known as hertz $("Hz")$.
+- *Frequency* is the rate at which an object spins, measured in revolutions per second $("rev"slash"s")$ or sometimes just in hertz $("s"^(-1) = "Hz")$.
   - Denoted $f$.
-- *Period* is the number of seconds needed to make one revolution.
+  \
+- *Period* is the time required to make one revolution, measured in seconds.
   - Denoted $T$.
 $
 T= 1 / f
 $
-- Given radius of the circular motion $R$
-$
+#definition([Circular Motion Equations], [
+  Given radius of the circular motion $R$
+  $
   v &= (2 pi R) / T
   \
   a_c &= v^2 / R
+  \
+  a_"tot" &= lr(|| (dif arrow(v))/(dif t)||) = sqrt(a_c^2 +a_t^2)
 $
+])
+
 
 
 \ \
@@ -344,7 +354,7 @@ $
   \
   arrow(v)_(A B) &= -arrow(v)_(B A)
 $
-
+- This is essentially vector addition.
 - The *Law of Sines* and the *Law of Cosines* are useful formulas for relative motion problems whenever angles are needed.
 
 #definition([Law of Sines], [
@@ -504,9 +514,6 @@ $
 - Objects are in equilibrium when they are at rest or moving with constant velocity, meaning that the net force acting on those objects must be zero.
 $
   Sigma arrow(F) &= 0 \
-  &=> \
-  Sigma F_x &= 0 \
-  Sigma F_y &= 0
 $
 - A common example of forces in equilibrium is an object sitting on a horizontal surface. The net vertical force is zero because the magnitude of the normal force and weight force are equal.
 
@@ -891,3 +898,39 @@ $
   , supplement: none,
   caption: [The "$diff$" symbol refers to taking a derivative with respect to one variable, holding everything else constant, known as a _partial derivative_. The nabla vector is known as the gradient vector, and is a vector consisting of all partial derivatives.]
 )
+
+#example([Object's Potential Energy Function], [
+  A small object with mass $m = 0.0900 "kg"$ moves along the $+x$-axis. 
+  The only force applied to the object is a conservative force with potential energy function $U(x) = -alpha x^2 + beta x^3$ where 
+  \ $alpha=9.50 "J"slash"m"^2$ and $beta=0.300 "J"slash"m"^3$. The object is released from rest at negligible $x$.
+  + When the object is at $x = 4.00 "m"$, what is its speed?
+  + When the object is at $x = 4.00 "m"$, what is the magnitude of its acceleration?
+  + What is the maximum value of $x$ reached by the object during its motion?
+  #line(length: 100%)
+  1) Because we know the object starts from rest, the work done by the conservative force must be equal to the kinetic energy.
+  Thus, we can equate kinetic energy to the work done, or the negative potential energy function (because we start from a negligible $x$) and solve for the velocity.
+  $
+    K&=W 
+    \
+    1/2 m v^2 &= - U(4)
+    \
+    v &= sqrt(-(2 U(4)) / m)
+    \
+    v &= sqrt((2(9.5 "J"slash"m"^2)(4 "m")^2) / (0.09 "kg") - (2(0.3 "J"slash"m"^3)(4 "m"^3)) / (0.09 "kg"))
+    \
+    bold(v&=54.3 "m"slash"s")
+  $
+  2) We can start by finding the negative derivative to get the the force function, then use the force function to get the acceleration function.
+  $
+    F &= -(dif U) / (dif x)
+    \
+    F &= 2alpha x - 3 beta x^2 = m a 
+    \
+    a &= (2 alpha x) / m - (3 beta x^2) / m
+    \
+    a(4) &= (2 (9.5 "J"slash"m"^2)(4 "m")) / (0.09 "kg") - (3 (0.3 "J"slash"m"^3)(4 "m")^2) / (0.09 "kg")
+    \
+    bold(a(4) &= 684 "m"slash"s"^2)
+  $
+  3) Similarly to our logic for part one, we can use the fact that $K=W=-U(x)$. By finding the zeros of $-U(x)$, we find that $x_max$ is whenever the kinetic energy is zero again: $bold(x_max=31.7 "m")$.
+])

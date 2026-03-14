@@ -370,9 +370,9 @@ $
 #definition([Circular Motion Equations], [
   Given radius of the circular motion $R$
   $
-  v &= (2 pi R) / T
+  v &= (2 pi R) / T = 2 pi R f
   \
-  a_c &= v^2 / R
+  a_c &= v^2 / R = (4pi^2 R) / T = 4pi^2 R f
   \
   a_"tot" &= lr(|| (dif arrow(v))/(dif t)||) = sqrt(a_c^2 +a_t^2)
 $
@@ -564,6 +564,7 @@ $
 - Signs can indicate the direction, but you have to be consistent.
   - In *pulley problems*, direction should be based on the direction of the pulley's cord.
   - In *incline problems*, the $x$-axis should be parallel to the incline and the $y$-axis should be perpendicular to the incline.
+    - Consequently, when given the angle of the incline, sine is used to find the $x$-component of weight and cosine is used to find the $y$-component of weight because weight will not be perpendicular to the incline.
 - Sometimes, normal force can be referred to as *apparent weight* because the magnitude may be less than or greater than the opposing weight force.
   - For instance, you feel _heavier_ when you are in an elevator moving up because your normal force is greater than your weight force and vice versa.
   $
@@ -574,7 +575,7 @@ $
   + Write Newton's second law for each of the three blocks in both directions.
   + Find the largest mass that block C can have so that blocks A and B slide together when the system is released from rest.
   #line(length: 100%)
-  1) Note that along the direction of the pulley, the vertical forces acting on block A and B are irrelevant.
+  1) Along the direction of the pulley, the vertical forces acting on block A and B are irrelevant.
   $
     Sigma F_A &= T - f_s
     \
@@ -626,6 +627,55 @@ $
 - As a result, denoting a singular "centrifugal force" is generally not accurate.
   - For example, if an object is moving vertically with uniform circular motion, the weight force points toward the center of rotation at the top, but away from the center of rotation at the bottom.
 - Additionally, direction should be considered relative to the center of rotation---generally the positive direction is toward the center.
+- Additionally, problems involving *circular motion of vehicles* have less obvious forces contributing to the circular motion.
+  - Along a curved road with friction, _static friction is what maintains the vehicle's circular motion_ because at any given moment, the tires of the cars are stationary relative to the pavement.
+  - Along a banked curve without friction (sort of like an inclined plane from the inner curve to the outer curve), _the $x$-component of the normal force is what maintains the vehicle's circular motion_.
+#example([Rounding a Flat Curve], [
+  A sports car is rounding a flat, unbanked curve with radius $R$. If the coefficient of static friction between the tires is $mu_s$, what is the maximum speed $v_"max"$ the driver can complete the curve without sliding off?
+  #line(length: 100%)
+  Here, the only force contributing to the circular motion is static friction, so we can just use the given formula for maximum static friction to find $v_max$.
+  #continue_example
+])
+
+#example([Rounding a Flat Curve _continued_], [
+  $
+    m a_c &= f_s
+    \
+    (m v_"max"^2) / R &= mu_s m g 
+    \
+    bold(v_"max" &= sqrt(R mu_s g))
+  $
+  Note that the maximum speed needed is not based on the mass of the vehicle at all.
+])
+
+#example([Rounding a Banked Curve], [
+  You are planning to create a road banked at the perfect angle to allow cars to complete turns without friction. At what angle $alpha$  should the road be banked to allow for this?
+  #line(length:100%)
+  We can imagine this from a straight back perspective of the car. While similar to an incline plane problem, we are evaluating components parallel to the horizontal rather than the incline. As a result, the only inward force is the $x$-component of the normal force because the curve is banked from the inside-out. 
+  
+  Now, because the normal force and its $y$-component are perpendicular to the respective sides forming the angle $alpha$, _the angle between them is also equal to $alpha$_. Thus, the $x$-component of the normal force is the component opposite of $alpha$ while the $y$-component of the normal force is the component adjacent of $alpha$.
+  $
+    n_y &= m g 
+    \
+    n cos alpha &= m g 
+    \
+    n &= (m g) / (cos alpha)
+  $
+  Using this value of $n$, we can now solve for the angle.
+  $
+    n_x &= (m v^2) / R
+    \
+    n sin alpha &= (m v^2) / R 
+    \
+    m g (sin alpha) / (cos alpha) &= (m v^2) / R 
+    \
+    m g tan alpha &= (m v^2) / R 
+    \
+    tan alpha &= v^2 / (R g)
+    \
+    bold(alpha &= arctan(v^2 / (R g)))
+  $
+])
 
 
 

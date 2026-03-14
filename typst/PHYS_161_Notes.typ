@@ -303,12 +303,46 @@ $
     \
     2 g h_"max" &= v_(0y)^2
     \
-    h_"max" &= (v_(0y)^2) / (2g h)
+    h_"max" &= (v_(0y)^2) / (2g)
     \
-    h_"max" &= (v_0^2 sin^2 theta) / (2g h)
+    h_"max" &= (v_0^2 sin^2 theta) / (2g)
   $
 ])
 - In later chapters, there will be other ways of finding the range or maximum height of a projectile, but these may still be useful depending on what is known in a problem.
+#example([Fireworks Display], [
+  During a fireworks display, a shell is shot into the air with an initial speed $v_0 = 70.0 "m"slash"s"$ at an angle of $75 degree$ above the horizontal. The fuse is timed to ignite the shell just as it reaches its highest point above the ground.
+  + How much time has passed between the launch of the shell and the explosion?
+  + What is the horizontal displacement of the shell before it explodes?
+  #line(length: 100%)
+  1) This is essentially the time needed for the firework to reach its max height. We can derive the maximum height formula (as seen above) first.
+  $
+    h_"max" = ((70.0 "m"slash"s")^2sin^2 75 degree) / (2(9.81 "m"slash"s"^2)) = 233 "m"
+  $
+  Now, we can solve for time easily.
+  $
+    h_"max" &= v_(0y) t - 1/2 g t^2
+    \
+    h_"max" &= v_(0)sin(75 degree) t - 1/2 g t^2
+    \
+    1/2 g t^2 - v_(0)sin(75 degree) t + h_"max" &=  0
+    \
+    bold(t &= 6.89 "s")
+  $
+  #continue_example
+])
+
+#example([Fireworks Display _continued_], [
+  2) We can calculate the firework's displacement using the time we just calculated.
+  $
+    Delta x &= v_(0x)t
+    \
+    Delta x &= v_0 cos(75 degree)t
+    \
+    Delta x &= (70 "m"slash"s")cos(75 degree)(6.89 "s")
+    \
+    bold(Delta x &= 125 "m")
+  $
+])
 
 
 
@@ -346,7 +380,7 @@ $
 
 
 
-\ \
+
 == Relative Motion
 - Given reference frames $A$, $B$, and $C$ where $A B$ means "$A$ in the reference frame of $B$"
 $
@@ -452,6 +486,12 @@ $
 
 
 
+== Free Body Diagrams
+- *Free-body diagrams* show the forces acting on an object's center, including any relevant components.
+- While the magnitude of the drawn forces isn't that important, scaling them relative to each other makes the direction of the net acceleration clearer.
+
+
+
 
 
 
@@ -495,13 +535,11 @@ $
   - Generally denoted $arrow(n)$.
 - The *tension force* is the pulling force exerted equally throughout a rope, cable, etc.
   - Generally denoted $arrow(T)$.
-  - In pulley problems, the direction of motion should be decided relative to the direction of the pulley's tension.
 - The *friction force* is exerted by a surface on an object and acts perpendicular to the normal force. It depends on the roughness of the surface (expressed by the coefficient of friction).
   - *Kinetic   friction*, denoted $arrow(f)_k$ with coefficient of kinetic friction $mu_k$, acts on objects sliding across a surface.
   $
     arrow(f)_k = mu_k arrow(n)
   $
-  \ \
   - *Static friction*, denoted  $arrow(f)_s$ with coefficient of static friction $mu_s$, acts on still objects until the applied force exceeds the maximum static friction.
   $
     arrow(f)_s <= arrow(f)_(s",max") = mu_s arrow(n)
@@ -520,7 +558,61 @@ $
 
 
 == Dynamics of Particles
-- Using Newton's second law, 
+- Using Newton's second law, we can set all forces (or components of forces) equal to mass times acceleration and solve for unknowns accordingly.
+- Signs can indicate the direction, but you have to be consistent.
+  - In *pulley problems*, direction should be based on the direction of the pulley's cord.
+  - In *incline problems*, the $x$-axis should be parallel to the incline and the $y$-axis should be perpendicular to the incline.
+- Sometimes, normal force can be referred to as *apparent weight* because the magnitude may be less than or greater than the opposing weight force.
+  - For instance, you feel _heavier_ when you are in an elevator moving up because your normal force is greater than your weight force and vice versa.
+  $
+    n=m(g+a_y)
+  $
+#example([Table Pulley], [
+  Block B with mass $m_B = 5.0 "kg"$ rests on block A, with mass $m_A = 8.0 "kg"$, which is on a horizontal frictionless tabletop. The coefficient of static friction between block A and block B is $mu_s = 0.75$. A string attached to block A passes over a massless, frictionless pulley at the edge of the tabletop, and block C is suspended from the other end of the string and is released from rest.
+  + Write Newton's second law for each of the three blocks in both directions.
+  + Find the largest mass that block C can have so that blocks A and B slide together when the system is released from rest.
+  #line(length: 100%)
+  1) Note that along the direction of the pulley, the vertical forces acting on block A and B are irrelevant.
+  $
+    Sigma F_A &= T - f_s
+    \
+    Sigma F_B &= f_s
+    \
+    Sigma F_C &= m_C g - T
+  $
+  2) Now, block A and B will slip once the maximum static friction is exceeded, so we can use its formula to find the acceleration of the system when $m_C$ is maximized.
+  $
+    m_B a &= mu_s m_B g
+    \
+    a &= mu_s g 
+    \
+    a &= (0.75)(9.81 "m"slash"s"^2) = 7.36 "m"slash"s"^2
+  $
+  #continue_example
+])
+
+#example([Table Pulley _continued_], [
+  Using this, we can find an expression for $T$. 
+  $
+    T - f_s + f_s &= (m_A + m_B) a
+    \
+    T &= (m_A + m_B) a
+  $
+  With both acceleration and tension found, we can now solve for the maximum mass of C.
+  $
+    m_C a &= m_C g - T
+    \
+    m_C a &= m_C g - (m_A + m_B) a 
+    \
+    m_C a - m_C g &= - (m_A + m_B) a 
+    \
+    m_C &= - ((m_A + m_B) a ) / (a-g)
+    \
+    m_C &= -((8 "kg" + 5 "kg")(7.36 "m"slash"s"^2)) / (7.36 "m"slash"s"^2 - 9.81 "m"slash"s"^2)
+    \
+    bold(m_C &= 39 "kg")
+  $
+])
 
 
 
@@ -531,7 +623,7 @@ $
 $
 - As a result, denoting a singular "centrifugal force" is generally not accurate.
   - For example, if an object is moving vertically with uniform circular motion, the weight force points toward the center of rotation at the top, but away from the center of rotation at the bottom.
-- Additionally, direction should be considered relative to the center of rotation.
+- Additionally, direction should be considered relative to the center of rotation---generally the positive direction is toward the center.
 
 
 
@@ -674,10 +766,12 @@ $
   W = integral_(r_1)^(r_2) arrow(F) dot dif arrow(r)
 $
 - This is also the definition for work done by a spring because it varies depending on the displacement.
+#derivation([Work Done by a Spring], [
 $
   W_s &= integral_(x_1)^(x_2) (-k x) dif x \
   W_s &= -1/2 k Delta x^2
 $
+])
 
 == Power
 - *Power* is the rate at which work is done, measured in watts $"(W)"$ or joules per second $("J"slash"s")$.
@@ -883,7 +977,7 @@ $
 
 
 
-\ \
+\
 == Force and Potential Energy
 - Recall that the work done by a conservative force equals the negative change in potential energy.
 $

@@ -412,18 +412,18 @@ $
 #example([Metro Trains],[
   Two metro trains pass by each other on the red line. 
   The northbound train is moving at a speed of $25.0 "m"slash"s"$ and the southbound train is moving at a speed of $20.0 "m"slash"s"$.
-  In the northbound train, Cecilia is walking toward the front of the train at $2.0 "m"slash"s"$ and in the southbound one Jack is moving toward the front of the train also at $2.0 "m"slash"s"$.
+  In the northbound train, Cecilia is walking toward the front of the train at $2.0 "m"slash"s"$ and in the southbound one Jack is moving toward the back of the train also at $2.0 "m"slash"s"$.
   What is the magnitude of Jack's velocity relative to Cecilia?
   #line(length:100%)
   We can start by finding both of their speeds relative to the Earth.
   $
-    arrow(v)_"Jack,Earth" &= arrow(v)_"Jack,North" + arrow(v)_"North,Earth"
+    arrow(v)_"Cecilia,Earth" &= arrow(v)_"Cecilia,North" + arrow(v)_"North,Earth"
     \
-    arrow(v)_"Jack,Earth" &= (4 "m"slash"s") + (25 "m"slash"s") = 29 "m"slash"s"
+    arrow(v)_"Cecilia,Earth" &= (2 "m"slash"s") + (25  "m"slash"s") = 27 "m"slash"s"
     \
-    arrow(v)_"Cecilia,Earth" &= arrow(v)_"Cecilia,South" + arrow(v)_"South,Earth"
+    arrow(v)_"Jack,Earth" &= arrow(v)_"Jack,South" + arrow(v)_"South,Earth"
     \
-    arrow(v)_"Cecilia,Earth" &= (4 "m"slash"s") + (-20  "m"slash"s") = -16 "m"slash"s"
+    arrow(v)_"Jack,Earth" &= (2 "m"slash"s") + (-20 "m"slash"s") = -18 "m"slash"s"
   $
   Now, we can solve for Jack's velocity relative to Cecilia.
   $
@@ -431,9 +431,11 @@ $
     \
     arrow(v)_"Jack,Cecilia" &= arrow(v)_"Jack,Earth" - arrow(v)_"Cecilia,Earth"
     \
-    arrow(v)_"Jack,Cecilia" &= (29 "m"slash"s") - (-16 "m"slash"s")
+    arrow(v)_"Jack,Cecilia" &= (-18 "m"slash"s") - (27 "m"slash"s")
     \
-    bold(arrow(v)_"Jack,Cecilia" &= 45.0 "m"slash"s")
+    arrow(v)_"Jack,Cecilia" &= -45.0 "m"slash"s"
+    \
+    bold(v_"Jack,Cecilia" &= 45.0 "m"slash"s")
   $
 ])
 

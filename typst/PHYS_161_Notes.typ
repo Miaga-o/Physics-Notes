@@ -680,10 +680,32 @@ $
 ])
 
 - However, these formulas only hold true when the force remains constant during the displacement.
+#example([Final Velocity of a Sled], [
+  You push a $30.0 "kg"$ sled with constant horizontal force $F=500 "N"$ for a horizontal distance $d=20.0 "m"$. The sled's initial velocity is $10.0 "m"slash"s"$. What is the final velocity of the sled?
+  #line(length: 100%)
+  1) Because we can calculate the work done and we are given the initial velocity, we can use the work-energy theorem to derive an expression for the final velocity.
+  $
+    W &= F_parallel d 
+    \
+    W &= (500 "N")(20 "m")
+    \
+    W &= 10000 "J"
+    \
+    1/2 m v_2^2 - 1/2 m v_1^2 &= 10000 "J"
+    \
+    1/2 m v_2^2 &= 10000 "J" + 1/2 m v_1^2 
+    \
+    v_2 &= sqrt((20000 "J") / m + v_1^2)
+    \
+    v_2 &= sqrt((20000 "J") / (30.0 "kg") + (10 "m"slash"s")^2)
+    \
+    bold(v_2 &= 27.7 "m"slash"s")
+  $
+])
 
 
 
-\
+
 == Work and Energy with Varying Force
 - If an object is experiencing a varying net force, then the total work can be approximated using the average force per increment of the total displacement.
 - Thus, as the increment tends to zero, work may be defined as follows:

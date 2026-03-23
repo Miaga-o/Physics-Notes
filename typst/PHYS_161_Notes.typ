@@ -223,6 +223,7 @@ $
   \
   arrow(a) &= a_x hat(i) + a_y hat(j) + a_z hat(k) wide wide &a&= sqrt(a_x+a_y+a_z)
 $
+- *Vector quantities* are quantities with magnitude and direction, opposed to *scalar quantities*, which only have magnitudes.
 
 
 
@@ -260,7 +261,7 @@ $
 $
   (-b plus.minus sqrt(b^2 - 4a c)) / (2a)
 $
-- Given these equations, we can also derive a general formula for a projectile's *range* and *maximum height.*
+- Now, we can derive a general formula for a projectile's *range* and *maximum height.*
 #derivation([Range Formula], [
   Let $Delta x$ equal $R$ and let $Delta y$ equal 0.
   $
@@ -699,6 +700,7 @@ $
   $
 ])
 
+- Because work is defined by a dot product, it is a scalar quantity, although it can still be negative.
 - Thus, it follows that a force does *negative work* when applied opposite of the direction of $arrow(s)$ and does *zero work* when applied perpendicular to the direction of $arrow(s)$.
 - Additionally, given this definition, there are multiple ways to define *net work.*
 $
@@ -731,6 +733,7 @@ $
   $
 ])
 
+- It follows that energy is also a scalar quantity.
 - However, these formulas only hold true when the force remains constant during the displacement.
 #example([Final Velocity of a Sled], [
   You push a $30.0 "kg"$ sled with constant horizontal force $F=500 "N"$ for a horizontal distance $d=20.0 "m"$. The sled's initial velocity is $10.0 "m"slash"s"$. What is the final velocity of the sled?
@@ -1102,3 +1105,26 @@ $
   $
   3) Similarly to our logic for part one, we can use the fact that $K=W=-U(x)$. By finding the zeros of $-U(x)$, we find that $x_max$ is whenever the kinetic energy is zero again: $bold(x_max=31.7 "m")$.
 ])
+
+
+
+
+
+
+
+
+
+
+#pagebreak()
+= Momentum, Impulse, and Collisions
+== Momentum and Impulse
+- *Momentum* is an object's _quantity of motion_, measured in $"kg" dot "m"slash"s"$.
+  - Denoted $p$.
+#definition([Momentum], [
+  Given momentum $arrow(p)$, mass $m$, and velocity $arrow(v)$
+  $
+    arrow(p) = m arrow(v)
+  $
+])
+
+- Thus, momentum is a vector quantity.

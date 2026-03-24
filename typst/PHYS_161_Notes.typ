@@ -82,7 +82,7 @@
 
 = Units, Physical Quantities, and Vectors
 == SI Units
-- *SI Units* refer to system of units used by engineers and scientists across the world.
+- *SI Units* refer to the system of units used by engineers and scientists across the world.
 - For PHYS 161, these will be the most commonly used units in problems.
 #figure(
   table(
@@ -413,7 +413,7 @@ $
 #example([Metro Trains],[
   Two metro trains pass by each other on the red line. 
   The northbound train is moving at a speed of $25.0 "m"slash"s"$ and the southbound train is moving at a speed of $20.0 "m"slash"s"$.
-  In the northbound train, Cecilia is walking toward the front of the train at $2.0 "m"slash"s"$ and in the southbound one Jack is moving toward the back of the train also at $2.0 "m"slash"s"$.
+  In the northbound train, Cecilia is walking toward the front of the train at $2.0 "m"slash"s"$, and in the southbound one, Jack is moving toward the back of the train also at $2.0 "m"slash"s"$.
   What is the magnitude of Jack's velocity relative to Cecilia?
   #line(length:100%)
   We can start by finding both of their speeds relative to the Earth.
@@ -612,7 +612,7 @@ $
     \
     Sigma F_C &= m_C g - T
   $
-  2) Now, block A and B will slip once the maximum static friction is exceeded, so we can use their net force equations to find the acceleration of the system when $m_C$ is maximized.
+  2) Now, blocks A and B will slip once the maximum static friction is exceeded, so we can use their net force equations to find the acceleration of the system when $m_C$ is maximized.
   $
     m_B a &= mu_s m_B g
     \
@@ -762,7 +762,7 @@ $
 ])
 
 - It follows that energy is also a scalar quantity.
-- However, these formulas only hold true when the force remains constant during the displacement.
+- However, these formulas only hold when the force remains constant during the displacement.
 #example([Final Velocity of a Sled], [
   You push a $30.0 "kg"$ sled with constant horizontal force $F=500 "N"$ for a horizontal distance $d=20.0 "m"$. The sled's initial velocity is $10.0 "m"slash"s"$. What is the final velocity of the sled?
   #line(length: 100%)
@@ -881,7 +881,7 @@ $
 == Power
 - *Power* is the rate at which work is done, measured in watts $"(W)"$ or joules per second $("J"slash"s")$.
   - Denoted $P$.
-  - Power is also sometimes give in horsepower $("hp")$. The conversion rate is as follows:
+  - Power is also sometimes given in horsepower $("hp")$. The conversion rate is as follows:
   $
     1 "hp" = 745.7 "W"
   $
@@ -912,7 +912,7 @@ $
   - For example, a fruit hanging from a tall tree has the _potential_ to reach a higher speed (and therefore kinetic energy) before it hits the ground than a fruit hanging from a smaller tree.
 
 == Gravitational Potential Energy
-- *Gravitational potential energy* is potential energy dependent on an object's mass and height about the ground.
+- *Gravitational potential energy* is potential energy dependent on an object's mass and height above the ground.
   - Denoted $U_g$.
 #definition([Gravitational Potential Energy], [
   Given gravitational potential energy $U_g$, object's mass $m$, acceleration due to gravity $g$, and height above the ground $h$
@@ -1169,10 +1169,9 @@ $
   $
 ])
 
-- This theorem enables impulse to be expressed in terms of net force.
 
 #derivation([Relating Impulse to Force], [
-  Given net force $Sigma F$, acceleration $arrow(a)$, and mass $m$
+  Given net force $Sigma arrow(F)$, acceleration $arrow(a)$, and mass $m$
   $
     Sigma arrow(F) &= m arrow(a)
     \
@@ -1194,9 +1193,11 @@ $
     \
     arrow(J) &= Sigma arrow(F) Delta t
   $
+  If we interpret $Sigma arrow(F)$ as a varying force, then impulse simply equals the integral of the net force with respect to time.
+  If the impulse $arrow(J)$ and the time interval $Delta t$ are known, then $Sigma arrow(F)$ represents the average net force over the time interval.
+
 ])
 
-\ \
 - It follows that impulse is the area under a force versus time graph.
 #figure(
   cetz.canvas({
@@ -1378,7 +1379,6 @@ $
 
 
 
-\
 == Momentum Conservation and Collisions
 - Collisions are strong interactions between objects over a relatively short time interval.
   - Momentum is conserved in collisions, but kinetic energy is not always conserved.
@@ -1391,6 +1391,61 @@ $
   m_A arrow(v)_A + m_B arrow(v)_B = (m_A + m_B) arrow(v)_(A B)
 $
   - Just because a collision is inelastic _does not mean_ that the colliding objects have to stick together. For instance, kinetic energy could be dissipated from deformations.
+
+
+
+== Center of Mass
+- A system's *center of mass* is the average position of all matter in the system.
+
+#definition([Center of Mass with Point Masses], [
+Given point masses $m_i$ of a system each a distance $x_i$, $y_i$, or $z_i$ from the origin, center of masses $x_"cm"$, $y_"cm"$, and $z_"cm"$ are defined as follows:
+  #table(
+    columns: (33%, 34%, 33%),
+    stroke: none,
+    $
+    x_"cm" &= (sum_(i=1)^(N) m_i x_i) / (sum_(i=1)^N m_i)
+    $,
+    $
+    y_"cm" &= (sum_(i=1)^(N) m_i y_i) / (sum_(i=1)^N m_i)
+    $,
+    $
+    z_"cm" &= (sum_(i=1)^(N) m_i z_i) / (sum_(i=1)^N m_i)
+    $
+  )
+
+Or, condensed into a single vector equation:
+  $
+    arrow(R)_"cm" &= (sum_(i=1)^N m_i arrow(r)) / (sum_(i=1)^N m_i)
+  $
+])
+
+
+- A separate equation is used for continuous mass distributions (specific shapes or forms of uniform density):
+$
+  arrow(R)_"cm" &= (integral arrow(r) dot dif m) / (sum_(i=1)^N m_i)
+$
+- To simplify this integral, we can find the differential $dif m$ in terms of densities and known differentials depending on the dimensions involved in the mass distribution.
+  - Linear density, denoted $lambda$:
+  $
+    lambda &= M / L = (dif m) / (dif L)
+    \
+    &therefore dif m = lambda dif L = lambda dif x
+  $
+  
+  - Surface density, denoted $sigma$:
+  $
+    sigma &= M / A = M / L^2 = (dif m) / (dif A)
+    \
+    &therefore dif m = sigma dif A = lambda dif x dif y
+  $
+
+  - Volume density, denoted $rho$:
+  $
+    rho &= M / V = M / L^3 = (dif m) / (dif V)
+    \
+    &therefore dif m = lambda dif V = lambda dif x dif y dif z
+  $
+
 
 
 

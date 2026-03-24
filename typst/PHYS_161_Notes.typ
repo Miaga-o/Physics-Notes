@@ -12,7 +12,6 @@
 #show heading.where(level: 3): set text(size: 16pt)
 #show math.equation: set text(font: "New Computer Modern Math")
 #show sym.emptyset: set text(font: "Fira Sans")
-#set table(fill: (x, y) => if y == 0 {white.darken(5%)})
 
 //Functions and variables
 #let custom_numbering = (..numbers) => { 
@@ -74,7 +73,7 @@
 ])
 
 #outline()
-#pagebreak()
+
 
 
 
@@ -87,6 +86,7 @@
 - For PHYS 161, these will be the most commonly used units in problems.
 #figure(
   table(
+    fill: (x, y) => if y == 0 {white.darken(5%)},
     columns: (auto, auto, auto),
     inset: 8pt,
     [*Application*], [*Unit*], [*Shorthand*],
@@ -99,6 +99,7 @@
 - Additionally, many prefixes may be used in problems, necessitating conversions.
 #figure(
   table(
+    fill: (x, y) => if y == 0 {white.darken(5%)},
     columns: (auto, auto, auto),
     inset: 8pt,
     [*Length*], [*Mass*], [*Time*],
@@ -492,6 +493,33 @@ $
 == Free Body Diagrams
 - *Free-body diagrams* show the forces acting on an object's center, including any relevant components.
 - While the magnitude of the drawn forces isn't that important, scaling them relative to each other makes the direction of the net acceleration clearer.
+#figure([
+  #cetz.canvas({
+    import cetz.draw: *
+    let center(len1, len2) = (0 + len1, 0 + len2) //gives position relative to current center location
+    rect(center(-1,-1), center(1,1), fill: red)
+    circle(center(0,0), radius: 3pt, fill: black)
+
+    //Forces and labels
+    line(center(0,0), center(0,1.5), mark: (end: "straight")) //Normal
+    content(center(0,1.75), [$arrow(n)$])
+
+    line(center(0,0), center(0,-2.5), mark: (end: "straight")) //Weight
+    content(center(0,-2.75), [$arrow(w)$])
+
+    line(center(0,0), center(2,1), mark: (end: "straight")) //Tension
+    content(center(2, 1.25), [$arrow(T)$])
+    line(center(0,0), center(2,0), stroke: (dash: "dashed"))
+    content(center(1.5,-0.25), [$T_x$])
+    line(center(2,0), center(2,1), stroke: (dash: "dashed"))
+    content(center(2.25,0.5), [$T_y$])
+
+    line(center(0,0), center(-2.25, 0), stroke: none) //idk centering
+  })],
+  supplement: none,
+  caption: [Free-body diagram of a block being pulled at an angle by a rope.
+  Note how the vertical components of the forces are all balanced.]  
+)
 
 
 
@@ -1064,10 +1092,10 @@ $
 - Thus, given force $arrow(F)$ and potential energy $U$:
 #figure(
   $
-    arrow(F) = -arrow(nabla) U= -(diff U) / (diff x) hat(i) -(diff U) / (diff y) hat(j) -(diff U) / (diff z) hat(k) 
+    arrow(F) = -arrow(nabla) U= -(partial U) / (partial x) hat(i) -(partial U) / (partial y) hat(j) -(partial U) / (partial z) hat(k) 
   $
   , supplement: none,
-  caption: [The "$diff$" symbol refers to taking a derivative with respect to one variable, holding everything else constant, known as a _partial derivative_. The nabla vector is known as the gradient vector, and is a vector consisting of all partial derivatives.]
+  caption: [The "$partial$" symbol refers to taking a derivative with respect to one variable, holding everything else constant, known as a _partial derivative_. The nabla vector is known as the gradient vector, and is a vector consisting of all partial derivatives.]
 )
 
 #example([Object's Potential Energy Function], [
@@ -1285,13 +1313,69 @@ $
 - *Internal forces* are the forces exerted by a system's particles on each other.
 - *External forces* are the forces exerted by particles outside the system on the system's particles.
 - *Isolated systems* are systems with no external forces.
-- _Momentum is conserved_ if the net external force in a system is zero.
-  - By Newton's third law, the internal forces of the system will sum to zero as well.
 - The *total momentum* of a system is the sum of the momenta of the system's particles.
   - Denoted P.
 $
-  arrow(P) = arrow(p)_A + arrow(p)_B
+  arrow(P) = arrow(p)_A + arrow(p)_B + dots.c = m arrow(v)_A + m arrow(v)_B + dots.c
 $
+#definition([Conservation of Momentum], [
+  We say that a system's total momentum is _conserved_ if the system's net external force is zero.
+]) 
+
+- Note that by Newton's third law, a system's internal forces do not impact the system's total momentum.
+#example([Gun Recoil], [
+  A marksman holds a $3.00 "kg"$ rifle loosely, allowing it to recoil.
+  He fires a $5.00 "g"$ bullet whose horizontal velocity relative to the ground is $300 "m"slash"s"$.
+  + What is the rifle's recoil velocity?
+  + What are the final momentum and kinetic energy of the bullet and rifle?
+  #line(length:100%)
+  1) During the shot, the external forces exerted by the marksman are negligible.
+  Thus, the system's total momentum is conserved. 
+  Now, it follows that the system's total momentum is initially zero, so it should be zero after the shot.
+  Since we are given everything but the rifle's recoil velocity, we can simply isolate it by equating the momenta to zero.
+  $
+    p_R + p_B &= 0
+    \
+    p_R &= -p_B 
+    \
+    m_R v_R &= -m_B v_B
+    \
+    v_R &= -(m_B v_B) / m_R
+    \
+    v_R &= -((5 "g" dot (0.001 "kg") / (1 "g")) (300 "m"slash"s")) / (3 "kg")
+    \
+    bold(v_R &= -0.500 "m"slash"s")
+  $
+
+  2) Now that we have the recoil velocity of the rifle, we can simply plug our values into the momentum and kinetic energy formulas.
+  #figure(
+    table(
+      columns: (25%, 25%, 25%, 25%),
+      stroke: none,
+      $
+        p_R &= m_R v_R
+        \
+        bold(p_R &= -1.50 "kg" dot "m"slash"s")
+      $,
+      $
+        K_R &= 1/2 m_R v_R^2
+        \
+        bold(K_R &= 0.375 "J")
+      $,
+      $
+        p_B &= m_B v_B
+        \
+        bold(p_B &= 1.5 "kg" dot "m"slash"s")
+      $,
+      $
+        K_B &= 1/2 m_B v_B^2
+        \
+        bold(K_B &= 225 "J")
+      $
+    )
+  )
+])
+
 
 
 

@@ -363,7 +363,6 @@ $
 
 - *Frequency* is the rate at which an object spins, measured in revolutions per second $("rev"slash"s")$ or sometimes just in hertz $("s"^(-1) = "Hz")$.
   - Denoted $f$.
-  \
 - *Period* is the time required to make one revolution, measured in seconds.
   - Denoted $T$.
 $
@@ -513,6 +512,7 @@ $
     content(center(1.5,-0.25), [$T_x$])
     line(center(2,0), center(2,1), stroke: (dash: "dashed"))
     content(center(2.25,0.5), [$T_y$])
+    content(center(0.85,0.2), [$theta$])
 
     line(center(0,0), center(-2.25, 0), stroke: none) //idk centering
   })],
@@ -1378,9 +1378,21 @@ $
 
 
 
-
+\
 == Momentum Conservation and Collisions
-- Not all collisions conserve momentum.
+- Collisions are strong interactions between objects over a relatively short time interval.
+  - Momentum is conserved in collisions, but kinetic energy is not always conserved.
+- *Elastic collisions* occur if the forces between the colliding objects are conservative.
+  - Thus, the total kinetic energy is conserved.
+- *Inelastic collisions* occur if there are nonconservative forces between the colliding objects.
+  - *Completely inelastic collisions* are when colliding objects stick together and move as one object.
+  - This leads to a unique formula for conservation of momentum in completely inelastic collisions:
+$
+  m_A arrow(v)_A + m_B arrow(v)_B = (m_A + m_B) arrow(v)_(A B)
+$
+  - Just because a collision is inelastic _does not mean_ that the colliding objects have to stick together. For instance, kinetic energy could be dissipated from deformations.
+
+
 
 
 

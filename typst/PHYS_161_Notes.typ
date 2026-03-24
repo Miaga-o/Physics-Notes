@@ -947,7 +947,7 @@ $
 
 
 == Conservative and Nonconservative forces
-- *Mechanical energy* is energy that is either kinetic or potential, and the total mechanical energy of a system is only constant
+- *Mechanical energy* is energy that is either kinetic or potential.
 - *Conservative forces* do work independent of the path, meaning that they only depend on the endpoints of the displacement.
   - The work done by conservative forces is reversible because they convert between forms of mechanical energy.
 - *Nonconservative forces* do work dependent on the path.
@@ -1352,7 +1352,7 @@ $
     table(
       columns: (25%, 25%, 25%, 25%),
       stroke: none,
-      $
+      $\ \ 
         p_R &= m_R v_R
         \
         bold(p_R &= -1.50 "kg" dot "m"slash"s")
@@ -1362,7 +1362,7 @@ $
         \
         bold(K_R &= 0.375 "J")
       $,
-      $
+      $\ \
         p_B &= m_B v_B
         \
         bold(p_B &= 1.5 "kg" dot "m"slash"s")

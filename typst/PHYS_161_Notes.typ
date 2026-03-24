@@ -518,7 +518,7 @@ $
 $
   w=m g
 $
-- However, there also exists a general definition for weight force, the *Universal Law of Gravitation* using the gravitational constant $G$
+- However, there also exists a general definition for weight force, the *Universal Law of Gravitation* using the gravitational constant $G$:
 $
   G = 6.6743 times 10^(-11) space "m"^3 dot "kg"^(-1) dot "s"^(-1)
 $
@@ -556,7 +556,7 @@ $
 $
   Sigma arrow(F) &= 0 \
 $
-- A common example of forces in equilibrium is an object sitting on a horizontal surface. The net vertical force is zero because the magnitude of the normal force and weight force are equal.
+- A common example of forces in equilibrium is an object sitting on a horizontal surface. The net vertical force is zero because the magnitude of the normal force and the weight force are equal.
 
 
 
@@ -584,7 +584,7 @@ $
     \
     Sigma F_C &= m_C g - T
   $
-  2) Now, block A and B will slip once the maximum static friction is exceeded, so we can use its formula to find the acceleration of the system when $m_C$ is maximized.
+  2) Now, block A and B will slip once the maximum static friction is exceeded, so we can use their net force equations to find the acceleration of the system when $m_C$ is maximized.
   $
     m_B a &= mu_s m_B g
     \
@@ -627,9 +627,9 @@ $
 $
 - As a result, denoting a singular "centrifugal force" is generally not accurate.
   - For example, if an object is moving vertically with uniform circular motion, the weight force points toward the center of rotation at the top, but away from the center of rotation at the bottom.
-- Additionally, direction should be considered relative to the center of rotation---generally the positive direction is toward the center.
+- Additionally, direction should be considered relative to the center of rotation---generally, the positive direction is toward the center.
 - Additionally, problems involving *circular motion of vehicles* have less obvious forces contributing to the circular motion.
-  - Along a curved road with friction, _static friction is what maintains the vehicle's circular motion_ because at any given moment, the tires of the cars are stationary relative to the pavement.
+  - Along a curved road with friction, _static friction is what maintains the vehicle's circular motion_ because at any given moment, the tires of the car are stationary relative to the pavement.
   - Along a banked curve without friction (sort of like an inclined plane from the inner curve to the outer curve), _the $x$-component of the normal force is what maintains the vehicle's circular motion_.
 #example([Rounding a Flat Curve], [
   A sports car is rounding a flat, unbanked curve with radius $R$. If the coefficient of static friction between the tires is $mu_s$, what is the maximum speed $v_"max"$ the driver can complete the curve without sliding off?
@@ -652,7 +652,7 @@ $
 #example([Rounding a Banked Curve], [
   You are planning to create a road banked at the perfect angle to allow cars to complete turns without friction. At what angle $alpha$  should the road be banked to allow for this?
   #line(length:100%)
-  We can imagine this from a straight back perspective of the car. While similar to an incline plane problem, we are evaluating components parallel to the horizontal rather than the incline. As a result, the only inward force is the $x$-component of the normal force because the curve is banked from the inside-out. 
+  We can imagine this from a straight back perspective of the car. While similar to an inclined plane problem, we are evaluating components parallel to the horizontal rather than the incline. As a result, the only inward force is the $x$-component of the normal force because the curve is banked from the inside-out. 
   
   Now, because the normal force and its $y$-component are perpendicular to the respective sides forming the angle $alpha$, _the angle between them is also equal to $alpha$_. Thus, the $x$-component of the normal force is the component opposite of $alpha$ while the $y$-component of the normal force is the component adjacent of $alpha$.
   $
@@ -1118,7 +1118,7 @@ $
 #pagebreak()
 = Momentum, Impulse, and Collisions
 == Momentum and Impulse
-- *Momentum* is an object's _quantity of motion_, measured in $"kg" dot "m"slash"s"$.
+- *Momentum* is an object's _quantity of motion_, measured in $"kg" dot "m"slash"s"$ or $"N" dot "s"$
   - Denoted $p$.
 #definition([Momentum], [
   Given momentum $arrow(p)$, mass $m$, and velocity $arrow(v)$
@@ -1128,3 +1128,216 @@ $
 ])
 
 - Thus, momentum is a vector quantity.
+- We can also redefine Newton's second law in terms of momentum:
+$
+  Sigma arrow(F) = m ((dif arrow(v)) / (dif t)) = dif / (dif t) (m arrow(v)) = (dif arrow(p)) / (dif t)
+$
+- An object's change in momentum is known as *impulse*.
+  - Denoted $J$.
+#definition([Impulse-Momentum Theorem], [
+  Given impulse $arrow(J)$ and momentum $arrow(p)$
+  $
+    arrow(J) = Delta arrow(p)
+  $
+])
+
+- This theorem enables impulse to be expressed in terms of net force.
+
+#derivation([Relating Impulse to Force], [
+  Given net force $Sigma F$, acceleration $arrow(a)$, and mass $m$
+  $
+    Sigma arrow(F) &= m arrow(a)
+    \
+    Sigma arrow(F) &= m (dif arrow(v)) / (dif t)
+    \
+    Sigma arrow(F) dif t &= m dif arrow(v)
+    \
+    m dif arrow(v) &= Sigma arrow(F) dif t 
+    \
+    m integral_(v_1)^(v_2) dif arrow(v) &= integral_(t_1)^(t_2) Sigma arrow(F) dif t
+    \
+    m integral_(v_1)^(v_2) dif arrow(v) &= integral_(t_1)^(t_2) Sigma arrow(F) dif t
+    \
+     m (arrow(v)_2 - arrow(v)_1) &= Sigma arrow(F) (t_2 - t_1)
+    \
+    m Delta arrow(v) &= Sigma arrow(F) Delta t
+    \
+    Delta arrow(p) &= Sigma arrow(F) Delta t
+    \
+    arrow(J) &= Sigma arrow(F) Delta t
+  $
+])
+
+\ \
+- It follows that impulse is the area under a force versus time graph.
+#figure(
+  cetz.canvas({
+    import cetz.draw: *
+    import cetz-plot: *
+
+    let func = x => x
+    let domain = (0, 10)
+
+    set-style(
+      axes: (shared-zero: false),
+      legend: (stroke: none, orientation: ttb, scale: 120%)
+    )
+
+    plot.plot(
+      size: (5,5),
+      x-label: $t$,
+      y-label: $Sigma F$,
+      x-tick-step: none,
+      x-ticks: (
+        (3, $t_1$),
+        (8, $t_2$),
+      ),
+      y-tick-step: none,
+      y-ticks: (
+        (3, $Sigma F_1$),
+        (8, $Sigma F_2$),
+      ),
+      x-equal: "y",
+      axis-style: "school-book",
+      legend: "north-east",
+      {
+        plot.add(
+          domain: domain, func, 
+          style: (stroke: (paint: rgb("#e63737")))
+        )
+
+        plot.add-fill-between(
+          domain: (3,8), func, x => 0,
+          style: (stroke: none, fill: rgb("#e0adad"))
+        )
+
+        plot.add-vline(3,
+          max: 3,
+          style: (stroke: (dash: "dashed"))
+        )
+        plot.add-hline(3,
+          max: 3,
+          style: (stroke: (dash: "dashed"))
+        )
+        plot.add-vline(8,
+          max: 8,
+          style: (stroke: (dash: "dashed"))
+        )
+        plot.add-hline(8,
+          max: 8,
+          style: (stroke: (dash: "dashed"))
+        )
+        
+
+        plot.add-legend([$Sigma F$], preview: () => {
+          line((0,0.5), (1,0.5), stroke: rgb("#e63737"))
+        })
+
+        plot.add-legend([$J$], preview: () => {
+          rect((0,0), (1,1), stroke: none, fill: rgb("#e0adad"))
+        })
+      }
+    )
+  }),
+)
+
+- One real-life application of this concept is car crashes. The impulse experienced by a driver colliding with the steering wheel is the same as colliding with an air bag. However, because the air bag takes a longer time to stop the driver, the average force applied to the driver must be less.
+
+#example([Ball Rebounding], [
+  You throw a $0.40 "kg"$ ball against a brick wall with a horizontal speed of $30 "m"slash"s"$.
+  After colliding with the wall, the ball rebounds with a horizontal speed of $20 "m"slash"s"$.
+  + Find the impulse of the net external force on the ball during the impact.
+  + If the ball is in contact with the wall for $0.01 "s"$, find the average horizontal force that the wall exerts on the ball during the impact.
+  #line(length: 100%)
+  1) 
+  Because we are given an initial and final velocity of the ball, we can apply the impulse-momentum theorem.
+  $
+    J_x &= Delta p_x
+    \
+    J_x &= m v_(2x) - m v_(1x)
+    \
+    J_x &= m (v_(2x) - v_(1x))
+    \
+    J_x &= (0.4 "kg")((-20 "m"slash"s") - (30 "m"slash"s"))
+    \
+    bold(J_x &= -20 "N" dot "s")
+  $
+
+  2)
+  Now that we know the impulse of the net external force, the average force can be calculated using the fact that the impulse is the area under a force versus time graph.
+  $
+    J_x &= Sigma F_("av-"x) Delta t
+    \
+    Sigma F_("av-"x) Delta t &= J_x
+    \
+    Sigma F_("av-"x) &= J_x / (Delta t)
+    \
+    Sigma F_("av-"x) &= (20 "N" dot "s") / (0.01 "s")
+    \
+    bold(Sigma F_("av"-x) &= 2000 "N")
+  $
+])
+
+
+
+
+== Conservation of Momentum
+- *Internal forces* are the forces exerted by a system's particles on each other.
+- *External forces* are the forces exerted by particles outside the system on the system's particles.
+- *Isolated systems* are systems with no external forces.
+- _Momentum is conserved_ if the net external force in a system is zero.
+  - By Newton's third law, the internal forces of the system will sum to zero as well.
+- The *total momentum* of a system is the sum of the momenta of the system's particles.
+  - Denoted P.
+$
+  arrow(P) = arrow(p)_A + arrow(p)_B
+$
+
+
+
+== Momentum Conservation and Collisions
+- Not all collisions conserve momentum.
+
+
+
+
+
+
+
+
+
+
+= Rotation of Rigid Bodies
+
+
+
+
+
+
+
+
+
+
+= Dynamics of Rotational Motion
+
+
+
+
+
+
+
+
+
+
+= Equilibrium and Elasticity
+
+
+
+
+
+
+
+
+
+#counter(heading).update(13) //Son im crine
+= Periodic Motion

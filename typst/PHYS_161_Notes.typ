@@ -1436,14 +1436,14 @@ $
   $
     sigma &= M / A = M / L^2 = (dif m) / (dif A)
     \
-    &therefore dif m = sigma dif A = lambda dif x dif y
+    &therefore dif m = sigma dif A = sigma dif x dif y
   $
 
   - Volume density, denoted $rho$:
   $
     rho &= M / V = M / L^3 = (dif m) / (dif V)
     \
-    &therefore dif m = lambda dif V = lambda dif x dif y dif z
+    &therefore dif m = lambda dif V = rho dif x dif y dif z
   $
 
 

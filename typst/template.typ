@@ -1,0 +1,88 @@
+#import "@preview/cetz:0.4.2"
+#import "@preview/cetz-plot:0.1.3"
+#import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge, shapes
+
+
+//Functions and variables
+/*
+* Automatically numbers headings up to level 2
+*/
+#let custom_numbering = (..numbers) => { 
+  if numbers.pos().len() < 3 {
+    numbering("1.1", ..numbers)
+  }
+}
+
+/*
+* Emphasized box for definitions
+*/
+#let definition(title, body) = {
+  box(
+    stroke: blue,
+    inset: 8pt,
+    radius: 10pt,
+    width: 100%,
+    [#text(fill: blue, size: 14pt, [*Definition:*]) #text(fill: black, size: 14pt, [*#title*]) \  
+    #body]
+  )
+}
+
+/*
+* Emphasized box for example problems
+*/
+#let example(title, body) = {
+  box(
+    stroke: orange,
+    inset: 8pt,
+    radius: 10pt,
+    width: 100%,
+    [#text(fill: orange, size: 14pt, [*Example:*]) #text(fill: black, size: 14pt, [*#title*]) \
+    #body]
+  )
+}
+
+/*
+* Emphasized box for formula derivations
+*/
+#let derivation(title, body) = {
+  box(
+    stroke: purple,
+    inset: 8pt,
+    radius: 10pt,
+    width: 100%,
+    [#text(fill: purple, size: 14pt, [*Derivation:*]) #text(fill: black, size: 14pt, [*#title*]) \
+    #body]
+  )
+}
+
+/*
+* Signifies that an emphasis box will continue on the next page
+*/
+#let continue_box = align(center, [_Continued on next page_])
+
+/*
+* Me
+*/
+#let author = text(size: 16pt, [Miagao])
+
+
+//Rules
+#let formatting(a) = {
+  set page("a4", numbering: "1 of 1")
+
+  show title: set text(size: 28pt)
+  show heading.where(level: 1): set text(size: 20pt)
+  show heading.where(level: 2): set text(size: 18pt)
+  show heading.where(level: 3): set text(size: 16pt)
+  show heading.where(level: 4): set text(size: 14pt)
+  set heading(numbering: custom_numbering)
+
+  show math.equation: set text(font: "New Computer Modern Math")
+  //set text(font: "Times new Roman")
+  show sym.emptyset: set text(font: "Fira Sans")
+
+  align(center, [#title([PHYS 161 Notes])#author])
+  outline()
+  pagebreak()
+  a
+}

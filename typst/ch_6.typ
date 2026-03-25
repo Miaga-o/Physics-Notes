@@ -177,7 +177,7 @@ $
 #definition([Power], [
   Given power $P$, work $W$, velocity $arrow(v)$, and force $arrow(F)$
   $
-    P = (dif W) / (dif t) = arrow(F) dot arrow(v) = F v cos theta
+    P = drv(W,t) = arrow(F) dot arrow(v) = F v cos theta
   $
 ])
 

@@ -3,7 +3,7 @@
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge, shapes
 
 
-//Functions and variables
+//Organization
 /*
 * Automatically numbers headings up to level 2
 */
@@ -64,6 +64,28 @@
 * Me
 */
 #let author = text(size: 16pt, [Miagao])
+
+
+//Math
+/*
+* Derivative
+*/
+#let drv(derivative_of, respect_to) = $(dif #derivative_of) / (dif #respect_to)$
+
+/*
+* nth order derivative
+*/
+#let ndrv(derivative_of, respect_to, order) = $(dif^order #derivative_of) / (dif #respect_to^order)$
+
+/*
+* Partial derivative
+*/
+#let pdrv(derivative_of, respect_to) = $(partial #derivative_of) / (partial #respect_to)$
+
+/*
+* Evaluated integral
+*/
+#let eval(equation, lower_bound, upper_bound) = $lr((#equation)|)_(#lower_bound)^(#upper_bound)$
 
 
 //Rules

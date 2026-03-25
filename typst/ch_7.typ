@@ -185,7 +185,7 @@ $
 - Thus, given force $arrow(F)$ and potential energy $U$:
 #figure(
   $
-    arrow(F) = -arrow(nabla) U= -(partial U) / (partial x) hat(i) -(partial U) / (partial y) hat(j) -(partial U) / (partial z) hat(k) 
+    arrow(F) = -arrow(nabla) U= -pdrv(U,x) hat(i) -pdrv(U,y) hat(j) -pdrv(U,z) hat(k) 
   $
   , supplement: none,
   caption: [The "$partial$" symbol refers to taking a derivative with respect to one variable, holding everything else constant, known as a _partial derivative_. The nabla vector is known as the gradient vector, and is a vector consisting of all partial derivatives.]

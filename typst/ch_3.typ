@@ -161,7 +161,7 @@ $
   \
   a_c &= v^2 / R = (4pi^2 R) / T = 4pi^2 R f
   \
-  a_"tot" &= lr(|| (dif arrow(v))/(dif t)||) = sqrt(a_c^2 +a_t^2)
+  a_"tot" &= lr(|| drv(arrow(v),t)||) = sqrt(a_c^2 +a_t^2)
 $
 ])
 

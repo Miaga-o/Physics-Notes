@@ -14,7 +14,7 @@
 - Thus, momentum is a vector quantity.
 - We can also redefine Newton's second law in terms of momentum:
 $
-  Sigma arrow(F) = m ((dif arrow(v)) / (dif t)) = dif / (dif t) (m arrow(v)) = (dif arrow(p)) / (dif t)
+  Sigma arrow(F) = m (drv(arrow(v), t)) = dif / (dif t) (m arrow(v)) = drv(arrow(p), t)
 $
 - An object's change in momentum is known as *impulse*.
   - Denoted $J$.
@@ -278,26 +278,97 @@ Or, condensed into a single vector equation:
 
 - A separate equation is used for continuous mass distributions (specific shapes or forms of uniform density):
 $
-  arrow(R)_"cm" &= (integral arrow(r) dot dif m) / (sum_(i=1)^N m_i)
+  arrow(R)_"cm" &= 1 / M_"tot" integral arrow(r) dot dif m
 $
 - To simplify this integral, we can find the differential $dif m$ in terms of densities and known differentials depending on the dimensions involved in the mass distribution.
-  - Linear density, denoted $lambda$:
-  $
-    lambda &= M / L = (dif m) / (dif L)
-    \
-    &therefore dif m = lambda dif L = lambda dif x
-  $
-  
-  - Surface density, denoted $sigma$:
-  $
-    sigma &= M / A = M / L^2 = (dif m) / (dif A)
-    \
-    &therefore dif m = sigma dif A = sigma dif x dif y
-  $
+#figure(
+  table(
+    columns: (33%, 34%, 33%),
+    stroke: none,
+    [Linear density, denoted $lambda$:],
+    [Surface density, denoted $sigma$:],
+    [Volume density, denoted $rho$:],
+    $
+      lambda &= M / L = (dif m) / (dif L)
+      \
+      &therefore dif m = lambda dif L = lambda dif x
+    $,
+    $
+      sigma &= M / A = M / L^2 = (dif m) / (dif A)
+      \
+      &therefore dif m = sigma dif A = sigma dif x dif y
+    $,
+    $
+      rho &= M / V = M / L^3 = (dif m) / (dif V)
+      \
+      &therefore dif m = lambda dif V = rho dif x dif y dif z
+    $
+  )
+)
 
-  - Volume density, denoted $rho$:
+#derivation([Center of Mass of a Uniform Rod], [
+  Intuitively, the center of mass of a uniform rod should be the middle. We can use the center of mass equation for continuous mass distributions to prove this.
+
+  We can define the length of any rod as $L$ along the $x$-axis, and define $dif m$ using linear density $lambda$.
+  #continue_box
+])
+
+#derivation([Center of Mass of a Uniform Rod _continued_], [
   $
-    rho &= M / V = M / L^3 = (dif m) / (dif V)
+    x_"cm" &= 1 / M_"tot" integral x dif m
     \
-    &therefore dif m = lambda dif V = rho dif x dif y dif z
+    x_"cm" &= 1 / M_"tot" integral x lambda dif L
+    \
+    x_"cm" &= lambda / M_"tot" integral_0^L x dif x
+    \
+    x_"cm" &= lambda / M_"tot" lr((1/2 x^2)|)_0^L
+    \
+    x_"cm" &= lambda / M_"tot" dot L^2 /2
+    \
+    x_"cm" &= M_"tot" / L dot 1/ M_"tot" dot L^2 /2
+    \
+    x_"cm" &= 1/ L dot L^2 /2
+    \
+    x_"cm" &= L /2
   $
+])
+
+#derivation([Center of Mass of a Uniform Cube], [
+  Similar to a uniform rod, the center of mass of a uniform cube is at the very center. Again, we can use the center of mass equation for continuous mass distributions to prove this.
+
+  We can define the side lengths of any cube as $L$ and define $dif m$ using volume density $rho$.
+  $
+    arrow(R)_"cm" &= 1 / M_"tot" integral arrow(r) dot dif m
+    \
+    arrow(R)_"cm" &= 1 / M_"tot" integral.triple arrow(r) dot rho dif V
+    \
+    arrow(R)_"cm" &= rho / M_"tot" integral.triple arrow(r) dot dif x dif y dif z
+    \
+    arrow(R)_"cm" &= rho / M_"tot" integral_0^L integral_0^L integral_0^L (x hat(i) + y hat(j) + z hat(k)) dot dif x dif y dif z
+    \
+    arrow(R)_"cm" &= rho / M_"tot" integral_0^L integral_0^L eval(1/2x^2 hat(i) + x y hat(j) + x z hat(k), x=0, x=L) dot dif y dif z
+    \
+    arrow(R)_"cm" &= rho / M_"tot" integral_0^L integral_0^L (L^2/2 hat(i) + L y hat(j) + L z hat(k)) dot dif y dif z
+    \
+    arrow(R)_"cm" &= rho / M_"tot" integral_0^L eval(L^2/2 y hat(i) + L/2 y^2 hat(j) + L y z hat(k), y=0, y=L) dot dif z
+  $
+  #continue_box
+])
+
+#derivation([Center of Mass of a Uniform Cube _continued_], [
+  $
+    arrow(R)_"cm" &= rho / M_"tot" integral_0^L (L^3/2 hat(i) + L^3/2 hat(j) + L^2 z hat(k)) dot dif z
+    \
+    arrow(R)_"cm" &= rho / M_"tot" eval(L^3/2 z hat(i) + L^3/2 z hat(j) + L^2/2 z^2 hat(k), z=0, z=L)
+    \
+    arrow(R)_"cm" &= rho / M_"tot" (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
+    \
+    arrow(R)_"cm" &= M_"tot" / V dot 1 / M_"tot" (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
+    \
+    arrow(R)_"cm" &= 1/ V dot (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
+    \
+    arrow(R)_"cm" &= 1/ L^3 dot (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
+    \
+    arrow(R)_"cm" &= L / 2 hat(i) + L / 2 hat(j) + L / 2 hat(k)
+  $
+])

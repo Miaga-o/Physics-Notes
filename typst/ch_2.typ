@@ -16,11 +16,11 @@
   \
   v_("av") &= (Delta x) / (Delta t)
   \
-  v &= lim_(Delta t -> 0) (Delta x) / (Delta t) = (dif x) / (dif t)
+  v &= lim_(Delta t -> 0) (Delta x) / (Delta t) = drv(x,t)
   \
   a_("av") &= (Delta v) / (Delta t)
   \
-  a &= lim_(Delta t -> 0)(Delta v) / (Delta t) = (dif v) / (dif t) = (dif^2 x) / (dif t^2)
+  a &= lim_(Delta t -> 0)(Delta v) / (Delta t) = drv(v,t) = ndrv(x,t,2)
 $
 
 
@@ -43,7 +43,7 @@ With constant acceleration, the following *kinematic equations* hold true:
     \
     integral_(t_1)^(t_2) v dif t &= integral_(t_1)^(t_2) (v_0 + a Delta t) dif t
     \
-    integral_(t_1)^(t_2) (dif x) / (dif t) dif t &= integral_(t_1)^(t_2) (v_0 + a Delta t) dif t
+    integral_(t_1)^(t_2) drv(x,t) dif t &= integral_(t_1)^(t_2) (v_0 + a Delta t) dif t
     \
     integral_(x_1)^(x_2) dif x &= integral_(t_1)^(t_2) (v_0 + a Delta t) dif t
     \

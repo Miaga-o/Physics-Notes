@@ -10,3 +10,7 @@
 #include("ch_6.typ")
 #include("ch_7.typ")
 #include("ch_8.typ")
+#include("ch_9.typ")
+#include("ch_10.typ")
+#include("ch_11.typ")
+#include("ch_14.typ")

@@ -240,13 +240,115 @@ $
   - Momentum is conserved in collisions, but kinetic energy is not always conserved.
 - *Elastic collisions* occur if the forces between the colliding objects are conservative.
   - Thus, the total kinetic energy is conserved.
+$
+  1/2 m_A v_(1A)^2 + 1/2 m_B v_(2A)^2 = 1/2 m_A v_(2A)^2 + 1/2 m_B v_(2B)^2
+$
 - *Inelastic collisions* occur if there are nonconservative forces between the colliding objects.
-  - *Completely inelastic collisions* are when colliding objects stick together and move as one object.
+- *Completely inelastic collisions* are when colliding objects stick together and move as one object.
   - This leads to a unique formula for conservation of momentum in completely inelastic collisions:
 $
   m_A arrow(v)_A + m_B arrow(v)_B = (m_A + m_B) arrow(v)_(A B)
 $
-  - Just because a collision is inelastic _does not mean_ that the colliding objects have to stick together. For instance, kinetic energy could be dissipated from deformations.
+- In inelastic and completely inelastic collisions, kinetic energy is not conserved.
+
+=== Completely Inelastic Collisions
+#derivation([Loss of Kinetic Energy], [
+  In order to establish why a system's kinetic energy decreases in completely inelastic collisions, we can first find the velocity after the inelastic collision using conservation of momentum. 
+  To simplify it further, we can say that object B is initially at rest.
+  $
+    (m_A + m_B) arrow(v)_(A B) &= m_A arrow(v)_A + m_B arrow(v)_B
+    \
+    (m_A + m_B) arrow(v)_(A B) &= m_A arrow(v)_A
+    \
+    arrow(v)_(A B) &= (m_A arrow(v)_A) / (m_A + m_B)
+  $
+  Now, we can use their magnitudes to find initial and final kinetic energies of the system in terms of object A's original velocity and find the ratio between them.
+  $
+    K_1 &= 1/2 m_A v_A^2
+    \
+    K_2 &= 1/2 (m_A + m_B) v_(A B)^2 
+    \
+    &= 1/2 (m_A + m_B)((m_A v_A) / (m_A + m_B))^2
+    \
+    &= (m_A^2 v_A^2) / (2(m_A + m_B))
+    \
+    therefore K_2 / K_1 &= m_A / (m_A + m_B)
+  $
+
+  Now, it follows that this ratio is always less than one, showing that kinetic energy is always lost in completely inelastic collisions. This holds true even if object B is not originally at rest.
+])
+
+- Just because a collision is inelastic _does not mean_ that the colliding objects have to stick together. For instance, kinetic energy could be dissipated from deformations.
+
+
+
+=== Elastic Collisions
+- Commonly, elastic collision problems start with one object at rest before the collision.
+- Thus, we can establish a relationship between the initial velocity of the moving object and the final velocity of the object initially at rest.
+#derivation([When a Moving Object Collides with a Still Object], [
+  To establish a relationship between the initial velocity of the moving object and the final velocity of the object initially at rest, we can apply the conservation of energy and momentum.
+  #align(center, table(
+    columns: (55%, 45%),
+    stroke: none,
+    $
+      1/2 m_A v_(1A)^2 &= 1/2 m_A v_(2A)^2 + 1/2 m_B v_B^2
+      \
+      1/2 m_A (v_(1A)^2 - v_(2A)^2) &= 1/2 m_B v_B^2
+      \
+      1/2 m_A (v_(1A) + v_(2A))(v_(1A) - v_(2A)) &= 1/2 m_B v_B^2
+    $,
+    $\ \
+      m_A v_(1A) &= m_A v_(2A) + m_B v_B
+      \ \
+      m_A (v_(1A) - v_(2A)) &= m_B v_B
+    $
+  ))
+
+  Now, by dividing the kinetic energy equation by the momentum equation, we can derive the final velocity of object B in terms of object A's velocities.
+  $
+    1/2 v_(1A) + 1/2 v_(2A) &= 1/2 v_B
+    \
+    v_B &= v_(1A) + v_(2A)
+  $
+
+  Using this definition, we can define the final velocity of object A (which we are not interested in) in terms of object A's initial velocity using the momentum equation.
+  $
+    m_A v_(1A) &= m_A v_(2A) + m_B (v_(1A) + v_(2A))
+    \
+    m_A v_(1A) &= m_A v_(2A) + m_B v_(1A) + m_B v_(2A)
+    \
+    m_A v_(1A) - m_B v_(1A) &= m_A v_(2A) + m_B v_(2A)
+    \
+    v_(2A) &= (m_A v_(1A) - m_B v_(1A)) / (m_A + m_B)
+    \
+    v_(2A) &= (m_A - m_B) / (m_A + m_B)v_(1A)
+  $
+
+  We can plug this value for the final velocity of the moving object back into the velocity relationship we defined earlier to establish the relationship we are looking for.
+  $
+    v_B &= v_(1A) + (m_A - m_B) / (m_A + m_B)v_(1A)
+    \
+    v_B &= (m_A + m_B)/(m_A + m_B)v_(1A) + (m_A - m_B) / (m_A + m_B)v_(1A)
+    \
+    v_B &= (2m_A) / (m_A + m_B)v_(1A)
+  $
+  We can interpret this answer in numerous ways. 
+  - Say that the mass of the moving object is much less than the still object. Then, the still object's velocity after the collision is very small.
+    - If a ping pong ball collides with a still cannon ball, the cannon ball shouldn't move much.
+  - If the mass of the moving object is equal to the still object, then the still object's velocity after the collision will be equal to the moving object's initial velocity.
+    - In a game of pool, a cue ball of roughly equal mass to the other balls is used to push the other balls.
+  - If the mass of the moving object is much greater than the still object, the still object's velocity after the collision is very high.
+    - If a cannon ball collides with a still ping pong ball, the ping pong ball should move a lot.
+])
+
+- Now, recall the the equality we determined in the previous derivation:
+$
+  v_B = v_(1A) + v_(2A)
+$
+- If we rearrange this equality, we can get the _velocity of the object B relative to object A_ because these velocities are given relative to the ground:
+$
+  v_(1A) = v_B - v_(2A)
+$
 
 
 
@@ -282,7 +384,8 @@ Or, condensed into a single vector equation:
 $
 ])
 
-- Because point masses are not given, we integrate with respect to the mass throughout the object. To apply this definition, we can find the differential in terms of densities and also integrate over different axes depending on the dimensions involved in the mass distribution.
+- Because point masses are not given, we integrate with respect to the mass throughout the object. 
+- To apply this definition, we can find the differential in terms of densities and also integrate over different axes depending on the dimensions involved in the mass distribution.
 
 #figure(
   table(
@@ -324,7 +427,7 @@ $
     \
     x_"cm" &= lambda / M_"tot" integral_0^L x dif x
     \
-    x_"cm" &= lambda / M_"tot" lr((1/2 x^2)|)_0^L
+    x_"cm" &= lambda / M_"tot" eval(1/2 x^2, 0, L)
     \
     x_"cm" &= lambda / M_"tot" dot L^2 /2
     \
@@ -337,7 +440,7 @@ $
 ])
 
 #derivation([Center of Mass of a Uniform Cube], [
-  Similar to a uniform rod, the center of mass of a uniform cube is at the very center. Again, we can use the center of mass equation for continuous mass distributions to prove this.
+  Similar to a uniform rod, the center of mass of a uniform cube is at the very center. Again, we can use the center of mass equation for continuous mass distributions to prove this. 
 
   We can define the side lengths of any cube as $L$ and define $dif m$ using volume density $rho$.
   $
@@ -408,4 +511,7 @@ $
 $
   M_"tot" arrow(a)_"cm" = Sigma arrow(F) = Sigma arrow(F)_"ext" + Sigma arrow(F)_"int" = Sigma arrow(F)_"ext"
 $
+- Now, imagine a scenario where a shell is shot into the air, following a parabolic trajectory. Even when it splits into multiple fragments that each follow their own trajectory, the center of mass _follows the original trajectory_ as if the masses of the system were all concentrated on that path.
 - This explains the definition of net force as shown in chapter 4.
+
+#pagebreak()

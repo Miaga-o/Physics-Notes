@@ -275,12 +275,15 @@ Or, condensed into a single vector equation:
   $
 ])
 
-
-- A separate equation is used for continuous mass distributions (specific shapes or forms of uniform density):
-$
+#definition([Center of Mass with Continuous Mass Distribution], [
+  Given distance $arrow(r)$ from the origin and total system mass $M_"tot"$, center of mass $arrow(R)_"cm"$ is defined as follows:
+  $
   arrow(R)_"cm" &= 1 / M_"tot" integral arrow(r) dot dif m
 $
-- To simplify this integral, we can find the differential $dif m$ in terms of densities and known differentials depending on the dimensions involved in the mass distribution.
+])
+
+- Because point masses are not given, we integrate with respect to the mass throughout the object. To apply this definition, we can find the differential in terms of densities and also integrate over different axes depending on the dimensions involved in the mass distribution.
+
 #figure(
   table(
     columns: (33%, 34%, 33%),
@@ -309,11 +312,11 @@ $
 #derivation([Center of Mass of a Uniform Rod], [
   Intuitively, the center of mass of a uniform rod should be the middle. We can use the center of mass equation for continuous mass distributions to prove this.
 
-  We can define the length of any rod as $L$ along the $x$-axis, and define $dif m$ using linear density $lambda$.
   #continue_box
 ])
 
 #derivation([Center of Mass of a Uniform Rod _continued_], [
+  We can define the length of any rod as $L$ along the $x$-axis, and define $dif m$ using linear density $lambda$.
   $
     x_"cm" &= 1 / M_"tot" integral x dif m
     \
@@ -372,3 +375,37 @@ $
     arrow(R)_"cm" &= L / 2 hat(i) + L / 2 hat(j) + L / 2 hat(k)
   $
 ])
+
+
+
+=== Motion of the Center of Mass
+- Like we've previously established, we can find the velocity and acceleration of the center of mass using derivatives.
+#definition([Velocity of the Center of Mass], [
+  Given point masses $m_i$ of a system each moving with velocity $arrow(v)_i$, the velocity of the center of mass $arrow(v)_"cm"$ is defined as follows:
+  $
+    arrow(v)_"cm" = (sum_(i=1)^N m_i arrow(v)_i) / (sum_(i=1)^N m_i)
+  $
+])
+
+- Now, say the total mass of the system is $sum_(i=1)^N m_i = M_"tot"$. If we multiply the velocity of the center of mass by the total mass, we arrive at a new definition for total momentum $arrow(P)$:
+$
+  M_"tot" arrow(v)_"cm" = sum_(i=1)^N m_i arrow(v)_i = m_1arrow(v)_1 + m_2arrow(v)_2 + dots.c + m_N arrow(v)_N = arrow(P)
+$
+- Thus, a system with a net external force of zero has a center of mass that moves with constant velocity.
+
+#definition([Acceleration of the Center of Mass], [
+  Given point masses $m_i$ of a system each with acceleration $arrow(a)_i$, the acceleration of the center of mass $arrow(a)_"cm"$ is defined as follows:
+  $
+    arrow(a)_"cm" = (sum_(i=1)^N m_i arrow(a)_i) / (sum_(i=1)^N m_i)
+  $
+])
+
+- Now, it follows that multiplying the acceleration of the center of mass by the system's total mass yields the rate of change of the system's total momentum: the _net force_.
+$
+  M_"tot" arrow(a)_"cm" = sum_(i=1)^N m_i arrow(a)_i = m_1 arrow(a)_1 + m_2 arrow(a)_2 + dots.c + m_N arrow(a)_N = Sigma arrow(F)
+$
+- However, due to Newton's third law, the net internal forces cancel out, leaving just the net external forces. Thus:
+$
+  M_"tot" arrow(a)_"cm" = Sigma arrow(F) = Sigma arrow(F)_"ext" + Sigma arrow(F)_"int" = Sigma arrow(F)_"ext"
+$
+- This explains the definition of net force as shown in chapter 4.

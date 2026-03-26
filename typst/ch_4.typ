@@ -65,8 +65,8 @@
     line(center(0,0), center(-2.25, 0), stroke: none) //idk centering
   })],
   supplement: none,
-  caption: [Free-body diagram of a block being pulled at an angle by a rope.
-  Note how the vertical components of the forces are all balanced.]  
+  caption: [Free-body diagram of a block being pulled at an angle $theta$ by a rope.
+  Note how the vertical components of the forces are all balanced, signifying that it is being dragged horizontally.]  
 )
 
 #pagebreak()

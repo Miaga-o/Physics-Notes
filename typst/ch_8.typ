@@ -411,7 +411,6 @@ $
 ])
 
 #derivation([When a Moving Object Collides with a Still Object _continued_], [
-  
   $
     m_A v_(1A) &= m_A v_(2A) + m_B (v_(1A) + v_(2A))
     \
@@ -440,22 +439,14 @@ $
     - If a cannon ball collides with a still ping pong ball, the ping pong ball should move a lot.
 ])
 
-- Now, recall the the equality we determined in the previous derivation:
-$
-  v_B = v_(1A) + v_(2A)
-$
-- If we rearrange this equality, we can get the _velocity of object B relative to object A after the collision_ because these velocities are given relative to the ground:
-$
-  v_(1A) = v_B - v_(2A)
-$
-- In that derivation, object B is still before the collision. Thus, $v_(1A)$ is the velocity of object A relative to object B before the collision, or the _negative velocity of object B relative to object A before the collision._
-- We call situations like this *straight-line elastic collisions*, and it follows from our previous reasoning that the magnitude of the relative velocities of both objects remain constant.
- - This holds even if both objects are moving during the collision, although having one object still simplifies the algebra.
+- We can heavily simplify calculations for elastic collision problems using the motion of the center of mass, which we will cover in the next two sub chapters.
+
 
 
 
 == Center of Mass
 - A system's *center of mass* is the average position of all matter in the system.
+- In many center of mass problems, we use *point masses*, singular pioints of some mass $m$.
 
 #definition([Center of Mass with Point Masses], [
 Given point masses $m_i$ of a system each a distance $x_i$, $y_i$, or $z_i$ from the origin, center of masses $x_"cm"$, $y_"cm"$, and $z_"cm"$ are defined as follows:
@@ -524,15 +515,14 @@ $
     x_"cm" &= 1 / M_"tot" integral x lambda dif L
     \
     x_"cm" &= lambda / M_"tot" integral_0^L x dif x
-    \
-    x_"cm" &= lambda / M_"tot" eval(1/2 x^2, 0, L)
   $
   #continue_box
 ])
 
 #derivation([Center of Mass of a Uniform Rod _continued_], [
-  
   $
+    x_"cm" &= lambda / M_"tot" eval(1/2 x^2, 0, L)
+    \
     x_"cm" &= lambda / M_"tot" dot L^2 /2
     \
     x_"cm" &= M_"tot" / L dot 1/ M_"tot" dot L^2 /2
@@ -599,6 +589,10 @@ $
   M_"tot" arrow(v)_"cm" = sum_(i=1)^N m_i arrow(v)_i = m_1arrow(v)_1 + m_2arrow(v)_2 + dots.c + m_N arrow(v)_N = arrow(P)
 $
 - Thus, a system with a net external force of zero has a center of mass that moves with constant velocity.
+- Additionally, we can define the kinetic energy of a system:
+$
+  K_"sys" = sum_(i=1)^N 1/2 m_i v_i^(*2) + 1/2 M_"cm" v_"cm"^2
+$
 
 #definition([Acceleration of the Center of Mass], [
   Given point masses $m_i$ of a system each with acceleration $arrow(a)_i$, the acceleration of the center of mass $arrow(a)_"cm"$ is defined as follows:
@@ -617,5 +611,18 @@ $
 $
 - Now, imagine a scenario where a shell is shot into the air, following a parabolic trajectory. Even when it splits into multiple fragments that each follow their own trajectory, the center of mass _follows the original trajectory_ as if the masses of the system were all concentrated on that path.
 - This explains the definition of net force as shown in chapter 4.
+
+== Center-of-Mass Frame
+- By using the center of mass as a reference frame, elastic collision problems can be heavily simplified.
+  - Known as the *Center-of-Mass reference frame*, or just *CM reference frame*.
+- In the CM reference frame, _the velocity of the center of mass is zero_ and _the total momentum is zero._
+
+#definition([Center-of-Mass Frame] ,[
+  Given that superscript $*$ denotes "in the reference frame of the Center of Mass"
+  $
+    v_(i)^* &= -v_(f)^*
+  $
+])
+
 
 #pagebreak()

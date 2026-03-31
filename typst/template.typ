@@ -1,6 +1,8 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge, shapes
+#import "@preview/itemize:0.2.0" as el
+#import "@preview/delimitizer:0.1.0"
 
 
 
@@ -115,6 +117,7 @@
   show math.equation: set text(font: "New Computer Modern Math")
   //set text(font: "Times New Roman")
   show sym.emptyset: set text(font: "Fira Sans")
+  show: el.default-enum-list
 
   align(center, [#title([PHYS 161 Notes])#author])
   outline()

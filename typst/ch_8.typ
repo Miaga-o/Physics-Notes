@@ -259,7 +259,7 @@ $
   + Find the speed of asteroid B after the collision.
   #line(length: 100%) 
 
-  1) First, we want to find the velocity of of asteroid B in terms of asteroid A. We can use the conservation of momentum in the direction perpendicular to asteroid A's initial trajectory to find it because it should be zero.
+  1) First, we want to find the velocity of of asteroid B in terms of asteroid A. We can use the conservation of momentum in the direction perpendicular to asteroid A's initial trajectory to find it because the total momentum in this direction is zero.
   $
     0 &= m v_(2A y) - m v_(2 B y)
     \
@@ -270,7 +270,7 @@ $
     v_(2B) &= v_(2A) sin(30 degree) / sin(45 degree)
   $
 
-  Now, we the only unknown for conservation of momentum in the $x$-direction is the final velocity of asteroid A in the $x$-direction, which can we express in terms of the final speed of asteroid A using trigonometry.
+  Now, the only unknown for conservation of momentum in the $x$-direction is the final velocity of asteroid A in the $x$-direction, which can we express in terms of the final speed of asteroid A using trigonometry.
   #continue_box
 ])
 
@@ -435,7 +435,7 @@ $
   - Say that the mass of the moving object is much less than the still object. Then, the still object's velocity after the collision is very small.
     - If a ping pong ball collides with a still cannon ball, the cannon ball shouldn't move much.
   - If the mass of the moving object is equal to the still object, then the still object's velocity after the collision will be equal to the moving object's initial velocity.
-    - In a game of pool, a cue ball of roughly equal mass to the other balls is used to push the other balls.
+    - In a game of pool, a cue ball of roughly equal mass to the other balls is used to move them.
   - If the mass of the moving object is much greater than the still object, the still object's velocity after the collision is very high.
     - If a cannon ball collides with a still ping pong ball, the ping pong ball should move a lot.
 ])
@@ -517,10 +517,6 @@ $
 #derivation([Center of Mass of a Uniform Rod], [
   Intuitively, the center of mass of a uniform rod should be the middle. We can use the center of mass equation for continuous mass distributions to prove this.
 
-  #continue_box
-])
-
-#derivation([Center of Mass of a Uniform Rod _continued_], [
   We can define the length of any rod as $L$ along the $x$-axis, and define $dif m$ using linear density $lambda$.
   $
     x_"cm" &= 1 / M_"tot" integral x dif m
@@ -530,7 +526,13 @@ $
     x_"cm" &= lambda / M_"tot" integral_0^L x dif x
     \
     x_"cm" &= lambda / M_"tot" eval(1/2 x^2, 0, L)
-    \
+  $
+  #continue_box
+])
+
+#derivation([Center of Mass of a Uniform Rod _continued_], [
+  
+  $
     x_"cm" &= lambda / M_"tot" dot L^2 /2
     \
     x_"cm" &= M_"tot" / L dot 1/ M_"tot" dot L^2 /2
@@ -559,18 +561,18 @@ $
     arrow(R)_"cm" &= rho / M_"tot" integral_0^L integral_0^L (L^2/2 hat(i) + L y hat(j) + L z hat(k)) dot dif y dif z
     \
     arrow(R)_"cm" &= rho / M_"tot" integral_0^L eval(L^2/2 y hat(i) + L/2 y^2 hat(j) + L y z hat(k), y=0, y=L) dot dif z
+    \
+    arrow(R)_"cm" &= rho / M_"tot" integral_0^L (L^3/2 hat(i) + L^3/2 hat(j) + L^2 z hat(k)) dot dif z
+    \
+    arrow(R)_"cm" &= rho / M_"tot" eval(L^3/2 z hat(i) + L^3/2 z hat(j) + L^2/2 z^2 hat(k), z=0, z=L)
+    \
+    arrow(R)_"cm" &= rho / M_"tot" (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
   $
   #continue_box
 ])
 
 #derivation([Center of Mass of a Uniform Cube _continued_], [
   $
-    arrow(R)_"cm" &= rho / M_"tot" integral_0^L (L^3/2 hat(i) + L^3/2 hat(j) + L^2 z hat(k)) dot dif z
-    \
-    arrow(R)_"cm" &= rho / M_"tot" eval(L^3/2 z hat(i) + L^3/2 z hat(j) + L^2/2 z^2 hat(k), z=0, z=L)
-    \
-    arrow(R)_"cm" &= rho / M_"tot" (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
-    \
     arrow(R)_"cm" &= M_"tot" / V dot 1 / M_"tot" (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
     \
     arrow(R)_"cm" &= 1/ V dot (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))

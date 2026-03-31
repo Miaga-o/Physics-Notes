@@ -3,7 +3,9 @@
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge, shapes
 
 
+
 //Organization
+
 /*
 * Automatically numbers headings up to level 2
 */
@@ -66,7 +68,9 @@
 #let author = text(size: 16pt, [Miagao])
 
 
+
 //Math
+
 /*
 * Derivative
 */
@@ -87,8 +91,17 @@
 */
 #let eval(equation, lower_bound, upper_bound) = $lr((#equation)|)_(#lower_bound)^(#upper_bound)$
 
+/*
+* Magnitude of a vector
+*/
+#let mag(vector) = $lr(||#vector||)$
+
 
 //Rules
+
+/*
+* Page formatting
+*/
 #let formatting(a) = {
   set page("a4", numbering: "1 of 1")
 
@@ -100,7 +113,7 @@
   set heading(numbering: custom_numbering)
 
   show math.equation: set text(font: "New Computer Modern Math")
-  //set text(font: "Times new Roman")
+  //set text(font: "Times New Roman")
   show sym.emptyset: set text(font: "Fira Sans")
 
   align(center, [#title([PHYS 161 Notes])#author])

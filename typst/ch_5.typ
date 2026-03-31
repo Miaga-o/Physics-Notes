@@ -36,7 +36,7 @@ $
 - The *tension force* is the pulling force exerted equally throughout a rope, cable, etc.
   - Generally denoted $arrow(T)$.
 - The *friction force* is exerted by a surface on an object and acts perpendicular to the normal force. It depends on the roughness of the surface (expressed by the coefficient of friction).
-  - *Kinetic   friction*, denoted $arrow(f)_k$ with coefficient of kinetic friction $mu_k$, acts on objects sliding across a surface.
+  - *Kinetic friction*, denoted $arrow(f)_k$ with coefficient of kinetic friction $mu_k$, acts on objects sliding across a surface.
   $
     arrow(f)_k = mu_k arrow(n)
   $

@@ -179,6 +179,7 @@ $
   We say that a system's total momentum is _conserved_ if the system's net external force is zero.
 ]) 
 
+- Remember that momentum is a vector quantity, so apply its conservation per component in problems with more than one dimension.
 - Note that by Newton's third law, a system's internal forces do not impact the system's total momentum.
 #example([Gun Recoil], [
   A marksman holds a $3.00 "kg"$ rifle loosely, allowing it to recoil.
@@ -251,6 +252,64 @@ $
 $
 - In inelastic and completely inelastic collisions, kinetic energy is not conserved.
 
+#example([Asteroid Deflection], [
+  Two asteroids of equal mass in the asteroid belt between Mars and Jupiter collide. Asteroid A initially travels with $v_(1A) = 40.0 "m"slash"s"$ with respect to an inertial frame where asteroid B is at rest. After the collision, asteroid A is deflected $30.0 degree$ from its original direction, while asteroid B is deflected $45.0 degree$ from asteroid A's original direction.
+  #figure(image("/images/YF-08-36.jpg", width: 30%))
+  + Find the speed of asteroid A after the collision.
+  + Find the speed of asteroid B after the collision.
+  #line(length: 100%) 
+
+  1) First, we want to find the velocity of of asteroid B in terms of asteroid A. We can use the conservation of momentum in the direction perpendicular to asteroid A's initial trajectory to find it because it should be zero.
+  $
+    0 &= m v_(2A y) - m v_(2 B y)
+    \
+    0 &= m v_(2A) sin(30 degree) - m v_(2 B) sin(45 degree)
+    \
+    m v_(2 B) sin(45 degree) &= m v_(2A) sin(30 degree)
+    \
+    v_(2B) &= v_(2A) sin(30 degree) / sin(45 degree)
+  $
+
+  Now, we the only unknown for conservation of momentum in the $x$-direction is the final velocity of asteroid A in the $x$-direction, which can we express in terms of the final speed of asteroid A using trigonometry.
+  #continue_box
+])
+
+#example([Asteroid Deflection _continued_], [
+  
+  $
+    m v_(1A x) &= m v_(2A x) + m v_(2B x)
+    \
+    v_(1A x) &= v_(2A x) + v_(2B x)
+    \
+    v_(1A x) &= v_(2A)cos(30 degree) + v_(2B)cos(45degree)
+    \
+    v_(1A x) &= v_(2A)cos(30 degree) + v_(2A) sin(30degree)/sin(45degree) cos(45degree)
+    \
+    v_(1A x) &= (cos(30degree) + sin(30degree)/sin(45degree)cos(45degree)) v_(2A)
+    \
+    v_(2A) &= v_(1A x) / (cos(30degree) + sin(30degree)/sin(45degree)cos(45degree))
+    \
+    v_(2A) &= (40 "m"slash"s") / (sqrt(3)/2 + sqrt(2)/2 dot sqrt(2)/2)
+    \
+    bold(v_(2A) &= 29.3 "m"slash"s")
+  $
+
+  2) Because we just solved for the final speed of asteroid A, the final speed of asteroid B is easy to solve for using conservation of momentum.
+  $
+    v_(1A x) &= v_(2A x) + v_(2B x)
+    \
+    v_(2B x) &= v_(1A x) - v_(2A x)
+    \
+    v_(2B)cos(45degree) &= v_(1A x) - v_(2A) cos(30degree)
+    \
+    v_(2B)&= (v_(1A x) - v_(2A) cos(30degree)) / (cos(45degree))
+    \
+    v_(2B) &= (40 "m"slash"s" -(29.3 "m"slash"s") sqrt(3)/2) / (sqrt(2) / 2)
+    \
+    bold(v_(2B) &= 20.7 "m"slash"s")
+  $
+])
+
 === Completely Inelastic Collisions
 #derivation([Loss of Kinetic Energy], [
   In order to establish why a system's kinetic energy decreases in completely inelastic collisions, we can first find the velocity after the inelastic collision using conservation of momentum. 
@@ -279,6 +338,41 @@ $
 ])
 
 - Just because a collision is inelastic _does not mean_ that the colliding objects have to stick together. For instance, kinetic energy could be dissipated from deformations.
+
+#example([Ice Collision], [
+  A $5.00 "kg"$ block of ice is sliding at $12.0 "m"slash"s"$ across the floor of an icy valley when it collides and sticks to another $5.00 "kg"$ block of ice that is initially at rest. After the collision, how high above the valley floor will the combined chunks go?
+  #line(length: 100%)
+  Because we are looking for the maximum height the block will go after the collision, we first need to find the velocity of the combined blocks after the collision using conservation of momentum because the collision is completely inelastic and doesn't conserve kinetic energy.
+  $
+    p_0 &= p_f 
+    \
+    m v_0 &= 2m v \
+    \
+    2m v &= m v_0
+    \
+    v &= 1/2 v_0
+  $
+  #continue_box
+])
+
+#example([Ice Collision _continued_], [
+  Now, energy is conserved after the collision, and the kinetic energy is zero when the combined blocks reach their maximum height, allowing us to solve for it.
+  $
+    E_1 &= E_2
+    \
+    1/2 2m v^2 &= 2m g h
+    \
+    2m g h &= m v^2
+    \
+    h &= v^2 / (2 g)
+    \
+    h &= (0.5v_0)^2 / (2 g)
+    \
+    h &= (0.5 dot 12 "m"slash"s")^2 / (2 dot 9.81 "m"slash"s"^2)
+    \
+    bold(h &= 1.83 "m")
+  $
+])
 
 
 
@@ -312,6 +406,12 @@ $
   $
 
   Using this definition, we can define the final velocity of object A (which we are not interested in) in terms of object A's initial velocity using the momentum equation.
+
+  #continue_box
+])
+
+#derivation([When a Moving Object Collides with a Still Object _continued_], [
+  
   $
     m_A v_(1A) &= m_A v_(2A) + m_B (v_(1A) + v_(2A))
     \
@@ -323,7 +423,6 @@ $
     \
     v_(2A) &= (m_A - m_B) / (m_A + m_B)v_(1A)
   $
-
   We can plug this value for the final velocity of the moving object back into the velocity relationship we defined earlier to establish the relationship we are looking for.
   $
     v_B &= v_(1A) + (m_A - m_B) / (m_A + m_B)v_(1A)
@@ -345,10 +444,13 @@ $
 $
   v_B = v_(1A) + v_(2A)
 $
-- If we rearrange this equality, we can get the _velocity of the object B relative to object A_ because these velocities are given relative to the ground:
+- If we rearrange this equality, we can get the _velocity of object B relative to object A after the collision_ because these velocities are given relative to the ground:
 $
   v_(1A) = v_B - v_(2A)
 $
+- In that derivation, object B is still before the collision. Thus, $v_(1A)$ is the velocity of object A relative to object B before the collision, or the _negative velocity of object B relative to object A before the collision._
+- We call situations like this *straight-line elastic collisions*, and it follows from our previous reasoning that the magnitude of the relative velocities of both objects remain constant.
+ - This holds even if both objects are moving during the collision, although having one object still simplifies the algebra.
 
 
 

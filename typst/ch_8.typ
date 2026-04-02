@@ -143,9 +143,10 @@ $
     \
     J_x &= m (v_(2x) - v_(1x))
     \
-    J_x &= (0.4 "kg")((-20 "m"slash"s") - (30 "m"slash"s"))
+    J_x &= (0.4 "kg")big(((-20 "m"slash"s") - (30 "m"slash"s")))
     \
     bold(J_x &= -20 "N" dot "s")
+
   $
 
   2)
@@ -446,7 +447,7 @@ $
 
 == Center of Mass
 - A system's *center of mass* is the average position of all matter in the system.
-- In many center of mass problems, we use *point masses*, singular pioints of some mass $m$.
+- In many center of mass problems, we use *point masses*, singular points of some mass $m$.
 
 #definition([Center of Mass with Point Masses], [
 Given point masses $m_i$ of a system each a distance $x_i$, $y_i$, or $z_i$ from the origin, center of masses $x_"cm"$, $y_"cm"$, and $z_"cm"$ are defined as follows:
@@ -589,10 +590,8 @@ $
   M_"tot" arrow(v)_"cm" = sum_(i=1)^N m_i arrow(v)_i = m_1arrow(v)_1 + m_2arrow(v)_2 + dots.c + m_N arrow(v)_N = arrow(P)
 $
 - Thus, a system with a net external force of zero has a center of mass that moves with constant velocity.
-- Additionally, we can define the kinetic energy of a system:
-$
-  K_"sys" = sum_(i=1)^N 1/2 m_i v_i^(*2) + 1/2 M_"cm" v_"cm"^2
-$
+- Furthermore, if the center of mass is already at rest, then it stays at rest when $Sigma arrow(F) = 0$.
+
 
 #definition([Acceleration of the Center of Mass], [
   Given point masses $m_i$ of a system each with acceleration $arrow(a)_i$, the acceleration of the center of mass $arrow(a)_"cm"$ is defined as follows:
@@ -612,6 +611,30 @@ $
 - Now, imagine a scenario where a shell is shot into the air, following a parabolic trajectory. Even when it splits into multiple fragments that each follow their own trajectory, the center of mass _follows the original trajectory_ as if the masses of the system were all concentrated on that path.
 - This explains the definition of net force as shown in chapter 4.
 
+#example([Romeo and Juliet], [
+  Romeo, who is sitting in the rear of their boat in still water, entertains Juliet by playing his guitar. After the serenade, Juliet, who is sitting at the front of the boat, moves to the rear to kiss Romeo. The $80"-kg"$ boat is facing the shore and the $55"-kg"$ Juliet needs to move $2.7 "m"$ to reach the $77"-kg"$ Romeo. How far does the boat move and in what direction?
+  #line(length: 100%)
+  Now, the center of mass of the system does not change because the net external force acting on the system is zero. Now, it follows that the boat is $2.7 "m"$ long, and that its center of mass is its center. We can choose the origin as the front of the boat.
+  $
+    x_("cm-"i) &= x_("cm-"f)
+    \
+    (m_J x_(J i) + m_R x_(R i) + m_B x_(B i)) / (m_J + m_R + m_B) &= (m_J x_(J f) + m_R x_(R f) + m_B x_(B f)) / (m_J + m_R + m_B)
+    \
+    m_J x_(J i) + m_R x_(R i) + m_B x_(B i) &= m_J x_(J f) + m_R x_(R f) + m_B x_(B f)
+    \
+    m_J x_(J i) + m_R x_(R i) - m_J x_(J f) - m_R x_(R f)&= m_B x_(B f) - m_B x_(B i)
+    \
+    (m_J x_(J i) + m_R x_(R i) - m_J x_(J f) - m_R x_(R f)) / m_B &= x_(B f) - x_(B i)
+    \
+    Delta x_B &= (m_J (x_(J i) - x_(J f)) + m_R (x_(R i) - x_(R f))) / m_B
+    \
+    Delta x_B &= ((55 "kg")(0 "m" - 2.7 "m") - (77 "kg")(2.7 "m" - 2.7 "m"))/(80 "kg")
+    \
+    Delta x_B &= -1.9 "m"
+  $
+  Now, because Juliet moves from the front of the boat to the rear of the boat, she moves away from the shore. Thus, for the system's center of mass to remain constant, the boat must move toward from the shore. So, after Juliet moves to kiss Romeo, *the boat moves $1.9 "m"$ toward the shore.*
+])
+
 == Center-of-Mass Frame
 - By using the center of mass as a reference frame, elastic collision problems can be heavily simplified.
   - Known as the *Center-of-Mass reference frame*, or just *CM reference frame*.
@@ -624,5 +647,57 @@ $
   $
 ])
 
+#example([Cart Collision], [
+  A cart with mass $m_1 = 107 "kg"$ travels horizontally to the right at $v_1 = 5.00 "m"slash"s"$ while another cart with mass $m_2 = 86 "kg"$ travels horizontally to the left at $v_2 = 3.60 "m"slash"s"$. Eventually, both carts collide in an elastic collision. Find the velocity of the system's center of mass, then use that to find the initial and final relative velocities of both carts.
+  #line(length: 100%)
+
+  We can find the center of mass of the velocity using our formula from the previous subchapter.
+  $
+    v_"cm" &= (m_1 v_1 + m_2 v_2) / (m_1 + m_2)
+    \
+    v_"cm" &= ((107 "kg")(5 "m"slash"s") + (86 "kg")(-3.6 "m"slash"s")) / (107 "kg" + 86 "kg")
+    \
+    bold(v_"cm" &= 1.17 "m"slash"s")
+  $
+
+  Now, we can use the CM reference frame. We can say that the given cart velocities and $v_"cm"$ are relative to the lab. Now, we can just apply what we've learned about relative velocities.
+  #figure(
+    table(
+      stroke: none,
+      columns: (50%, 50%),
+      $
+        v_(1i)^* &= v_(1i) + v_("lab","cm")
+        \
+        v_(1i)^* &= v_(1i) - v_"cm"
+        \
+        v_(1i)^* &= 5 "m"slash"s" - 1.17 "m"slash"s"
+        \
+        bold(v_(1i)^* &= 3.83 "m"slash"s")
+        \ \
+        v_(1f)^* &= -v_(1i)^*
+        \
+        bold(v_(1f)^* &= -3.83 "m"slash"s")
+      $,
+      $
+        v_(2i)^* &= v_(2i) + v_("lab","cm")
+        \
+        v_(2i)^* &= v_(2i) - v_"cm"
+        \
+        v_(2i)^* &= -3.6 "m"slash"s" - 1.17 "m"slash"s"
+        \
+        bold(v_(2i)^* &= -4.77 "m"slash"s")
+        \ \
+        v_(2f)^* &= -v_(2i)^*
+        \
+        bold(v_(2f)^* &= 4.77 "m"slash"s")
+      $,
+    )
+  )
+])
+
+- Another use case of the CM reference frame is for defining the kinetic energy of a system:
+$
+  K_"sys" = sum_(i=1)^N 1/2 m_i v_i^(*2) + 1/2 M_"cm" v_"cm"^2
+$
 
 #pagebreak()

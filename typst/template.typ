@@ -2,7 +2,7 @@
 #import "@preview/cetz-plot:0.1.3"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge, shapes
 #import "@preview/itemize:0.2.0" as el
-#import "@preview/delimitizer:0.1.0"
+#import "@preview/delimitizer:0.1.0": big, bigg, Big, Bigg, paired-delimiter
 
 
 

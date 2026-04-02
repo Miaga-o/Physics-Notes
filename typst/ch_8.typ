@@ -614,7 +614,7 @@ $
 #example([Romeo and Juliet], [
   Romeo, who is sitting in the rear of their boat in still water, entertains Juliet by playing his guitar. After the serenade, Juliet, who is sitting at the front of the boat, moves to the rear to kiss Romeo. The $80"-kg"$ boat is facing the shore and the $55"-kg"$ Juliet needs to move $2.7 "m"$ to reach the $77"-kg"$ Romeo. How far does the boat move and in what direction?
   #line(length: 100%)
-  Now, the center of mass of the system does not change because the net external force acting on the system is zero. Now, it follows that the boat is $2.7 "m"$ long, and that its center of mass is its center. We can choose the origin as the front of the boat.
+  Now, the center of mass of the system does not change because the net external force acting on the system is zero. Now, it follows that the boat is $L= 2.7 "m"$ long, and that its center of mass is at half that length. Now, the final positions relative to the origin all move by the distance $d$ toward the shore to compensate for Juliet moving toward the boat's rear, which is away from the shore. We will choose the front of the boat as the origin.
   $
     x_("cm-"i) &= x_("cm-"f)
     \
@@ -622,17 +622,21 @@ $
     \
     m_J x_(J i) + m_R x_(R i) + m_B x_(B i) &= m_J x_(J f) + m_R x_(R f) + m_B x_(B f)
     \
-    m_J x_(J i) + m_R x_(R i) - m_J x_(J f) - m_R x_(R f)&= m_B x_(B f) - m_B x_(B i)
+    m_R L + m_B L/2 &= m_J (L-d) + m_R (L-d) + m_B (L/2-d)
     \
-    (m_J x_(J i) + m_R x_(R i) - m_J x_(J f) - m_R x_(R f)) / m_B &= x_(B f) - x_(B i)
+    m_R L + m_B L/2 &= (m_J + m_R + m_B/2)L - (m_J + m_R +m_B)d
     \
-    Delta x_B &= (m_J (x_(J i) - x_(J f)) + m_R (x_(R i) - x_(R f))) / m_B
+    (m_J + m_R +m_B)d &= (m_J + m_R + m_B/2)L - m_R L - m_B L/2
     \
-    Delta x_B &= ((55 "kg")(0 "m" - 2.7 "m") - (77 "kg")(2.7 "m" - 2.7 "m"))/(80 "kg")
+    d &= ((m_J + m_R + m_B/2)L - m_R L - m_B L/2)/(m_J+m_R+m_B)
     \
-    Delta x_B &= -1.9 "m"
+    d &= (m_J L)/(m_J+m_R+m_B)
+    \
+    d &= ((55 "kg")(2.7 "m"))/(55 "kg" + 77 "kg" + 80 "kg")
+    \
+    d &= 0.7 "m"
   $
-  Now, because Juliet moves from the front of the boat to the rear of the boat, she moves away from the shore. Thus, for the system's center of mass to remain constant, the boat must move toward from the shore. So, after Juliet moves to kiss Romeo, *the boat moves $1.9 "m"$ toward the shore.*
+  *The boat moves $0.7 "m"$ toward the shore.*
 ])
 
 == Center-of-Mass Frame
@@ -646,6 +650,11 @@ $
     v_(i)^* &= -v_(f)^*
   $
 ])
+
+- Another use case of the CM reference frame is for defining the kinetic energy of a system:
+$
+  K_"sys" = sum_(i=1)^N 1/2 m_i v_i^(*2) + 1/2 M_"cm" v_"cm"^2
+$
 
 #example([Cart Collision], [
   A cart with mass $m_1 = 107 "kg"$ travels horizontally to the right at $v_1 = 5.00 "m"slash"s"$ while another cart with mass $m_2 = 86 "kg"$ travels horizontally to the left at $v_2 = 3.60 "m"slash"s"$. Eventually, both carts collide in an elastic collision. Find the velocity of the system's center of mass, then use that to find the initial and final relative velocities of both carts.
@@ -694,10 +703,5 @@ $
     )
   )
 ])
-
-- Another use case of the CM reference frame is for defining the kinetic energy of a system:
-$
-  K_"sys" = sum_(i=1)^N 1/2 m_i v_i^(*2) + 1/2 M_"cm" v_"cm"^2
-$
 
 #pagebreak()

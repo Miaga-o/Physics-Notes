@@ -27,7 +27,7 @@ $
 
 == Motion with Constant Acceleration
 #definition([Kinematic Equations], [
-With constant acceleration, the following *kinematic equations* hold true:
+With constant acceleration, the following *kinematic equations* hold:
   $
     v = v_0 + a Delta t
     \

@@ -6,7 +6,7 @@
 - The units of work are joules $("J")$ or newton-meters.
 
 #definition([Work], [
-  Given work $W$, force $arrow(F)$, and displacement $arrow(s)$
+  Given work $W$, force $arrow(F)$, and displacement $arrow(s)$:
   $
     W = arrow(F) dot arrow(s) = F s cos(theta)
   $
@@ -23,7 +23,7 @@ $
 - *Energy* is the capacity to do work, and also uses joules.
 - *Kinetic energy* is the energy of a body from its mass and speed.
 #definition([Kinetic Energy], [
-  Given kinetic energy $K$, mass $m$, and speed $v$
+  Given kinetic energy $K$, mass $m$, and speed $v$:
   $
     K = 1 / 2 m v^2
   $
@@ -35,7 +35,7 @@ $
   W = Delta K
 $
 #derivation([Work-Energy Theorem], [
-  Given work $W$ and kinetic energy $K$
+  Given work $W$ and kinetic energy $K$:
   $
     F_(parallel) &= m a = m (v_2^2-v_1^2) / (2s)
     \
@@ -175,7 +175,7 @@ $
 $
 
 #definition([Power], [
-  Given power $P$, work $W$, velocity $arrow(v)$, and force $arrow(F)$
+  Given power $P$, work $W$, velocity $arrow(v)$, and force $arrow(F)$:
   $
     P = drv(W,t) = arrow(F) dot arrow(v) = F v cos theta
   $

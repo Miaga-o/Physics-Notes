@@ -8,7 +8,7 @@
 - *Gravitational potential energy* is potential energy dependent on an object's mass and height above the ground.
   - Denoted $U_g$.
 #definition([Gravitational Potential Energy], [
-  Given gravitational potential energy $U_g$, object's mass $m$, acceleration due to gravity $g$, and height above the ground $h$
+  Given gravitational potential energy $U_g$, object's mass $m$, acceleration due to gravity $g$, and height above the ground $h$:
   $
     U_g = m g h
   $
@@ -26,7 +26,7 @@ $
 - *Elastic potential energy* is potential energy stored in deformable objects such as springs when they are stretched or compressed from equilibrium.
   - Denoted $U_s$.
 #definition([Elastic Potential Energy], [
-  Given elastic potential energy $U_s$, spring constant $k$, and elongation of object $x$
+  Given elastic potential energy $U_s$, spring constant $k$, and elongation of object $x$:
   $
     U_s = 1/2 k x^2 
   $
@@ -51,7 +51,7 @@ $
 - As a result, we can equate the total mechanical energy at different points in a system.
 - Thus, work done by nonconservative forces should be subtracted.
 #definition([Law of Conservation of Energy], [
-  Given kinetic energy $K$, potential energy $U$, and work from nonconservative forces $W_"nc"$
+  Given kinetic energy $K$, potential energy $U$, and work from nonconservative forces $W_"nc"$:
   $
     Delta K + Delta U - W_"nc" = 0
   $

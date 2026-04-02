@@ -27,7 +27,7 @@
 #definition([Newton's Third Law], [
   For every action there is an equal and opposite reaction.
   
-  Given objects $A$ and $B$ where $A B$ means "exerted from $A$ on $B$"
+  Given objects $A$ and $B$, where the subscript $A B$ means "exerted from $A$ on $B$":
   $
     arrow(F)_(A B) = -arrow(F)_(B A)
   $

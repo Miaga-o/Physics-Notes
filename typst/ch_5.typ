@@ -20,7 +20,7 @@ $
   G = 6.6743 times 10^(-11) space "m"^3 dot "kg"^(-1) dot "s"^(-1)
 $
 #definition([Universal Law of Gravitation], [
-  The force between any two objects is defined as follows, given that $r$ is the _distance between the objects' centers_
+  The force between any two objects is defined as follows, given that $r$ is the _distance between the objects' centers_:
   $
     F_1 = F_2 = G (m_1 m_2) / r^2
   $

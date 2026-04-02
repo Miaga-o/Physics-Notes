@@ -155,7 +155,7 @@ $
 T= 1 / f
 $
 #definition([Circular Motion Equations], [
-  Given radius of the circular motion $R$
+  Given radius of the circular motion $R$:
   $
   v &= (2 pi R) / T = 2 pi R f
   \

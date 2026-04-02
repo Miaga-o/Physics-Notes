@@ -5,7 +5,7 @@
 - *Momentum* is an object's _quantity of motion_, measured in $"kg" dot "m"slash"s"$ or $"N" dot "s"$
   - Denoted $p$.
 #definition([Momentum], [
-  Given momentum $arrow(p)$, mass $m$, and velocity $arrow(v)$
+  Given momentum $arrow(p)$, mass $m$, and velocity $arrow(v)$:
   $
     arrow(p) = m arrow(v)
   $
@@ -19,7 +19,7 @@ $
 - An object's change in momentum is known as *impulse*.
   - Denoted $J$.
 #definition([Impulse-Momentum Theorem], [
-  Given impulse $arrow(J)$ and momentum $arrow(p)$
+  Given impulse $arrow(J)$ and momentum $arrow(p)$:
   $
     arrow(J) = Delta arrow(p)
   $
@@ -27,7 +27,7 @@ $
 
 
 #derivation([Relating Impulse to Force], [
-  Given net force $Sigma arrow(F)$, acceleration $arrow(a)$, and mass $m$
+  Given net force $Sigma arrow(F)$, acceleration $arrow(a)$, and mass $m$:
   $
     Sigma arrow(F) &= m arrow(a)
     \
@@ -440,7 +440,7 @@ $
     - If a cannon ball collides with a still ping pong ball, the ping pong ball should move a lot.
 ])
 
-- We can heavily simplify calculations for elastic collision problems using the motion of the center of mass, which we will cover in the next two sub chapters.
+- We can heavily simplify calculations for elastic collision problems using the motion of the center of mass, which we will cover in the next two subchapters.
 
 
 
@@ -450,7 +450,7 @@ $
 - In many center of mass problems, we use *point masses*, singular points of some mass $m$.
 
 #definition([Center of Mass with Point Masses], [
-Given point masses $m_i$ of a system each a distance $x_i$, $y_i$, or $z_i$ from the origin, center of masses $x_"cm"$, $y_"cm"$, and $z_"cm"$ are defined as follows:
+Given point masses $m_i$ of a system, each a distance $x_i$, $y_i$, or $z_i$ from the origin, center of masses $x_"cm"$, $y_"cm"$, and $z_"cm"$ are defined as follows:
   #table(
     columns: (33%, 34%, 33%),
     stroke: none,
@@ -609,7 +609,7 @@ $
   M_"tot" arrow(a)_"cm" = Sigma arrow(F) = Sigma arrow(F)_"ext" + Sigma arrow(F)_"int" = Sigma arrow(F)_"ext"
 $
 - Now, imagine a scenario where a shell is shot into the air, following a parabolic trajectory. Even when it splits into multiple fragments that each follow their own trajectory, the center of mass _follows the original trajectory_ as if the masses of the system were all concentrated on that path.
-- This explains the definition of net force as shown in chapter 4.
+- This explains the definition of net force as shown in Chapter 4.
 
 #example([Romeo and Juliet], [
   Romeo, who is sitting in the rear of their boat in still water, entertains Juliet by playing his guitar. After the serenade, Juliet, who is sitting at the front of the boat, moves to the rear to kiss Romeo. The $80"-kg"$ boat is facing the shore and the $55"-kg"$ Juliet needs to move $2.7 "m"$ to reach the $77"-kg"$ Romeo. How far does the boat move and in what direction?
@@ -645,63 +645,84 @@ $
 - In the CM reference frame, _the velocity of the center of mass is zero_ and _the total momentum is zero._
 
 #definition([Center-of-Mass Frame] ,[
-  Given that superscript $*$ denotes "in the reference frame of the Center of Mass"
+  Given that superscript $*$ denotes "in the reference frame of the Center of Mass" and given any object A:
   $
     v_(i)^* &= -v_(f)^*
+    \ \
+    v_A^* &= v_(A,"lab") + v_("lab","cm")
+    \
+    v_A^* &= v_(A,"lab") - v_("cm")
   $
 ])
 
-- Another use case of the CM reference frame is for defining the kinetic energy of a system:
-$
-  K_"sys" = sum_(i=1)^N 1/2 m_i v_i^(*2) + 1/2 M_"cm" v_"cm"^2
-$
 
-#example([Cart Collision], [
-  A cart with mass $m_1 = 107 "kg"$ travels horizontally to the right at $v_1 = 5.00 "m"slash"s"$ while another cart with mass $m_2 = 86 "kg"$ travels horizontally to the left at $v_2 = 3.60 "m"slash"s"$. Eventually, both carts collide in an elastic collision. Find the velocity of the system's center of mass, then use that to find the initial and final relative velocities of both carts.
+- Another use case of the CM reference frame is for defining the kinetic energy of a system.
+
+#definition([Kinetic Energy of a System], [
+  Given kinetic energy of a system $K_"sys"$ and masses of the system $m_i$ each with velocity $v_i^*$ 
+  $
+    K_"sys" &= sum_(i=1)^N 1/2 m_i v_i^(*2) + 1/2 M_"tot" v_"cm"^2
+    \
+    K_"sys" &= K_"rel" + K_"cm"
+  $
+])
+
+- Angular velocity is the rate of change of the angular displacement.
+
+#example([Elastic Blocks], [
+  Initially, block 1 with mass $m_1 = 1 "kg"$ is moving horizontally to the right with velocity \ $v_1 = 1 "m"slash"s"$ and block 2 with mass $m_2 = 0.5 "kg"$ is at rest. Block 1 collides elastically with block 2, and after that, block 2 collides elastically with a wall to the right. What impulse does the wall give to block 2?
   #line(length: 100%)
-
-  We can find the center of mass of the velocity using our formula from the previous subchapter.
+  Because there are no external forces in the system before block 2 collides with the wall, we can calculate the velocity of the center of mass at the time when block 2 is at rest, as it will remain constant until the collision between block 2 and the wall.
   $
-    v_"cm" &= (m_1 v_1 + m_2 v_2) / (m_1 + m_2)
+    v_"cm" &= (m_1 v_1) / (m_1 + m_2)
     \
-    v_"cm" &= ((107 "kg")(5 "m"slash"s") + (86 "kg")(-3.6 "m"slash"s")) / (107 "kg" + 86 "kg")
+    v_"cm" &= ((1 "kg")(1 "m"slash"s")) / (1 "kg" + 0.5 "kg")
     \
-    bold(v_"cm" &= 1.17 "m"slash"s")
+    v_"cm" &= 2/3 "m"slash"s"
   $
 
-  Now, we can use the CM reference frame. We can say that the given cart velocities and $v_"cm"$ are relative to the lab. Now, we can just apply what we've learned about relative velocities.
-  #figure(
-    table(
-      stroke: none,
-      columns: (50%, 50%),
-      $
-        v_(1i)^* &= v_(1i) + v_("lab","cm")
-        \
-        v_(1i)^* &= v_(1i) - v_"cm"
-        \
-        v_(1i)^* &= 5 "m"slash"s" - 1.17 "m"slash"s"
-        \
-        bold(v_(1i)^* &= 3.83 "m"slash"s")
-        \ \
-        v_(1f)^* &= -v_(1i)^*
-        \
-        bold(v_(1f)^* &= -3.83 "m"slash"s")
-      $,
-      $
-        v_(2i)^* &= v_(2i) + v_("lab","cm")
-        \
-        v_(2i)^* &= v_(2i) - v_"cm"
-        \
-        v_(2i)^* &= -3.6 "m"slash"s" - 1.17 "m"slash"s"
-        \
-        bold(v_(2i)^* &= -4.77 "m"slash"s")
-        \ \
-        v_(2f)^* &= -v_(2i)^*
-        \
-        bold(v_(2f)^* &= 4.77 "m"slash"s")
-      $,
-    )
-  )
+  Now that we know the velocity of the center of mass, we know the velocity of the CM reference frame. Thus, we can use the CM reference frame to find the velocity of block 2 after the first collision. First, we find the initial velocity of block 2 in the CM reference frame.
+  $
+    v_2^* &= v_2 + v_("lab","cm")
+    \
+    v_2^* &= v_2 - v_("cm")
+    \
+    v_2^* &= 0 "m"slash"s" - 2/3 "m"slash"s"
+    \
+    v_2^* &= - 2/3 "m"slash"s"
+  $
+  #continue_box
+])
+
+#example([Elastic Blocks _continued_], [
+  Now, we use the fact that an object reverses its direction but maintains the same speed relative to the center of mass after an elastic collision.
+  $
+    v_(2f)^* &= -v_2^*
+    \
+    v_(2f)^* &= -(-2/3 "m"slash"s")
+    \
+    v_(2f)^* &= 2/3 "m"slash"s"
+  $
+
+  To find the velocity of block 2 after the first collision, we can apply relative velocities again.
+  $
+    v_(2f)&= v_(2f)^* + v_"cm"
+    \
+    v_(2f)&= 2/3 "m"slash"s" + 2/3 "m"slash"s"
+    \
+    v_(2f) &= 4/3 "m"slash"s"
+  $
+
+  Now, it follows that the second collision is also elastic. Intuitively, block 2's velocity after the second collision has the same magnitude, albeit in the opposite direction. Now that we know the velocity of block 2 just before and just after its collision with the wall, we can calculate the impulse exerted by the wall on block 2.
+  $
+    J &= Delta p
+    \
+    J &= m_2(v_(2f f) - v_(2f))
+    \
+    J &= (0.5 "kg")(-4/3 "m"slash"s" - 4/3 "m"slash"s")
+    \
+    bold(J &= -4/3 "kg" dot "m"slash"s")
+  $
 ])
 
 #pagebreak()

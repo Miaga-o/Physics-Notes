@@ -63,4 +63,61 @@ $
 $
 - In longer physics problems with numerous equations, using the actual values in calculations and only converting the final answer to the correct number of significant figures is best practice.
 
+
+
+== Vectors
+- *Scalars* are quantities which only have _magnitude_.
+  - An example of a scalar would be mass.
+- *Vectors* are quantities with both _magnitude_ and _direction_.
+  - An example of a vector would be displacement.
+  - Vector variables are denoted with an arrow.
+  - Their components are denoted with subscripts that indicate which direction they represent: 
+  $
+    arrow(u) = chevron.l u_x, u_y, u_z chevron.r
+  $
+  - For this course, we often use *directional unit vectors* to describe direction:
+  #table(
+    stroke: none,
+    columns: (33%, 34%, 33%),
+    $ hat(i) = chevron.l 1,0,0 chevron.r $,
+    $ hat(j) = chevron.l 0,1,0 chevron.r $,
+    $ hat(k) = chevron.l 0,0,1 chevron.r $
+  )
+  $
+    arrow(u) = u_x hat(i) + u_y hat(j) + u_z hat(k)
+  $
+- *Unit vectors* are vectors with a magnitude of $1$, and use a caret rather than an arrow.
+$
+  hat(u)
+$
+- A vector's magnitude is often denoted by double or single bars surrounding it or by removing the arrow symbol. It can be calculated using the components of the vector.
+$
+  mag(arrow(u)) = u = sqrt(u_x^2 + u_y^2 + u_z^2)
+$
+- *Vector addition* is done by adding corresponding components, resulting in a sum vector.
+$
+  arrow(u) + arrow(v) = (u_x + v_x)hat(i) + (u_y + v_y)hat(j) + (u_z + v_z)hat(k)
+$
+- *Scaling a vector* is done by multiplying each component in the vector by the scalar.
+$
+  c arrow(u) = c u_x hat(i) + c u_y hat(j) + c u_z hat(k)
+$
+
+=== Vector Multiplication
+- The *dot product* or *scalar product* involves multiplying corresponding components, then summing them up. There also exists an alternate definition using the angle between the operands.
+$
+  arrow(u) dot arrow(v) = u_x v_x + u_y v_y + u_z v_z = mag(arrow(u)) mag(arrow(v)) cos(theta)
+$
+- The *cross product* or *vector product* is perpendicular to the plane formed by the operands, and its magnitude is calculated using the angle between the operands, albeit with sine. There also exists a determinant definition for the cross product.
+$
+  arrow(u) times arrow(v) &= mag(arrow(u)) mag(arrow(v)) sin(theta) hat(u)_perp 
+  = mat(delim: "|", 
+    hat(i), hat(j), hat(k);
+    u_x, u_y, u_z;
+    v_x, v_y, v_z;
+  )
+  = (u_y v_z - u_z v_y) hat(i) - (u_x v_z - u_z v_x) hat(j) + (u_x v_y - u_y v_x) hat(k)
+$
+
+
 #pagebreak()

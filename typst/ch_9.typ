@@ -15,7 +15,7 @@ $
 $
 - We define one radian as the angle of an arc $s$ given that $s = "radius" r$.
 $
-  s = theta r => theta = s/r
+  s = theta r space "or" space theta = s/r
 $
 
 - *Angular velocity* is the rate of change of angular displacement, measured in radians per second.
@@ -23,6 +23,23 @@ $
   - Note that while points farther from the axis of rotation have a larger displacement over the same time interval, _all points on a rigid body have the same angular velocity_.
 - *Angular acceleration* is the rate of change of angular velocity, measured in radians per second squared. 
   - Denoted $alpha$.
+- The standard for rotational motion is that counterclockwise from the $+x$-axis is the positive direction while clockwise from the $+x$-axis is the negative direction.
+- Applying our definition of angular displacement, we can find the magnitude of the tangential speed and acceleration:
+#table(
+  stroke: none,
+  columns: (50%, 50%),
+  $
+    abs(drv(s,t)) &= abs(drv(theta, t)) r
+    \
+    v_t &= omega r
+  $,
+  $
+    drv(v_t,t) &= drv(omega, t) r
+    \
+    a_t &= alpha r
+  $
+)
+- Note that $theta$, $omega$, and $alpha$ are _vector quantities_.
 - Given axis of rotation $z$:
 $
   Delta theta_z &= theta_(2z) - theta_(1z)
@@ -50,7 +67,7 @@ $
 - These are analogous to the kinematic equations we learned in Chapter 2.
 - We defined these angular kinematic equations along the $z$-axis because $mag(arrow(theta))$, $mag(arrow(omega))$, and $mag(arrow(alpha))$ are all equal to their $z$-components since the axis of rotation is fixed.
 - Consequently, $arrow(theta)$, $arrow(omega)$, and $arrow(alpha)$ are all parallel to the axis of rotation, or in other words, _perpendicular to the plane of rotation_. Specifically, their direction is denoted by the right-hand rule.
-- The *right-hand* rule is used to denote the direction of vectors. In this case, you curl your fingers in the direction of rotation (clockwise or counterclockwise) and stick your thumb out. _The direction of your thumb is analogous to the direction of $arrow(theta)$, $arrow(omega)$, and $arrow(alpha)$_.
+- The *right-hand* rule is used to denote the direction of vector products. In this case, you curl your fingers in the direction of rotation (clockwise or counterclockwise) and stick your thumb out. _The direction of your thumb is analogous to the direction of $arrow(omega)$ and $arrow(alpha)$_.
 
 
 
@@ -81,6 +98,6 @@ $
 
 
 
-== Moment of Inertia
+== Moment of Inertia Calculations
 
 #pagebreak()

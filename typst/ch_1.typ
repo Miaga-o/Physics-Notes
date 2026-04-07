@@ -70,10 +70,10 @@ $
   - An example of a scalar would be mass.
 - *Vectors* are quantities with both _magnitude_ and _direction_.
   - An example of a vector would be displacement.
-  - Vector variables are denoted with an arrow.
+  - Vector variables are denoted with an arrow or are bolded.
   - Their components are denoted with subscripts that indicate which direction they represent: 
   $
-    arrow(u) = chevron.l u_x, u_y, u_z chevron.r
+    bold(upright(u)) = arrow(u) = chevron.l u_x, u_y, u_z chevron.r
   $
   - For this course, we often use *directional unit vectors* to describe direction:
   #table(
@@ -86,13 +86,13 @@ $
   $
     arrow(u) = u_x hat(i) + u_y hat(j) + u_z hat(k)
   $
-- *Unit vectors* are vectors with a magnitude of $1$, and use a caret rather than an arrow.
-$
-  hat(u)
-$
 - A vector's magnitude is often denoted by double or single bars surrounding it or by removing the arrow symbol. It can be calculated using the components of the vector.
 $
   mag(arrow(u)) = u = sqrt(u_x^2 + u_y^2 + u_z^2)
+$
+- *Unit vectors* are vectors with a magnitude of $1$ and use a caret rather than an arrow.
+$
+  hat(u) = arrow(u) / mag(arrow(u))
 $
 - *Vector addition* is done by adding corresponding components, resulting in a sum vector.
 $
@@ -108,7 +108,7 @@ $
 $
   arrow(u) dot arrow(v) = u_x v_x + u_y v_y + u_z v_z = mag(arrow(u)) mag(arrow(v)) cos(theta)
 $
-- The *cross product* or *vector product* is perpendicular to the plane formed by the operands, and its magnitude is calculated using the angle between the operands, albeit with sine. There also exists a determinant definition for the cross product.
+- The *cross product* or *vector product* is perpendicular to the plane formed by the operands, and its magnitude is calculated using the angle between the operands, albeit with sine. There also exists a determinant definition, generally done with a cofactor expansion down the first row.
 $
   arrow(u) times arrow(v) &= mag(arrow(u)) mag(arrow(v)) sin(theta) hat(u)_perp 
   = mat(delim: "|", 

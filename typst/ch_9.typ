@@ -384,6 +384,7 @@ This subchapter will include the derivations for the moments of inertia of diffe
   $
 ])
 
+/*
 #derivation([Solid Sphere], [
   We can start by establishing a relationship between a solid sphere's volume density and the differential $dif m$. Let $R$ be the radius of the sphere.
   $
@@ -411,7 +412,7 @@ This subchapter will include the derivations for the moments of inertia of diffe
     I &= 3/5 M_"tot" R^2
   $
 ])
-
+*/
 
 
 #pagebreak()

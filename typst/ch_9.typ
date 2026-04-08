@@ -47,7 +47,7 @@ $
 $
   Delta theta &= theta_(2) - theta_(1)
   \
-  omega_("av-"z) &= (Delta theta) / (Delta t)
+  omega_("av-"z) &= (Delta theta) / (Delta t) = (2pi) / T = 2pi f
   \
   omega_z &= lim_(Delta t -> 0) (Delta theta) / (Delta t) = drv(theta,t)
   \
@@ -105,6 +105,66 @@ $
   $
 ])
 
+#example([Electric Motor Rotation], [
+  At $t = 0$, the current to a DC electric motor is reversed, resulting in an angular displacement of the motor shaft given by $theta(t) = (260 "rad"slash"s")t - (19.2 "rad"slash"s"^2)t^2 - (1.56 "rad"slash"s"^3)t^3$
+  + At what time is the angular velocity of the motor shaft zero?
+  + Calculate the angular acceleration at the instant that the motor shaft has zero angular velocity.
+  + How many revolutions does the motor shaft turn through between the time the current is reversed and the instant the angular velocity is zero?
+  + How fast was the motor shift rotating at $t = 0$ when the current was reversed?
+  + Calculate the average angular velocity from $t=0$ to when the motor shaft's angular velocity is zero.
+
+  #line(length: 100%)
+  1) We can simply find $theta prime (t)$ and find a valid zero of the resulting function.
+  $
+    theta prime(t) &= dif / (dif t)((260 "rad"slash"s")t - (19.2 "rad"slash"s"^2)t^2 - (1.56 "rad"slash"s"^3)t^3)
+    \
+    omega (t) &= 260 "rad"slash"s" - 2(19.2 "rad"slash"s"^2)t - 3(1.56 "rad"slash"s"^3)t^2
+    \
+    0 &= 260 "rad"slash"s" - 2(19.2 "rad"slash"s"^2)t - 3(1.56 "rad"slash"s"^3)t^2
+    \
+    t&= (38.4 plus.minus sqrt((-38.4)^2 - 4(-4.68)(260)))/(2 (-4.68))
+  $
+  #table(
+    stroke: none,
+    columns: (50%, 50%),
+    $ t &= -11.6 "s" $, $ bold(t &= 4.41 "s") $
+  )
+
+  2) Similarly, we can just find $omega prime (t)$, then use the time we just calculated.
+  $
+    omega prime (t) &= dif / (dif t)(260 "rad"slash"s" - 2(19.2 "rad"slash"s"^2)t - 3(1.56 "rad"slash"s"^3)t^2)
+    \
+    alpha (t) &= 38.4 "rad"slash"s"^2 - 6(1.56 "rad"slash"s"^3)t
+    \
+    alpha (4.41 "s") &= 38.4 "rad"slash"s"^2 - 6(1.56 "rad"slash"s"^3)(4.41 "s")
+    \
+    bold(alpha(4.41 "s") &= -79.6 "rad"slash"s"^2)
+  $
+
+  3) Again, we already calculated this time interval. Thus, we just need to use $theta(t)$.
+  $
+    theta(4.41 "s") &= (260 "rad"slash"s")(4.41 "s") - (19.2 "rad"slash"s"^2)(4.41 "s")^2 - (1.56 "rad"slash"s"^3)(4.41 "s")^3
+    \
+    theta (4.41 "s") &= 639 "rad"
+    \
+    theta (4.41 "s") &= 639 "rad" dot (1 "rev") / (2pi "rad")
+    \
+    bold(theta (4.41 "s") &= 102 "rev")
+  $
+
+  4) Since we've already found $omega(t)$. we can just find its value at $t=0$.
+  $
+    bold(omega(0) &= 260 "rad"slash"s")
+  $
+
+  5) Because we are calculating the average angular velocity, we use $theta(t)$.
+  $
+    omega_"av" &= (theta(4.41 "s") - theta(0 "s")) / (4.41 "s" - 0 "s")
+    \
+    bold(omega_"av" &= 145 "rad"slash"s")
+  $
+])
+
 
 
 == Energy in Rotational Motion
@@ -131,7 +191,7 @@ $
 #definition([Moment of Inertia with Continuous Mass Distributions] ,[
   Given moment of inertia $I$ and the distance of each infinitesimally small mass on the rigid body from the axis of rotation $r$:
   $
-    I = integral r dif m
+    I = integral r^2 dif m
   $
 ])
 
@@ -156,12 +216,12 @@ $
   $
     I = 1/3 M_"tot" a^2
   $
-
+  \
   - *Hollow cylinder:*
   $
     I = 1/2 M_"tot" (R_1^2 + R_2^2)
   $
-  \ \
+  
   - *Solid sphere:*
   $
     I = 2/5 M_"tot" R^2
@@ -194,15 +254,19 @@ $
     (2F d) / I &= omega^2
     \
     omega &= sqrt((2F d) / I)
-    \
-    omega &= sqrt((2 dot 9 "N" dot 2 "m") / (0.090 "kg"dot"m"^2))
-    \
-    bold(omega &= 20 "rad"slash"s")
   $
   #continue_box
 ])
 
 #example([Unwinding Cable _continued_], [
+  $
+    
+    \
+    omega &= sqrt((2 dot 9 "N" dot 2 "m") / (0.090 "kg"dot"m"^2))
+    \
+    bold(omega &= 20 "rad"slash"s")
+  $
+
   It follows that we can use the cylinder's final angular speed to find the cylinder's final linear speed.
   $
     v &= omega R
@@ -212,6 +276,7 @@ $
     bold(v &= 1.2 "m"slash"s")
   $
 ])
+
 
 === Gravitational Potential Energy of Extended Bodies
 #definition([Gravitational Potential Energy], [
@@ -226,7 +291,7 @@ $
 
 == Parallel-Axis Theorem
 #definition([Parallel Axis Theorem], [
-  Given moment of inertia $I_P$, moment of inertia through a parallel axis at the center of mass $I_"cm"$, total mass of rigid body $M_"tot"$, and distance between parallel axes $d$:
+  Let $I_P$ denote the moment of inertia about a rotational axis through point $P$, and let $I_"cm"$ denote the moment of inertia about a parallel rotational axis through the center of mass. Additionally, let $M_"tot"$ be the rigid body's total mass and $d$ be the distance between the parallel axes.
   $
     I_P = I_"cm" + M_"tot" d^2
   $
@@ -234,8 +299,118 @@ $
 
 
 
-=== Moment-of-Inertia Derivations
-- Extra derivations.
+== Moment-of-Inertia Derivations
+This subchapter will include the derivations for the moments of inertia of different forms given in subchapter 9.2.
+
+#derivation([Rod (at one end)], [
+  We can start by establishing a relationship between a rod's linear density and the differential $dif m$. Let $L$ be the length of the rod.
+  $
+    lambda &= M_"tot" / L = drv(m,L)
+    \
+    therefore dif m &=lambda dif L
+  $
+
+  Nowe, we can apply the moment of inertia formula.
+  $
+    I &= integral r^2 dif m
+    \
+    I &= integral r^2 lambda dif L
+    \
+    I &= lambda integral_0^L r^2 dif r
+    \
+    I &= lambda eval(1/3 r^3, 0, L)
+    \
+    I &= lambda (1/3 L^3)
+    \
+    I &= (M_"tot" / L) (1/3 L^3)
+    \
+    I &= 1/3 M_"tot" L^2
+  $
+])
+
+#derivation([Rod (at the center)], [
+  We can start by establishing a relationship between a rod's linear density and the differential $dif m$. Let $L$ be the length of the rod.
+  $
+    lambda &= M_"tot" / L = drv(m,L)
+    \
+    therefore dif m &=lambda dif L
+  $
+
+  Nowe, we can apply the moment of inertia formula.
+  $
+    I &= integral r^2 dif m
+    \
+    I &= integral r^2 lambda dif L
+    \
+    I &= lambda integral_(-L slash 2)^(L slash 2) r^2 dif r
+    \
+    I &= lambda eval(1/3 r^3, -L slash 2, L slash 2)
+    \
+    I &= lambda (1/3 (L/2)^3 - 1/3 (-L/2)^3)
+    \
+    I &= lambda (1/12 L^3)
+    \
+    I &= (M_"tot" / L) (1/12 L^3)
+    \
+    I &= 1/12 M_"tot" L^2
+  $
+])
+
+#derivation([Cylinder], [
+  We can start by establishing a relationship between a cylinder's volume density and the differential $dif m$. Let $r_2$ be the outer radius and $r_1$ be the inner radius.
+  $
+    rho &= M_"tot" / V = M_"tot" / (pi (r_2^2 - r_1^2) L) = drv(m, V) = (dif m)/ (2pi r L dif r )
+    \ 
+    therefore d m &= rho dif V = rho (2pi r L dif r)
+  $
+
+  Now, we can apply the moment of inertia formula.
+  $
+    I &= integral r^2 dif m
+    \
+    I &= integral r^2 rho dif V
+    \
+    I &= integral r^2 rho (2pi r L dif r)
+    \
+    I &= rho 2pi L integral_(r_1)^(r_2) r^3 dif r
+    \
+    I &= rho 2pi L eval(1/4 r^4, r_1, r_2)
+    \
+    I &= 1/2 rho pi L (r_2^4 - r_1^4)
+    \
+    I &= 1/2 (M_"tot" / (pi (r_2^2-r_1^2) L)) pi L  (r_2^2 + r_1^2)(r_2^2 - r_1^2)
+    \
+    I &= 1/2 M_"tot" (r_2^2 +r_1^2)
+  $
+])
+
+#derivation([Solid Sphere], [
+  We can start by establishing a relationship between a solid sphere's volume density and the differential $dif m$. Let $R$ be the radius of the sphere.
+  $
+    rho &= M_"tot"/V  = M_"tot" / (4/3 pi R^3) = drv(m, V) = (dif m) / (4pi r^2 dif r)
+    \
+    therefore dif m &= rho dif V = rho 4pi r^2 dif r
+  $
+
+  Now, we can apply the moment of inertia formula.
+  $
+    I &= integral r^2 dif m
+    \
+    I &= integral r^2 rho dif V
+    \
+    I &= integral r^2 rho (4pi r^2 dif r)
+    \
+    I &= rho 4pi integral_0^R r^4 dif r
+    \
+    I &= rho 4pi eval(1/5 r^5, 0, R)
+    \
+    I &= rho 4pi (1/5 R^5)
+    \
+    I &= (M_"tot" / (4/3 pi R^3)) 4pi (1/5 R^5)
+    \
+    I &= 3/5 M_"tot" R^2
+  $
+])
 
 
 

@@ -199,37 +199,42 @@ $
 - Using this formula, we can derive the moments of inertia for common forms.
   - *Slender rod with an axis of rotation through the center ($perp$ to the rod's surface):*
   $
-    I = 1/12 M_"tot" L^2
+    I_"rod-cm" = 1/12 M_"tot" L^2
   $
 
   - *Slender rod with an axis of rotation at one end ($perp$ to the rod's surface):*
   $
-    I = 1/3 M_"tot" L^2
+    I_"rod-end" = 1/3 M_"tot" L^2
   $
 
   - *Rectangular plate with an axis of rotation through the center:* 
   $
-    I = 1/12 M_"tot" (a^2 + b^2)
+    I_"rect-cm" = 1/12 M_"tot" (a^2 + b^2)
   $
 
   - *Thin rectangular plate with an axis of rotation along an edge:*
   $
-    I = 1/3 M_"tot" a^2
+    I_"rect-edge" = 1/3 M_"tot" a^2
   $
   \
-  - *Hollow cylinder:*
+  - *Hollow/solid cylinder:*
   $
-    I = 1/2 M_"tot" (R_1^2 + R_2^2)
+    I_"cylinder" = 1/2 M_"tot" (R_1^2 + R_2^2)
+  $
+
+  - *Thin-walled hollow cylinder:*
+  $
+    I_"thin-cylinder" = M_"tot" R^2
   $
   
   - *Solid sphere:*
   $
-    I = 2/5 M_"tot" R^2
+    I_"sphere" = 2/5 M_"tot" R^2
   $
 
-  - *Hollow sphere:*
+  - *Thin-walled hollow sphere:*
   $
-    I = 2/3 M_"tot" R^2
+    I_"solid-sphere" = 2/3 M_"tot" R^2
   $
 
 #example([Unwinding Cable], [
@@ -245,7 +250,7 @@ $
     I &= 0.090 "kg"dot"m"^2
   $
 
-  Now that we have the cylinder's moment of inertia, we can solve for the cylinder's final angular speed using the work-energy  theorem and rotational kinetic energy.
+  Now that we have the cylinder's moment of inertia, we can solve for the cylinder's final angular speed using the work-energy theorem and rotational kinetic energy.
   $
     W &= Delta K
     \
@@ -277,6 +282,36 @@ $
   $
 ])
 
+#example([Rotating Pulley], [
+  Consider a system with two blocks. Block A sits on a frictionless tabletop and is attached to a light rope that goes over a pulley at the edge of the table. Block B hangs from the other end of the rope with a mass of $m_B = 5.00 "kg"$. The pulley has a radius of $r=0.200 "m"$ and a moment of inertia of $I = 1.30 "kg"dot"m"^2$. If the pulley is rotating with an angular speed of $omega = 8.00 "rad"slash"s"$ after block B has descended $1.20 "m"$, what is block A's mass?
+  #line(length: 100%)
+  Because we are given the pulley's angular speed and radius, we can find its linear speed after block B has descended by $1.2 "m"$.
+  $
+    v &= omega r
+    \
+    v &= (8 "rad"slash"s")(0.2 "m")
+    \
+    v &= 1.6 "m"slash"s"
+  $
+
+  It follows that the linear speed of the pulley is equal to the speeds of blocks A and B at any given time. Thus, we can use conservation of energy to find the mass of block $A$.
+  $
+    E_1 &= E_2
+    \
+    U_A + U_B &= U_A + K_"pulley" + K_A + K_B
+    \
+    m_B g h &= 1/2 I omega^2 + 1/2 m_A v^2 + 1/2 m_B v^2
+    \
+    - 1/2 m_A v^2 &= 1/2 I omega^2 + 1/2 m_B v^2 - m_B g h 
+    \
+    m_A &= (2m_B g h - I omega^2 - m_B v^2)/v^2
+    \
+    m_A &= (2(5 "kg")(9.81 "m"slash"s")(1.2 "m") - (1.3 "kg"dot"m"^2)(8 "rad"slash"s")^2 - (5 "kg")(1.6 "m"slash"s")^2) / (1.6 "m"slash"s")^2
+    \
+    bold(m_A &= 8.48 "kg")
+  $
+])
+
 
 === Gravitational Potential Energy of Extended Bodies
 #definition([Gravitational Potential Energy], [
@@ -289,7 +324,7 @@ $
 - This formula is the same as finding the gravitational potential energy of the masses on an extended body and summing them up.
 - _This formula is for any extended body, including non-rigid bodies._
 
-== Parallel-Axis Theorem
+== Parallel Axis Theorem
 #definition([Parallel Axis Theorem], [
   Let $I_P$ denote the moment of inertia about a rotational axis through point $P$, and let $I_"cm"$ denote the moment of inertia about a parallel rotational axis through the center of mass. Additionally, let $M_"tot"$ be the rigid body's total mass and $d$ be the distance between the parallel axes.
   $
@@ -310,21 +345,21 @@ This subchapter will include the derivations for the moments of inertia of diffe
     therefore dif m &=lambda dif L
   $
 
-  Nowe, we can apply the moment of inertia formula.
+  Now, we can apply the moment of inertia formula.
   $
-    I &= integral r^2 dif m
+    I_"rod-end" &= integral r^2 dif m
     \
-    I &= integral r^2 lambda dif L
+    I_"rod-end" &= integral r^2 lambda dif L
     \
-    I &= lambda integral_0^L r^2 dif r
+    I_"rod-end" &= lambda integral_0^L r^2 dif r
     \
-    I &= lambda eval(1/3 r^3, 0, L)
+    I_"rod-end" &= lambda eval(1/3 r^3, 0, L)
     \
-    I &= lambda (1/3 L^3)
+    I_"rod-end" &= lambda (1/3 L^3)
     \
-    I &= (M_"tot" / L) (1/3 L^3)
+    I_"rod-end" &= (M_"tot" / L) (1/3 L^3)
     \
-    I &= 1/3 M_"tot" L^2
+    I_"rod-end" &= 1/3 M_"tot" L^2
   $
 ])
 
@@ -336,23 +371,36 @@ This subchapter will include the derivations for the moments of inertia of diffe
     therefore dif m &=lambda dif L
   $
 
-  Nowe, we can apply the moment of inertia formula.
+  Now, we can apply the moment of inertia formula.
   $
-    I &= integral r^2 dif m
+    I_"rod-cm" &= integral r^2 dif m
     \
-    I &= integral r^2 lambda dif L
+    I_"rod-cm" &= integral r^2 lambda dif L
     \
-    I &= lambda integral_(-L slash 2)^(L slash 2) r^2 dif r
+    I_"rod-cm" &= lambda integral_(-L slash 2)^(L slash 2) r^2 dif r
     \
-    I &= lambda eval(1/3 r^3, -L slash 2, L slash 2)
+    I_"rod-cm" &= lambda eval(1/3 r^3, -L slash 2, L slash 2)
     \
-    I &= lambda (1/3 (L/2)^3 - 1/3 (-L/2)^3)
+    I_"rod-cm" &= lambda (1/3 (L/2)^3 - 1/3 (-L/2)^3)
     \
-    I &= lambda (1/12 L^3)
+    I_"rod-cm" &= lambda (1/12 L^3)
     \
-    I &= (M_"tot" / L) (1/12 L^3)
+    I_"rod-cm" &= (M_"tot" / L) (1/12 L^3)
     \
-    I &= 1/12 M_"tot" L^2
+    I_"rod-cm" &= 1/12 M_"tot" L^2
+  $
+
+  Another option is using the parallel axis theorem, given that we just derived $I_"rod-end"$.
+  $
+    I_"rod-end" &= I_"rod-cm" + M_"tot" d^2
+    \
+    I_"rod-cm" &= I_"rod-end" - M_"tot" d^2
+    \
+    I_"rod-cm" &= 1/3 M_"tot" L^2 - M_"tot" (L/2)^2
+    \
+    I_"rod-cm" &= 4/12 M_"tot" L^2 - 3/12M_"tot" L^2
+    \
+    I_"rod-cm" &= 1/12 M_"tot" L^2
   $
 ])
 
@@ -366,53 +414,62 @@ This subchapter will include the derivations for the moments of inertia of diffe
 
   Now, we can apply the moment of inertia formula.
   $
-    I &= integral r^2 dif m
+    I_"cylinder" &= integral r^2 dif m
     \
-    I &= integral r^2 rho dif V
+    I_"cylinder" &= integral r^2 rho dif V
     \
-    I &= integral r^2 rho (2pi r L dif r)
+    I_"cylinder" &= integral r^2 rho (2pi r L dif r)
     \
-    I &= rho 2pi L integral_(r_1)^(r_2) r^3 dif r
+    I_"cylinder" &= rho 2pi L integral_(r_1)^(r_2) r^3 dif r
     \
-    I &= rho 2pi L eval(1/4 r^4, r_1, r_2)
+    I_"cylinder" &= rho 2pi L eval(1/4 r^4, r_1, r_2)
     \
-    I &= 1/2 rho pi L (r_2^4 - r_1^4)
+    I_"cylinder" &= 1/2 rho pi L (r_2^4 - r_1^4)
     \
-    I &= 1/2 (M_"tot" / (pi (r_2^2-r_1^2) L)) pi L  (r_2^2 + r_1^2)(r_2^2 - r_1^2)
+    I_"cylinder" &= 1/2 (M_"tot" / (pi (r_2^2-r_1^2) L)) pi L  (r_2^2 + r_1^2)(r_2^2 - r_1^2)
     \
-    I &= 1/2 M_"tot" (r_2^2 +r_1^2)
+    I_"cylinder" &= 1/2 M_"tot" (r_2^2 +r_1^2)
   $
 ])
 
-/*
+
+
 #derivation([Solid Sphere], [
-  We can start by establishing a relationship between a solid sphere's volume density and the differential $dif m$. Let $R$ be the radius of the sphere.
+  Imagine that a solid sphere of radius $R$ is divided into infinitesimally thin discs of radius $r$. Now, let $x$ be the distance of each disc's center from the sphere's center. For each disc, we can form a right triangle between the sphere's center, the disc's center, and a point on the disc's edge. Thus, we can express each disc's radius $r$ as follows:
   $
-    rho &= M_"tot"/V  = M_"tot" / (4/3 pi R^3) = drv(m, V) = (dif m) / (4pi r^2 dif r)
+    x^2 + r^2 &= R^2
     \
-    therefore dif m &= rho dif V = rho 4pi r^2 dif r
+    r^2 &= R^2 - x^2
+  $
+
+  When establishing a relationship between a solid sphere's volume density and the differential $dif m$, we can use the volumes of the discs, which are essentially cylinders, each with a length of $dif x$.
+  $
+    rho &= M_"tot"/V  = M_"tot" / (4/3 pi R^3) = drv(m, V) = (dif m) / (pi r^2 dif x) = (dif m) / (pi (R^2 - x^2) dif x)
+    \
+    therefore dif m &= rho dif V = rho pi (R^2 - x^2) dif x
   $
 
   Now, we can apply the moment of inertia formula.
   $
-    I &= integral r^2 dif m
+    I_"solid-sphere" &= integral r^2 dif m
     \
-    I &= integral r^2 rho dif V
+    I_"solid-sphere" &= integral (R^2 - x^2) dif m
     \
-    I &= integral r^2 rho (4pi r^2 dif r)
+    I_"solid-sphere" &= integral_0^R (R^2 - x^2) rho pi (R^2 - x^2) dif x
     \
-    I &= rho 4pi integral_0^R r^4 dif r
+    I_"solid-sphere" &= rho pi integral_0^R (R^4 - 2R^2 x^2 + x^4) dif x
     \
-    I &= rho 4pi eval(1/5 r^5, 0, R)
+    I_"solid-sphere" &= rho pi eval(R^4 x - 2/3 R^2 x^3 + 1/5 x^5, 0, R)
     \
-    I &= rho 4pi (1/5 R^5)
+    I_"solid-sphere" &= rho pi (8/15R^5)
     \
-    I &= (M_"tot" / (4/3 pi R^3)) 4pi (1/5 R^5)
+    I_"solid-sphere" &= (M_"tot" / (4/3 pi R^3)) pi (8/15R^5)
     \
-    I &= 3/5 M_"tot" R^2
+    I_"solid-sphere" &= 2/5 M_"tot" R^2
   $
+
 ])
-*/
+
 
 
 #pagebreak()

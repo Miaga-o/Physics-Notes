@@ -105,6 +105,122 @@ $
   $
 ])
 
+#example([Variable-Speed Motor], [
+  A technician is testing a computer-controlled, variable-speed motor. 
+  She attaches a thin disk to the motor shaft, with the shaft at the center of the disk. 
+  The disk starts from rest, and sensors attached to the motor shaft measure its angular acceleration $alpha_z$ as a function of time.
+  #figure(
+    cetz.canvas({
+      import cetz.draw: *
+      import cetz-plot: *
+
+      let func = x => 1.2*x
+      let domain = (0, 6)
+
+      set-style(
+        legend: (stroke: none, orientation: ttb, scale: 120%)
+      )
+
+      plot.plot(
+        size: (3.5,4),
+        x-label: $t "(s)"$,
+        y-label: $alpha_z "(rad"slash"s"^2")"$,
+        x-tick-step: 1,
+        y-tick-step: 1,
+        x-equal: "y",
+        axis-style: "school-book",
+        x-grid: true,
+        y-grid: true,
+        legend: "north-east",
+        {
+          plot.add(
+            domain: domain, func, 
+            style: (stroke: (paint: rgb("#3a37e6")))
+          )
+
+          plot.annotate({
+            circle((5,6), radius: 5pt, fill: black)
+            content((5.3,5.1), [$(5,6)$])
+          })
+
+          plot.add-legend([$alpha_z$], preview: () => {
+            line((0,0.5), (1,0.5), stroke: rgb("#3a37e6"))
+          })
+
+          plot.add-anchor("ffoajfirf", (5,6))
+        }
+      )
+    }),
+    supplement: none,
+    caption: [The results from one test run of the motor.]
+  )
+  + Through how many revolutions has the disk turned in the first $5.0 "s"$?
+  + What is the angular velocity of the disk at $t=5.0 "s"$?
+  + What is the angular velocity of the disk when it has turned through $2.00 "rev"$?
+
+  #line(length: 100%)
+  1) Because we know the disk starts from rest, we can continuously find antiderivatives.
+  $
+    alpha_z (t) &= ((6 "rad"slash"s"^2) / (5 "s"))t
+    \
+    alpha_z (t) &= (1.2 "rad"slash"s"^3)t
+    \
+    omega_z (t) &= integral (1.2 "rad"slash"s"^3)t dif t
+    \
+    omega_z (t) &= (0.6 "rad"slash"s"^3)t^2 
+    \
+    theta (t) &= integral (0.6 "rad"slash"s"^3)t^2 dif t
+    \
+    theta (t) &= (0.2 "rad"slash"s"^3)t^3
+    \
+    theta (5 "s") &= (0.2 "rad"slash"s"^3)(5 "s")^3
+    \
+    theta (5 "s") &= 25 "rad"
+    \
+    N_"revs" &= 25 "rad" dot (1 "rev") / (2pi "rad")
+    \
+    bold(N_"revs" &= 4.0 "rev")
+  $
+
+  2) We could integrate $alpha_z (t)$ from $t=0$ to $t=5$, but we've already found $omega_z (t)$ during our steps to find $theta (t)$.
+  $
+    omega_z (t) &= (0.6 "rad"slash"s"^3)t^2
+    \
+    omega_z (5 "s") &= (0.6 "rad"slash"s"^3)(5 "s")^2
+    \
+    bold(omega_z (5 "s") &= 15 "rad"slash"s")
+  $
+
+  #continue_box
+])
+
+#example([Variable-Speed Motor _continued_], [
+  3) We first need to convert the revolutions to radians.
+  $
+    theta &= 2.00 "rev" dot (2pi "rad")/(1 "rv") = 4pi "rad"
+  $
+
+  Now, we can solve for the time when 2 revolutions have passed using $theta (t)$, which we found in part 1.
+  $
+    theta (t) &= (0.2 "rad"slash"s"^3)t^3
+    \
+    4pi "rad" &= (0.2 "rad"slash"s"^3)t^3
+    \
+    t &= root(3, (4pi "rad") / (0.2 "rad"slash"s"^3))
+    \
+    t &= 3.98 "s"
+  $
+
+  This value can then be plugged into $omega_z (t)$.
+  $
+    omega_z (t) &= (0.6 "rad"slash"s"^3)t^2
+    \
+    omega_z (3.98 "s") &= (0.6 "rad"slash"s"^3)(3.98 "s")^2
+    \
+    bold(omega_z (3.98 "s") &= 9.5 "rad"slash"s")
+  $
+])
+
 #example([Electric Motor Rotation], [
   At $t = 0$, the current to a DC electric motor is reversed, resulting in an angular displacement of the motor shaft given by $theta(t) = (260 "rad"slash"s")t - (19.2 "rad"slash"s"^2)t^2 - (1.56 "rad"slash"s"^3)t^3$
   + At what time is the angular velocity of the motor shaft zero?
@@ -129,7 +245,10 @@ $
     columns: (50%, 50%),
     $ t &= -11.6 "s" $, $ bold(t &= 4.41 "s") $
   )
+  #continue_box
+])
 
+#example([Electric Motor Rotation _continued_], [
   2) Similarly, we can just find $omega prime (t)$, then use the time we just calculated.
   $
     omega prime (t) &= dif / (dif t)(260 "rad"slash"s" - 2(19.2 "rad"slash"s"^2)t - 3(1.56 "rad"slash"s"^3)t^2)
@@ -140,7 +259,6 @@ $
     \
     bold(alpha(4.41 "s") &= -79.6 "rad"slash"s"^2)
   $
-
   3) Again, we already calculated this time interval. Thus, we just need to use $theta(t)$.
   $
     theta(4.41 "s") &= (260 "rad"slash"s")(4.41 "s") - (19.2 "rad"slash"s"^2)(4.41 "s")^2 - (1.56 "rad"slash"s"^3)(4.41 "s")^3
@@ -216,7 +334,7 @@ $
   $
     I_"rect-edge" = 1/3 M_"tot" a^2
   $
-  \
+
   - *Hollow/solid cylinder:*
   $
     I_"cylinder" = 1/2 M_"tot" (R_1^2 + R_2^2)
@@ -259,13 +377,6 @@ $
     (2F d) / I &= omega^2
     \
     omega &= sqrt((2F d) / I)
-  $
-  #continue_box
-])
-
-#example([Unwinding Cable _continued_], [
-  $
-    
     \
     omega &= sqrt((2 dot 9 "N" dot 2 "m") / (0.090 "kg"dot"m"^2))
     \
@@ -432,17 +543,45 @@ This subchapter will include the derivations for the moments of inertia of diffe
   $
 ])
 
+#derivation([Thin-walled Cylinder], [
+  Because the cylinder is infinitely thin, we will relate $dif m$ to surface density $sigma$. Let $R$ be the radius of the cylinder.
+  $
+    sigma &= M_"tot" / A = M_"tot" / (2 pi R L) &= drv(m, A)
+    \
+    therefore dif m &= sigma dif A = sigma 2pi R dif x
+  $
+
+  Now, we can apply the moment of inertia formula.
+  $
+    I_"thin-cylinder" &= integral R^2 dif m
+    \
+    I_"thin-cylinder" &= integral R^2 sigma dif A
+    \
+    I_"thin-cylinder" &= integral R^2 sigma (2pi R dif x)
+    \
+    I_"thin-cylinder" &= sigma 2pi R^3 integral_0^L dif x
+    \
+    I_"thin-cylinder" &= sigma 2pi R^3 eval(x, 0, L)
+    \
+    I_"thin-cylinder" &= sigma 2pi R^3 (L)
+    \
+    I_"thin-cylinder" &= (M_"tot" / (2pi R L)) 2pi R^3 (L)
+    \
+    I_"thin-cylinder" &= M_"tot" R^2
+  $
+])
+
 
 
 #derivation([Solid Sphere], [
-  Imagine that a solid sphere of radius $R$ is divided into infinitesimally thin discs of radius $r$. Now, let $x$ be the distance of each disc's center from the sphere's center. For each disc, we can form a right triangle between the sphere's center, the disc's center, and a point on the disc's edge. Thus, we can express each disc's radius $r$ as follows:
+  Imagine that a solid sphere of radius $R$ is divided into infinitesimally thin disks of radius $r$. Now, let $x$ be the distance of each disk's center from the sphere's center. For each disk, we can form a right triangle between the sphere's center, the disk's center, and a point on the disk's edge. Thus, we can express each disk's radius $r$ as follows:
   $
     x^2 + r^2 &= R^2
     \
     r^2 &= R^2 - x^2
   $
 
-  When establishing a relationship between a solid sphere's volume density and the differential $dif m$, we can use the volumes of the discs, which are essentially cylinders, each with a length of $dif x$.
+  When establishing a relationship between a solid sphere's volume density and the differential $dif m$, we can use the volumes of the disks, which are essentially cylinders, each with a length of $dif x$.
   $
     rho &= M_"tot"/V  = M_"tot" / (4/3 pi R^3) = drv(m, V) = (dif m) / (pi r^2 dif x) = (dif m) / (pi (R^2 - x^2) dif x)
     \
@@ -454,6 +593,8 @@ This subchapter will include the derivations for the moments of inertia of diffe
     I_"solid-sphere" &= integral r^2 dif m
     \
     I_"solid-sphere" &= integral (R^2 - x^2) dif m
+    \
+    I_"solid-sphere" &= integral (R^2 - x^2) rho dif V
     \
     I_"solid-sphere" &= integral_0^R (R^2 - x^2) rho pi (R^2 - x^2) dif x
     \
@@ -467,7 +608,47 @@ This subchapter will include the derivations for the moments of inertia of diffe
     \
     I_"solid-sphere" &= 2/5 M_"tot" R^2
   $
+])
 
+#derivation([Thin-walled Sphere], [
+  Because the sphere is infinitely thin, we will relate $dif m$ to surface density $sigma$. We can use use spherical coordinates where the radial distance is a constant $R$, the polar angle is $theta$, and the zenith angle is $phi.alt$.
+  $
+    sigma &= M_"tot" / A = M_"tot" / (4pi R^2) = drv(m,A)
+    \
+    therefore dif m &= sigma dif A = sigma R^2 sin(phi.alt) dif theta dif phi.alt
+  $
+
+  Now, we can find the distance from the axis in terms of the sphere's radius $R$ using the zenith angle.
+  $
+    cos(pi/2 - phi.alt) &=sin(phi.alt) =  r / R
+    \
+    therefore r &= R sin(phi.alt)
+  $
+
+  Now, we can apply the moment of inertia formula.
+  $
+    I_"thin-sphere" &= integral r^2 dif m
+    \
+    I_"thin-sphere" &= integral R^2 sin^2 (phi.alt) dif m
+    \
+    I_"thin-sphere" &= integral.double R^2 sin^2 (phi.alt) (sigma R^2 sin(phi.alt) dif theta dif phi.alt)
+    \
+    I_"thin-sphere" &= sigma integral_0^(2pi) dif theta
+    integral_0^pi R^4 sin^3 (phi.alt) dif phi.alt
+    \
+    I_"thin-sphere" &= sigma integral_0^(2pi) dif theta dot
+    eval(R^4/3 cos^3 (phi.alt) - R^4cos(phi.alt), phi.alt=0, phi.alt=pi)
+    \
+    I_"thin-sphere" &= sigma (4/3 R^4) integral_0^(2pi) dif theta 
+    \
+    I_"thin-sphere" &= sigma (4/3 R^4) eval(theta, theta=0, theta=2pi)
+    \
+    I_"thin-sphere" &= sigma (4/3 R^4) (2pi)
+    \
+    I_"thin-sphere" &= (M_"tot" / (4pi R^2)) (4/3 R^4) (2pi)
+    \
+    I_"thin-sphere" &= 2/3 M_"tot" R^2
+  $
 ])
 
 

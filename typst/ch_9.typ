@@ -474,6 +474,8 @@ This subchapter will include the derivations for the moments of inertia of diffe
   $
 ])
 
+
+
 #derivation([Rod (at the center)], [
   We can start by establishing a relationship between a rod's linear density and the differential $dif m$. Let $L$ be the length of the rod.
   $
@@ -515,6 +517,8 @@ This subchapter will include the derivations for the moments of inertia of diffe
   $
 ])
 
+
+
 #derivation([Cylinder], [
   We can start by establishing a relationship between a cylinder's volume density and the differential $dif m$. Let $r_2$ be the outer radius and $r_1$ be the inner radius.
   $
@@ -543,6 +547,8 @@ This subchapter will include the derivations for the moments of inertia of diffe
   $
 ])
 
+
+
 #derivation([Thin-walled Cylinder], [
   Because the cylinder is infinitely thin, we will relate $dif m$ to surface density $sigma$. Let $R$ be the radius of the cylinder.
   $
@@ -558,7 +564,12 @@ This subchapter will include the derivations for the moments of inertia of diffe
     I_"thin-cylinder" &= integral R^2 sigma dif A
     \
     I_"thin-cylinder" &= integral R^2 sigma (2pi R dif x)
-    \
+  $
+  #continue_box
+])
+
+#derivation([Thin-walled Cylinder _continued_], [
+  $
     I_"thin-cylinder" &= sigma 2pi R^3 integral_0^L dif x
     \
     I_"thin-cylinder" &= sigma 2pi R^3 eval(x, 0, L)
@@ -603,22 +614,30 @@ This subchapter will include the derivations for the moments of inertia of diffe
     I_"solid-sphere" &= rho pi eval(R^4 x - 2/3 R^2 x^3 + 1/5 x^5, 0, R)
     \
     I_"solid-sphere" &= rho pi (8/15R^5)
-    \
+  $
+
+  #continue_box
+])
+
+#derivation([Solid Sphere _continued_], [
+  $
     I_"solid-sphere" &= (M_"tot" / (4/3 pi R^3)) pi (8/15R^5)
     \
     I_"solid-sphere" &= 2/5 M_"tot" R^2
   $
 ])
 
+
+
 #derivation([Thin-walled Sphere], [
-  Because the sphere is infinitely thin, we will relate $dif m$ to surface density $sigma$. We can use use spherical coordinates where the radial distance is a constant $R$, the polar angle is $theta$, and the zenith angle is $phi.alt$.
+  Because the sphere is infinitely thin, we will relate $dif m$ to surface density $sigma$. We can use use spherical coordinates where the radial distance is a constant $rho.alt = R$, the polar angle is $theta$, and the azimuthal angle is $phi.alt$.
   $
     sigma &= M_"tot" / A = M_"tot" / (4pi R^2) = drv(m,A)
     \
     therefore dif m &= sigma dif A = sigma R^2 sin(phi.alt) dif theta dif phi.alt
   $
 
-  Now, we can find the distance from the axis in terms of the sphere's radius $R$ using the zenith angle.
+  Now, we can find the distance from the axis in terms of the sphere's radius $R$ using the azimuthal angle.
   $
     cos(pi/2 - phi.alt) &=sin(phi.alt) =  r / R
     \
@@ -640,8 +659,6 @@ This subchapter will include the derivations for the moments of inertia of diffe
     eval(R^4/3 cos^3 (phi.alt) - R^4cos(phi.alt), phi.alt=0, phi.alt=pi)
     \
     I_"thin-sphere" &= sigma (4/3 R^4) integral_0^(2pi) dif theta 
-    \
-    I_"thin-sphere" &= sigma (4/3 R^4) eval(theta, theta=0, theta=2pi)
     \
     I_"thin-sphere" &= sigma (4/3 R^4) (2pi)
     \

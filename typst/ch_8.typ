@@ -262,13 +262,15 @@ $
 
   1) First, we want to find the velocity of of asteroid B in terms of asteroid A. We can use the conservation of momentum in the direction perpendicular to asteroid A's initial trajectory to find it because the total momentum in this direction is zero.
   $
-    0 &= m v_(2A y) - m v_(2 B y)
+    0 &= m v_(2A y) + m v_(2 B y)
     \
-    0 &= m v_(2A) sin(30 degree) - m v_(2 B) sin(45 degree)
+    0 &= m v_(2A) sin(30 degree) + m v_(2 B) sin(45 degree)
     \
-    m v_(2 B) sin(45 degree) &= m v_(2A) sin(30 degree)
+    -m v_(2 B) sin(45 degree) &= m v_(2A) sin(30 degree)
     \
-    v_(2B) &= v_(2A) sin(30 degree) / sin(45 degree)
+    -v_(2B) &= v_(2A) sin(30 degree) / sin(45 degree)
+    \
+    abs(v_(2B)) &= v_(2A) sin(30 degree) / sin(45 degree)
   $
 
   Now, the only unknown for conservation of momentum in the $x$-direction is the final velocity of asteroid A in the $x$-direction, which can we express in terms of the final speed of asteroid A using trigonometry.

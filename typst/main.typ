@@ -2,6 +2,10 @@
 #set heading(numbering: custom_numbering)
 #show: formatting 
 
+#align(center, [#title([PHYS 161 Notes])#author])
+#outline()
+#pagebreak()
+
 #include("ch_1.typ")
 #include("ch_2.typ")
 #include("ch_3.typ")

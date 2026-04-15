@@ -3,6 +3,7 @@
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge, shapes
 #import "@preview/itemize:0.2.0" as el
 #import "@preview/delimitizer:0.1.0": big, bigg, Big, Bigg, paired-delimiter
+#import "@preview/shadowed:0.3.0": shadow
 
 
 
@@ -106,6 +107,7 @@
 */
 #let formatting(a) = {
   set page("a4", numbering: "1 of 1")
+  set enum(numbering: "1.a)")
 
   show title: set text(size: 28pt)
   show heading.where(level: 1): set text(size: 20pt)
@@ -119,8 +121,5 @@
   show sym.emptyset: set text(font: "Fira Sans")
   show: el.default-enum-list
 
-  align(center, [#title([PHYS 161 Notes])#author])
-  outline()
-  pagebreak()
   a
 }

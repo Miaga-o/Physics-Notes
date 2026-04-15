@@ -4,6 +4,8 @@
 #import "@preview/itemize:0.2.0" as el
 #import "@preview/delimitizer:0.1.0": big, bigg, Big, Bigg, paired-delimiter
 #import "@preview/shadowed:0.3.0": shadow
+#import "@preview/codly:1.3.0": *
+#import "@preview/codly-languages:0.1.1": *
 
 
 
@@ -107,19 +109,20 @@
 */
 #let formatting(a) = {
   set page("a4", numbering: "1 of 1")
-  set enum(numbering: "1.a)")
 
   show title: set text(size: 28pt)
   show heading.where(level: 1): set text(size: 20pt)
   show heading.where(level: 2): set text(size: 18pt)
   show heading.where(level: 3): set text(size: 16pt)
   show heading.where(level: 4): set text(size: 14pt)
-  set heading(numbering: custom_numbering)
+  set enum(numbering: "1.a)")
 
   show math.equation: set text(font: "New Computer Modern Math")
-  //set text(font: "Times New Roman")
   show sym.emptyset: set text(font: "Fira Sans")
+
   show: el.default-enum-list
+  show: codly-init.with()
+  codly(languages: codly-languages)
 
   a
 }

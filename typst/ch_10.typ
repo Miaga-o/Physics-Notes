@@ -35,6 +35,96 @@
   $
 ])
 
+#example([Rotating Machinery], [
+  A machine part has the form of a solid uniform sphere with mass $220 "g"$ and diameter $4.50 "cm"$. The part spins about a frictionless axle through its center, but at one point on its equator, it scrapes against metal, resulting in a friction force of $0.0200 "N"$ at that point.
+  + Find its angular acceleration. Let the direction of the sphere's rotation be the positive direction.
+  + How long will it take to decrease its rotational speed by $19.0 "rad"slash"s"$?
+  #continue_box
+])
+
+#example([Rotating Machinery _continued_], [
+  1) We can rearrange the formula for torque in terms of $I$ and $alpha_z$. We can say that the torque is negative because it results from friction.
+  $
+    -tau_z &= I alpha_z
+    \
+    alpha_z &= (-tau_z) / I
+    \
+    alpha_z &= (-f R) / (2/5 M R^2)
+    \
+    alpha_z &= (-5f) / (2 M R)
+    \
+    alpha_z &= (-5 (0.02 "N")) / (2 (0.220 "kg")(0.0225 "m"))
+    \
+    bold(alpha_z &= -10.1 "rad"slash"s")
+  $
+
+  2) Because we just solved for the angular acceleration, we can use an angular kinematic equation to find the time when $Delta omega_z &= -19.0 "rad"slash"s"$.
+  $
+    omega_z &= omega_(0z) + alpha_z t
+    \
+    Delta omega_z &= alpha_z t
+    \
+    t &= (Delta omega_z) / alpha_z
+    \
+    t &= (-19 "rad"slash"s") / (-10.1 "rad"slash"s"^2)
+    \
+    bold(t &= 1.88 "s")
+  $
+])
+
+#example([Flywheel on an Incline], [
+  A block with mass $m = 5.00 "kg"$ slides down a surface inclined $36.9 degree$ to the horizontal. The coefficient of kinetic friction is $0.27$. A string attached to the block is wrapped around a flywheel on a fixed axis through $O$. The flywheel has a mass $m_f = 16.0 "kg"$ and a moment of inertia \ $I_f = 0.500 "kg"dot"m"^2$ with respect to the axis of rotation. The string pulls without slipping a distance of $0.250 "m"$ from that axis.
+  #figure(image("../images/YF-10-55.jpg", width:25%))
+
+  + What is the acceleration of the block down the plane?
+  + What is the tension in the string?
+
+  #continue_box
+])
+
+#example([Flywheel on an Incline _continued_], [
+  1) Because we are only given the flywheel's moment of inertia and its mass, we need to solve for the radius using the corresponding moment of inertia equation (disk/cylinder).
+  $
+    \
+    1/2m_f R^2 &= I
+    \
+    R &= sqrt((2I) / m_f)
+    \
+    R &= sqrt((2(0.5 "kg"dot"m"^2)) / (16 "kg")) = 0.25 "m"
+  $
+
+  The only force acting on the flywheel is a tension force from the rope. Thus, we can express the tension force in terms of known quantities. The unknown $a$ will be factored out later.
+  $
+    Sigma tau_z &= I alpha = I (a/R) = T R
+    \
+    T &= (I a) / R^2
+  $
+
+  Now, we can substitute this value for $T$ into a Newton's second law equation to isolate $a$ and solve.
+  $
+    Sigma F_x &= m g sin(36.9 degree) - T - mu_k m g cos(36.9 degree)
+    \
+    m a &= m g sin(36.9 degree) - (I a) / R^2 - mu_k m g cos(36.9 degree)
+    \
+    m a + (I a) / R^2 &= m g sin(36.9 degree) - mu_k m g cos(36.9 degree)
+    \
+    a &= (m g big( (sin(36.9 degree) - mu_k cos(36.9 degree))) ) / (m + I/R^2)
+    \
+    a &= ((5 "kg")(9.81 "m"slash"s"^2) big( (sin(36.9 degree) - 0.27sin(36.9 degree))) )/(5 "kg" + (0.5 "kg" dot "m"^2)(0.25 "m")^(-2))
+    \
+    bold(a &= 1.45 "m"slash"s"^2)
+  $
+
+  2) Now that we've solved for the acceleration $a$, we can solve for $T$ using the equation we derived in part 1.
+  $
+    T &= (I a) / R^2
+    \
+    T &= ((0.5 "kg"dot"m"^2)(1.45 "m"slash"s"^2)) / (0.25 "m")
+    \
+    bold(T &= 11.6 "N")
+  $
+])
+
 
 
 == Rotation About a Moving Axis
@@ -51,6 +141,56 @@ $
 $
   v_"cm" &= R omega
 $
+- Thus, the total kinetic energy of an object that rolls without slipping can be simplified. Let $k$ be some constant associated with an object's moment of inertia.
+$
+  K_"tot" &= 1/2 M_"tot" v_"cm"^2 + 1/2 I_"cm"omega^2
+  \
+  K_"tot" &= 1/2 M_"tot" v_"cm"^2 + 1/2 (k M_"tot" R^2) (v_"cm" / R)^2
+  \
+  K_"tot" &= 1/2 M_"tot" v_"cm"^2 + k/2 M_"tot" v_"cm"^2
+  \
+  K_"tot" &= ((1+k)/2) M_"tot" v_"cm"^2
+$
+
+#example([Rolling Basketball], [
+  A basketball, which can be approximated as a hollow sphere, rolls down a mountainside into a valley and then up the opposite side, starting from rest at a height $H_0$ above the bottom. The mountainside the basketball is released on is rough, preventing slipping. Meanwhile, the opposite side is smooth and frictionless. Neglect rolling friction and assume the system's total mechanical energy is conserved. How high, in terms of $H_0$, will the ball go up the other side?
+  #figure(image("../images/yg.9.36.jpg", width:60%))
+  #continue_box
+])
+
+#example([Rolling Basketball _continued_], [
+  We can start by deriving an expression for $H_0$ using conservation of energy between the basketball's initial position and the valley.
+  $
+    m g H_0 &= 1/2 m v^2 +1/2 I omega^2
+    \
+    m g H_0 &= 1/2 m v^2 +1/2 (2/3 m R^2) (v/R)^2
+    \
+    m g H_0 &= 1/2 m v^2 +1/3 m v^2
+    \
+    m g H_0 &= 5/6 m v^2
+    \
+    H_0 &= (5v^2)/(6g)
+  $
+
+  Now, using the conservation of energy between the basketball's initial position and its final position and our derived $H_0$, we can establish a connection between _only_ $H$ and $H_0$. At the basketball's peak on the other side, it lacks translation kinetic energy but still has rotational kinetic energy from when it rolled down the rough part.
+  $
+    m g H_0 &= m g H + 1/2 I omega^2
+    \
+    m g H_0 &= m g H + 1/2 (2/3 m R^2) (v/R)^2
+    \
+    m g H_0 &= m g H + 1/3 m v^2
+    \
+    g ((5v^2)/(6g)) &= g H + 1/3 v^2
+    \
+    (5v^2)/(6) &= g H + 1/3 v^2
+    \
+    H &= v^2/(2g)
+    \
+    H &= 3/5((5v^2)/(6g))
+    \
+    bold(H &= 3/5 H_0)
+  $
+])
 
 
 

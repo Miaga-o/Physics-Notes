@@ -23,6 +23,58 @@
 - Generally, torque that causes counterclockwise rotation is positive while torque that causes clockwise rotation is negative.
 - Similar to other angular quantities, we often refer to torque as its component along the rotational axis, usually the $z$-axis.
 
+#example([Rotating a Square Plate], [
+  A square metal plate with $0.180 "m"$ side lengths is pivoted about an axis through point $O$ at its center and perpendicular to the plate. Calculate the net torque about this axis due to the three forces shown in the figure given $F_1 = 28.0 "N"$, $F_2 = 14.9 "N"$, and $F_3=16.1 "N"$.
+  #figure(image("../images/yf_Figure_10_40.jpg", width: 28%))
+  #line(length: 100%)
+  Because the lever arm is a perpendicular distance from the rotational axis, we need to calculate the diagonal distance from point $O$ to the square's corners.
+  $
+    (0.09 "m")^2 + (0.09 "m")^2 &= r^2
+    \
+    r &= sqrt((0.09 "m")^2 + (0.09 "m")^2)
+    \
+    r &=0.127 "m"
+  $
+
+  Now, we can calculate each of the torques and add them together to find the net torque. 
+  #continue_box
+])
+
+#example([Rotating a Square Plate _continued_], [
+  Make sure to calculate the angle between $arrow(F)$ and $arrow(r)$ with their tails at the same origin.
+  #table(columns: (33.33%, 33.34%, 33.33%), stroke: none,
+    $
+      tau_1 &= F_1 r sin(90 degree + 45 degree)
+      \
+      tau_1 &= (28 "N")r sin(135 degree)
+      \
+      tau_1 &= 2.52 "N"dot"m" arrow.cw
+    $,
+    $
+      tau_2 &= F_2 r sin(90 degree + 45 degree)
+      \
+      tau_2 &= (14.9 "N")r sin(135 degree)
+      \
+      tau_2 &= 1.34 "N"dot"m" arrow.ccw
+    $,
+    $
+      tau_3 &= F_3 r sin(45 degree + 45 degree)
+      \
+      tau_3 &= (16.1 "N")r sin(90 degree)
+      \
+      tau_3 &= 2.05 "N"dot"m"
+    $
+  )
+  Let counterclockwise rotation be the positive direction.
+  $
+    Sigma tau &= -tau_1 + tau_2 + tau_3
+    \
+    Sigma tau &= -(2.52 "N"dot"m") + (1.34 "N"dot"m") + (2.05 "N"dot"m")
+    \
+    bold(Sigma tau &= 0.870 "N"dot"m")
+  $
+])
+
 
 
 == Torque and Angular Acceleration
@@ -39,10 +91,8 @@
   A machine part has the form of a solid uniform sphere with mass $220 "g"$ and diameter $4.50 "cm"$. The part spins about a frictionless axle through its center, but at one point on its equator, it scrapes against metal, resulting in a friction force of $0.0200 "N"$ at that point.
   + Find its angular acceleration. Let the direction of the sphere's rotation be the positive direction.
   + How long will it take to decrease its rotational speed by $19.0 "rad"slash"s"$?
-  #continue_box
-])
+  #line(length:100%)
 
-#example([Rotating Machinery _continued_], [
   1) We can rearrange the formula for torque in terms of $I$ and $alpha_z$. We can say that the torque is negative because it results from friction.
   $
     -tau_z &= I alpha_z
@@ -50,14 +100,16 @@
     alpha_z &= (-tau_z) / I
     \
     alpha_z &= (-f R) / (2/5 M R^2)
-    \
-    alpha_z &= (-5f) / (2 M R)
+
     \
     alpha_z &= (-5 (0.02 "N")) / (2 (0.220 "kg")(0.0225 "m"))
     \
     bold(alpha_z &= -10.1 "rad"slash"s")
   $
+  #continue_box
+])
 
+#example([Rotating Machinery _continued_], [
   2) Because we just solved for the angular acceleration, we can use an angular kinematic equation to find the time when $Delta omega_z &= -19.0 "rad"slash"s"$.
   $
     omega_z &= omega_(0z) + alpha_z t
@@ -73,16 +125,16 @@
 ])
 
 #example([Flywheel on an Incline], [
-  A block with mass $m = 5.00 "kg"$ slides down a surface inclined $36.9 degree$ to the horizontal. The coefficient of kinetic friction is $0.27$. A string attached to the block is wrapped around a flywheel on a fixed axis through $O$. The flywheel has a mass $m_f = 16.0 "kg"$ and a moment of inertia \ $I_f = 0.500 "kg"dot"m"^2$ with respect to the axis of rotation. The string pulls without slipping a distance of $0.250 "m"$ from that axis.
-  #figure(image("../images/YF-10-55.jpg", width:25%))
+  A block with mass $m = 5.00 "kg"$ slides down a surface inclined $36.9 degree$ to the horizontal. 
+  The coefficient of kinetic friction is $0.27$. A string attached to the block is wrapped around a flywheel on a fixed axis through $O$. 
+  The flywheel has a mass $m_f = 16.0 "kg"$ and a moment of inertia \ $I_f = 0.500 "kg"dot"m"^2$ with respect to the axis of rotation. 
+  The string pulls without slipping a distance of $0.250 "m"$ from that axis.
+  #figure(image("../images/YF-10-55.jpg", width:21%))
 
   + What is the acceleration of the block down the plane?
   + What is the tension in the string?
+  #line(length:100%)
 
-  #continue_box
-])
-
-#example([Flywheel on an Incline _continued_], [
   1) Because we are only given the flywheel's moment of inertia and its mass, we need to solve for the radius using the corresponding moment of inertia equation (disk/cylinder).
   $
     \
@@ -92,8 +144,14 @@
     \
     R &= sqrt((2(0.5 "kg"dot"m"^2)) / (16 "kg")) = 0.25 "m"
   $
+  The only force acting on the flywheel is a tension force from the rope. 
+  Thus, we can express the tension force in terms of known quantities. 
+  The unknown $a$ will be factored out later.
+  
+  #continue_box
+])
 
-  The only force acting on the flywheel is a tension force from the rope. Thus, we can express the tension force in terms of known quantities. The unknown $a$ will be factored out later.
+#example([Flywheel on an Incline _continued_], [
   $
     Sigma tau_z &= I alpha = I (a/R) = T R
     \
@@ -141,6 +199,7 @@ $
 $
   v_"cm" &= R omega
 $
+
 - Thus, the total kinetic energy of an object that rolls without slipping can be simplified. Let $k$ be some constant associated with an object's moment of inertia.
 $
   K_"tot" &= 1/2 M_"tot" v_"cm"^2 + 1/2 I_"cm"omega^2
@@ -155,23 +214,21 @@ $
 #example([Rolling Basketball], [
   A basketball, which can be approximated as a hollow sphere, rolls down a mountainside into a valley and then up the opposite side, starting from rest at a height $H_0$ above the bottom. The mountainside the basketball is released on is rough, preventing slipping. Meanwhile, the opposite side is smooth and frictionless. Neglect rolling friction and assume the system's total mechanical energy is conserved. How high, in terms of $H_0$, will the ball go up the other side?
   #figure(image("../images/yg.9.36.jpg", width:60%))
-  #continue_box
-])
-
-#example([Rolling Basketball _continued_], [
   We can start by deriving an expression for $H_0$ using conservation of energy between the basketball's initial position and the valley.
   $
     m g H_0 &= 1/2 m v^2 +1/2 I omega^2
     \
     m g H_0 &= 1/2 m v^2 +1/2 (2/3 m R^2) (v/R)^2
     \
-    m g H_0 &= 1/2 m v^2 +1/3 m v^2
-    \
     m g H_0 &= 5/6 m v^2
     \
     H_0 &= (5v^2)/(6g)
   $
 
+  #continue_box
+])
+
+#example([Rolling Basketball _continued_], [
   Now, using the conservation of energy between the basketball's initial position and its final position and our derived $H_0$, we can establish a connection between _only_ $H$ and $H_0$. At the basketball's peak on the other side, it lacks translation kinetic energy but still has rotational kinetic energy from when it rolled down the rough part.
   $
     m g H_0 &= m g H + 1/2 I omega^2

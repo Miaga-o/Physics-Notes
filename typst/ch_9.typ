@@ -443,6 +443,8 @@ $
   $
 ])
 
+- The main application for this formula is for finding moments of inertia of known shapes on a rotational axis _offset_ some distance $d$ from the rotational axis through the center of mass.
+
 
 
 == Moment-of-Inertia Derivations

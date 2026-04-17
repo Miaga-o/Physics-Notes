@@ -289,7 +289,7 @@
     \
     Delta theta &= 175 "rad"
     \
-    n_"revs" &= 175 "rad" dot (1 "rev") / (2 pi "rad") = bold(28 "revs")
+    n_"revs" &= 175 "rad" dot (1 "rev") / (2 pi "rad") = bold(27.9 "revs")
   $
 
   #enum.item(2)[
@@ -299,9 +299,9 @@
   $
     Sigma tau &= tau_1 + tau_2 + tau_3 + tau_4
     \
-    Sigma tau &= F R sin (90 degree) + F R sin (90 degree) + F R sin (150 degree) + F R sin (150 degree)
+    Sigma tau &= F R sin (90 degree) + F R sin (90 degree) + F R sin (120 degree) + F R sin (120 degree)
     \
-    bold(Sigma tau &= 12.6 "N"dot"m")
+    bold(Sigma tau &= 15.7 "N"dot"m")
   $
 ]
 

@@ -200,15 +200,15 @@ $
   v_"cm" &= R omega
 $
 
-- Thus, the total kinetic energy of an object that rolls without slipping can be simplified. Let $k$ be some constant associated with an object's moment of inertia.
+- Thus, the total kinetic energy of an object that rolls without slipping can be simplified. Let $C$ be some constant associated with an object's moment of inertia.
 $
   K_"tot" &= 1/2 M_"tot" v_"cm"^2 + 1/2 I_"cm"omega^2
   \
-  K_"tot" &= 1/2 M_"tot" v_"cm"^2 + 1/2 (k M_"tot" R^2) (v_"cm" / R)^2
+  K_"tot" &= 1/2 M_"tot" v_"cm"^2 + 1/2 (C M_"tot" R^2) (v_"cm" / R)^2
   \
-  K_"tot" &= 1/2 M_"tot" v_"cm"^2 + k/2 M_"tot" v_"cm"^2
+  K_"tot" &= 1/2 M_"tot" v_"cm"^2 + C/2 M_"tot" v_"cm"^2
   \
-  K_"tot" &= ((1+k)/2) M_"tot" v_"cm"^2
+  K_"tot" &= ((1+C)/2) M_"tot" v_"cm"^2
 $
 
 #example([Rolling Basketball], [

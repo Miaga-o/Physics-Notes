@@ -45,7 +45,7 @@
 \
 
 #enum.item(5)[
-  The answer is *A*. 
+  The answer is *B*. 
   $
     P_i &= (4 "kg")(1.8 "m"slash"s") + (6 "kg")(-0.2 "m"slash"s")= 6 "kg"dot"m"slash"s"
     \

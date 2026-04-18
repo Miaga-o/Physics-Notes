@@ -661,7 +661,7 @@ $
 - Another use case of the CM reference frame is for defining the kinetic energy of a system.
 
 #definition([Kinetic Energy of a System], [
-  Given kinetic energy of a system $K_"sys"$ and masses of the system $m_i$ each with velocity $v_i^*$ 
+  Given kinetic energy of a system $K_"sys"$ and masses of the system $m_i$ each with velocity $v_i^*$:
   $
     K_"sys" &= sum_(i=1)^N 1/2 m_i v_i^(*2) + 1/2 M_"tot" v_"cm"^2
     \

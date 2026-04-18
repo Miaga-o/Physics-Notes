@@ -197,7 +197,7 @@ $
 #example([Variable-Speed Motor _continued_], [
   3) We first need to convert the revolutions to radians.
   $
-    theta &= 2.00 "rev" dot (2pi "rad")/(1 "rv") = 4pi "rad"
+    theta &= 2.00 "rev" dot (2pi "rad")/(1 "rev") = 4pi "rad"
   $
 
   Now, we can solve for the time when 2 revolutions have passed using $theta (t)$, which we found in part 1.

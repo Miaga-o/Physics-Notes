@@ -331,6 +331,92 @@ $
 - Similarly to the conservation of momentum, the internal torques exerted between system particles change their individual angular momenta, but _do not impact the system's total angular momentum_.
 - This is a direct consequence of Newton's third law.
 
+#example([Spinning Block], [
+  A small block on a frictionless, horizontal surface has a mass of $2.50 times 10^(-2) "kg"$.
+  It is attached to a massless cord passing through a hole in the surface.
+  The block is originally revolving at a distance of $0.300 "m"$ from the hole with an angular speed of $2.19 "rad"slash"s"$.
+  The cord is then pulled from below, shortening the radius of the circle in which the block revolves to $0.150 "m"$. Model the block as a particle.
+  #figure(image("../images/YF-10-48.jpg", width: 30%))
+  + Is the angular momentum of the block conserved?
+  + What is the new angular speed?
+  + Find the change in kinetic energy of the block.
+
+  #line(length: 100%)
+  1) *Angular momentum is conserved because the net force is just the rope's tension, which always points in the radial direction, parallel to the lever arm, meaning the the net torque is always zero.*
+
+  2) Because we know that angular momentum is conserved, we can use the angular speed definition to solve for the new angular speed.
+  $
+    L_1 &= L_2
+    \
+    I_1 omega_1 &= I_2 omega_2
+    \
+    m r_1^2 omega_1 &= m r_2^2 omega_2
+    \
+    omega_2 &= omega_1 r_1^2/r_2^2
+    \
+    omega_2 &= (2.19 "rad"slash"s") (0.3 "m")^2/(0.15 "m")^2
+    \
+    bold(omega_2 &= 8.76 "rad"slash"s")
+  $
+
+  3) We can use the previous angular speed we solved for to find the change in kinetic energy.
+  $
+    Delta K &= 1/2 m (v_2^2 - v_1^2)
+    \
+    Delta K &= 1/2 m (omega_2^2 r_2^2 - omega_1^2 r_1^2)
+    \
+    Delta K &= 1/2 ((8.76 "rad"slash"s")^2(0.15 "m")^2 - (2.19 "rad"slash"s")^2(0.3 "m")^2)
+    \
+    bold(Delta K &= 1.62 times 10^(-2) "J")
+  $
+])
+
+#example([Parachutist on a Turntable], [
+  A large wooden turntable in the shape of a flat uniform disk has a radius of $2.00 "m"$ and a total mass of $1.40 times 10^2 "kg"$.
+  The turntable is initially rotating at $3.00 "rad"slash"s"$ about a vertical axis through its center.
+  Suddenly, an $80.0 "kg"$ parachutist makes a soft landing on the turntable at a point near the outer edge.
+  + Find the angular speed of the turntable after the parachutist lands.
+  + Compute the kinetic energy of the system before and after the parachutist lands.
+
+  #line(length: 100%)
+  1) About the rotational axis, there will be zero net torque after the parachutist lands, so angular momentum is conserved. Thus, we can use the angular speed definition to find the answer.
+  $
+    L_1 &= L_2
+    \
+    I_1 omega_1 &= I_2 omega_2
+    \
+    omega_2 &= omega_1 I_1 / I_2
+    \
+    omega_2 &= omega_1 (1/2 m_t R^2) / (1/2 m_t R^2 + m_p R^2)
+    \
+    omega_2 &= (3 "rad"slash"s") (1/2 (140 "kg") (2 "m")^2) / (1/2 (140 "kg") (2 "m")^2 + (80 "kg") (2 "m")^2)
+    \
+    bold(omega_2 &= 1.40 "rad"slash"s")
+  $
+
+  2) We can use the angular speed we just found and the definition for rotational kinetic energy.
+  #table(columns: (50%, 50%), stroke: none,
+    $
+      K_1 &= 1/2I_1 omega_1^2
+      \
+      K_1 &= 1/2 (1/2 m_t R^2) omega_1^2
+      \
+      K_1 &= 1/4 ((140 "kg") (2 "m")^2) (3 "rad"slash"s")^2
+      \
+      bold(K_1 &= 1260 "J")
+    $,
+    $
+      K_2 &= 1/2I_2 omega_2^2
+      \
+      K_2 &= 1/2 (1/2 m_t R^2 + m_p R^2) omega_2^2
+      \
+      K_2 &= 1/2 (1/2(140 "kg") (2 "m")^2 + (80 "kg")(2 "m")^2) \ &dot (3 "rad"slash"s")^2
+      \
+      bold(K_2 &= 588 "J")
+    $,
+  )
+])
+
 
 
 #pagebreak()

@@ -10,7 +10,6 @@ $
   \
   arrow(a) &= a_x hat(i) + a_y hat(j) + a_z hat(k) wide wide &a&= sqrt(a_x+a_y+a_z)
 $
-- *Vector quantities* are quantities with magnitude and direction, opposed to *scalar quantities*, which only have magnitudes.
 
 
 
@@ -46,7 +45,7 @@ $
 - A common application of these formulas is finding the _air time_ of a projectile. Thus, sometimes the quadratic equation may be necessary to solve for the time.
   - In this case, either the negative time or the later time will be disregarded.
 $
-  (-b plus.minus sqrt(b^2 - 4a c)) / (2a)
+  t = (-v_0 plus.minus sqrt(v_0^2 + 4a Delta r)) / (2a)
 $
 - Now, we can derive a general formula for a projectile's *range* and *maximum height.*
 #derivation([Range Formula], [

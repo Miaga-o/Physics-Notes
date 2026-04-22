@@ -13,7 +13,7 @@
   - Microscopic
 - The *weight* force is from gravity. On Earth, it is defined as follows:
 $
-  w=m g
+  arrow(w)=m arrow(g)
 $
 - However, there also exists a general definition for weight force, the *Universal Law of Gravitation* using the gravitational constant $G$:
 $

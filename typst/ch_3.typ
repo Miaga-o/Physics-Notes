@@ -98,6 +98,9 @@ $
 #note-block[
   In later chapters, there will be other ways of finding the range or maximum height of a projectile, but these may still be useful depending on what is known in a problem.
 ]
+#caution-block[
+  Because the maximum height and range formulas aren't generally standard physics equations, they should be clearly derived before using them.
+]
 
 #example[Fireworks Display][
   During a fireworks display, a shell is shot into the air with an initial speed $v_0 = 70.0 "m"slash"s"$ at an angle of $75 degree$ above the horizontal. The fuse is timed to ignite the shell just as it reaches its highest point above the ground.

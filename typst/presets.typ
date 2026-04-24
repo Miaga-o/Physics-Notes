@@ -77,7 +77,9 @@
     if show_header {
       emph(hydra(1, skip-starting: true))
       h(1fr)
-      emph(hydra(2, skip-starting: true))
+      if hydra(3) == none {
+        emph(hydra(2, skip-starting: true))
+      } else {emph(hydra(3, skip-starting: true))}
       
       if here().page() != 1 {line(length: 100%, stroke: (thickness: 2pt, dash: "dotted"))}
     }

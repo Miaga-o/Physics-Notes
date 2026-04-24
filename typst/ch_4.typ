@@ -40,6 +40,10 @@
 == Free Body Diagrams
 - *Free-body diagrams* show the forces acting on an object's center, including any relevant components.
 - While the magnitude of the drawn forces isn't that important, scaling them relative to each other makes the direction of the net acceleration clearer.
+#caution-block[
+  When indicating forces, try to distinguish the system's acceleration from the force vectors. Acceleration is not a force, and the net acceleration is often from multiple forces.
+]
+
 #figure([
   #cetz.canvas({
     import cetz.draw: *

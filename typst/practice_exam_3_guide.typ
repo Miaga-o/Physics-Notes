@@ -1,5 +1,7 @@
 #import "presets.typ": *
-#show: formatting
+#show: template.with(show_title: false, show_header: false)
+#show heading.where(level: 2): set text(size: 18pt)
+#set text(size: 11pt)
 
 #let doc_title = [
   #pagebreak(weak: true)

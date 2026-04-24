@@ -48,7 +48,7 @@ $
   t = (-v_0 plus.minus sqrt(v_0^2 + 4a Delta r)) / (2a)
 $
 - Now, we can derive a general formula for a projectile's *range* and *maximum height.*
-#note[Range Formula Derivation][
+#derivation[Range Formula][
   Let $Delta x$ equal $R$ and let $Delta y$ equal 0.
   $
 
@@ -59,13 +59,11 @@ $
     t &= (v_0sin theta - v sin theta) /g
     \
     t &= (v_0sin theta - (-v_0 sin theta)) / g
-    \
-    
   $
   #continue_box
 ]
 
-#note[Range Formula _continued_][
+#derivation-box[Range Formula _continued_][
   $
     t &= (2v_0sin theta) / g
   $
@@ -82,7 +80,7 @@ $
   $
 ]
 
-#note[Maximum Height Formula Derivation][
+#derivation[Maximum Height Formula][
   Let $Delta y$ equal $h_"max"$ and $v_y = 0$.
   $
     
@@ -97,7 +95,10 @@ $
     h_"max" &= (v_0^2 sin^2 theta) / (2g)
   $
 ]
-- In later chapters, there will be other ways of finding the range or maximum height of a projectile, but these may still be useful depending on what is known in a problem.
+#note-block[
+  In later chapters, there will be other ways of finding the range or maximum height of a projectile, but these may still be useful depending on what is known in a problem.
+]
+
 #example[Fireworks Display][
   During a fireworks display, a shell is shot into the air with an initial speed $v_0 = 70.0 "m"slash"s"$ at an angle of $75 degree$ above the horizontal. The fuse is timed to ignite the shell just as it reaches its highest point above the ground.
   + How much time has passed between the launch of the shell and the explosion?

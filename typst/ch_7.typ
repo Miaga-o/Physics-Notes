@@ -65,6 +65,11 @@ $
 $
   Delta U_"int" = -W_"nc"
 $
+
+#note-block[
+  As positive work is done on an object, they tend to displace to positions of lower potential energy.
+]
+
 #example[Block on a Globe][
   A small block of mass $m$ sits on top of a globe with radius $R$. The small block begins sliding from the top of the globe with negligible speed. The block leaves the surface of the globe when it reaches a height $h_"crit"$ above the ground.
   Derive a formula for $v_"crit"$, the speed of the block the moment it falls off the globe, in terms of $R$, $h_"crit"$, and $g$.

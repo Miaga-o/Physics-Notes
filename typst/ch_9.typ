@@ -71,12 +71,16 @@ $
 - These are analogous to the kinematic equations we learned in Chapter 2.
 - We defined these angular kinematic equations along the $z$-axis because $mag(arrow(theta))$, $mag(arrow(omega))$, and $mag(arrow(alpha))$ are all equal to their $z$-components since the axis of rotation is fixed.
 - Consequently, $arrow(theta)$, $arrow(omega)$, and $arrow(alpha)$ are all parallel to the axis of rotation, or in other words, _perpendicular to the plane of rotation_. Specifically, their direction is denoted by the right-hand rule.
-- The *right-hand* rule is used to denote the direction of vector products. In this case, you curl your fingers in the direction of rotation (clockwise or counterclockwise) and stick your thumb out. _The direction of your thumb is analogous to the direction of $arrow(omega)$ and $arrow(alpha)$_.
+#important-block[The *right-hand* rule is used to denote the direction of vector products. In this case, you curl your fingers in the direction of rotation (clockwise or counterclockwise) and stick your thumb out. _The direction of your thumb is analogous to the direction of $arrow(omega)$ and $arrow(alpha)$_.]
 
 #example[Throwing a Discus][
   An athlete spins a discus in a circle of radius $r=80.0 "cm"$. At a particular instant, the athlete rotates at $omega=10.0 "rad"slash"s"$, and that angular speed changes at a rate of $50.0 "rad"slash"s"^2$. At this instant, find the tangential and centripetal components of the discus' acceleration, then use those components to find the magnitude.
   #line(length:100%)
   Because we are given the angular speed and acceleration, we are able to find the components of the discus' acceleration using the formulas we just established.
+  #continue_box
+]
+
+#example-box[Throwing a Discus _continued_][
   #table(
     stroke: none,
     columns: (50%, 50%),
@@ -119,7 +123,7 @@ $
       let domain = (0, 6)
 
       set-style(
-        legend: (stroke: none, orientation: ttb, scale: 120%)
+        legend: (stroke: none, fill: none, orientation: ttb, scale: 120%)
       )
 
       plot.plot(
@@ -159,11 +163,16 @@ $
   + What is the angular velocity of the disk at $t=5.0 "s"$?
   + What is the angular velocity of the disk when it has turned through $2.00 "rev"$?
 
-  #line(length: 100%)
+  #line(length:100%)
   1) Because we know the disk starts from rest, we can continuously find antiderivatives.
   $
     alpha_z (t) &= ((6 "rad"slash"s"^2) / (5 "s"))t
-    \
+  $
+  #continue_box
+]
+
+#example[Variable-Speed Motor _continued_][
+  $
     alpha_z (t) &= (1.2 "rad"slash"s"^3)t
     \
     omega_z (t) &= integral (1.2 "rad"slash"s"^3)t dif t
@@ -183,10 +192,6 @@ $
     bold(N_"revs" &= 4.0 "rev")
   $
 
-  #continue_box
-]
-
-#example[Variable-Speed Motor _continued_][
   2) We could integrate $alpha_z (t)$ from $t=0$ to $t=5$, but we've already found $omega_z (t)$ during our steps to find $theta (t)$.
   $
     omega_z (t) &= (0.6 "rad"slash"s"^3)t^2
@@ -229,10 +234,7 @@ $
   + How many revolutions does the motor shaft turn through between the time the current is reversed and the instant the angular velocity is zero?
   + How fast was the motor shift rotating at $t = 0$ when the current was reversed?
   + Calculate the average angular velocity from $t=0$ to when the motor shaft's angular velocity is zero.
-  #continue_box
-]
-
-#example-box[Electric Motor Rotation _continued_][
+  #line(length: 100%)
   1) We can simply find $theta prime (t)$ and find a valid zero of the resulting function.
   $
     theta prime(t) &= dif / (dif t)((260 "rad"slash"s")t - (19.2 "rad"slash"s"^2)t^2 - (1.56 "rad"slash"s"^3)t^3)
@@ -259,6 +261,7 @@ $
     \
     bold(alpha(4.41 "s") &= -79.6 "rad"slash"s"^2)
   $
+
   3) Again, we already calculated this time interval. Thus, we just need to use $theta(t)$.
   $
     theta(4.41 "s") &= (260 "rad"slash"s")(4.41 "s") - (19.2 "rad"slash"s"^2)(4.41 "s")^2 - (1.56 "rad"slash"s"^3)(4.41 "s")^3
@@ -269,6 +272,14 @@ $
     \
     bold(theta (4.41 "s") &= 102 "rev")
   $
+  #continue_box
+]
+
+#example-box[Electric Motor Rotation _continued_][
+  
+
+  
+  
 
   4) Since we've already found $omega(t)$. we can just find its value at $t=0$.
   $
@@ -297,13 +308,15 @@ $
 
 - Moment of inertia is applied in a definition for *rotational kinetic energy* $K$ of a rigid body.
 #definition[Rotational Kinetic Energy of a Rigid Body][
-  Given kinetic energy $K$, moment of inertia for some rotational axis $I$, and angular speed of rigid body $omega$:
+  Given rotational kinetic energy $K_"rot"$, moment of inertia for some rotational axis $I$, and angular speed of rigid body $omega$:
   $
-    K = 1/2 I omega^2
+    K_"rot" = 1/2 I omega^2
   $
 ]
 
-- Note that this is not different from the kinetic energy we discussed in Chapter 6. Rather, this is the sum of the kinetic energies of the points within a rotating rigid body.
+#note-block[
+  This is still kinetic energy, and is the sum of the kinetic energies of all points within a rotating rigid bodies. There will be problems where an object has both translational and rotational kinetic energy.
+]
 - According to this equation, the more resistant an object is to rotational acceleration, the greater its kinetic energy for some given $omega$.
 
 #definition[Moment of Inertia with Continuous Mass Distributions][
@@ -329,7 +342,7 @@ $
   $
     I_"rect-cm" = 1/12 M_"tot" (a^2 + b^2)
   $
-  \ \ \
+
   - *Thin rectangular plate with an axis of rotation along an edge:*
   $
     I_"rect-edge" = 1/3 M_"tot" a^2
@@ -433,7 +446,7 @@ $
 ]
 
 - This formula is the same as finding the gravitational potential energy of the masses on an extended body and summing them up.
-- _This formula is for any extended body, including non-rigid bodies._
+
 
 == Parallel Axis Theorem
 #theorem[Parallel Axis Theorem][
@@ -446,11 +459,11 @@ $
 - The main application for this formula is for finding moments of inertia of known shapes on a rotational axis _offset_ some distance $d$ from the rotational axis through the center of mass.
 
 
-#pagebreak()
+
 == Moment-of-Inertia Derivations
 This subchapter will include the derivations for the moments of inertia of different forms given in subchapter 9.2.
 
-#note[Rod (at one end)][
+#derivation[Rod at one end][
   We can start by establishing a relationship between a rod's linear density and the differential $dif m$. Let $L$ be the length of the rod.
   $
     lambda &= M_"tot" / L = dv(m,L)
@@ -478,7 +491,7 @@ This subchapter will include the derivations for the moments of inertia of diffe
 
 
 
-#note[Rod (at the center)][
+#derivation[Rod at the center][
   We can start by establishing a relationship between a rod's linear density and the differential $dif m$. Let $L$ be the length of the rod.
   $
     lambda &= M_"tot" / L = dv(m,L)
@@ -521,7 +534,7 @@ This subchapter will include the derivations for the moments of inertia of diffe
 
 
 
-#note[Cylinder][
+#derivation[Cylinder][
   We can start by establishing a relationship between a cylinder's volume density and the differential $dif m$. Let $r_2$ be the outer radius and $r_1$ be the inner radius.
   $
     rho &= M_"tot" / V = M_"tot" / (pi (r_2^2 - r_1^2) L) = dv(m, V) = (dif m)/ (2pi r L dif r )
@@ -551,7 +564,7 @@ This subchapter will include the derivations for the moments of inertia of diffe
 
 
 
-#note[Thin-walled Cylinder][
+#derivation[Thin-walled Cylinder][
   Because the cylinder is infinitely thin, we will relate $dif m$ to surface density $sigma$. Let $R$ be the radius of the cylinder.
   $
     sigma &= M_"tot" / A = M_"tot" / (2 pi R L) &= dv(m, A)
@@ -581,7 +594,7 @@ This subchapter will include the derivations for the moments of inertia of diffe
 
 
 
-#note[Solid Sphere][
+#derivation[Solid Sphere][
   Imagine that a solid sphere of radius $R$ is divided into infinitesimally thin disks of radius $r$. Now, let $x$ be the distance of each disk's center from the sphere's center. For each disk, we can form a right triangle between the sphere's center, the disk's center, and a point on the disk's edge. Thus, we can express each disk's radius $r$ as follows:
   $
     x^2 + r^2 &= R^2
@@ -620,7 +633,7 @@ This subchapter will include the derivations for the moments of inertia of diffe
 
 
 
-#note[Thin-walled Sphere][
+#derivation[Thin-walled Sphere][
   Because the sphere is infinitely thin, we will relate $dif m$ to surface density $sigma$. We can use use spherical coordinates where the radial distance is a constant $rho.alt = R$, the polar angle is $theta$, and the azimuthal angle is $phi.alt$.
   $
     sigma &= M_"tot" / A = M_"tot" / (4pi R^2) = dv(m,A)

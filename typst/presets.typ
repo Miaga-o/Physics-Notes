@@ -23,6 +23,20 @@
 //Emphasis box continuation
 #let continue_box = align(center, [_Continued on next page_])
 
+//Derivation box using Theorion
+#let (derivation-counter, derivation-box, derivation, show-derivation) = make-frame(
+  "derivation",
+  "Derivation",
+  counter: theorem-counter,
+  inherited-levels: 2, 
+  inherited-from: heading,  
+  render: fancy-box.with(
+    get-border-color: get-tertiary-border-color,
+    get-body-color: get-tertiary-body-color,
+    get-symbol: get-tertiary-symbol,
+  ),
+)
+
 //Me
 #let author = "Miagao"
 
@@ -50,6 +64,8 @@
 //Template
 #let template(
   doc_title: "",
+  show_title: true,
+  show_header: true,
   doc_font: "Libertinus Serif",
   math_font: "New Computer Modern Math",
   numbering_depth: 0,
@@ -58,9 +74,12 @@
 ) = [
   //Page
   #set page(page_style, numbering: "1 of 1", header: context {
-    if here().page() != 1 {
-      align(right, emph(hydra(2)))
-      line(length: 100%)
+    if show_header {
+      emph(hydra(1, skip-starting: true))
+      h(1fr)
+      emph(hydra(2, skip-starting: true))
+      
+      if here().page() != 1 {line(length: 100%, stroke: (thickness: 2pt, dash: "dotted"))}
     }
   })
 
@@ -99,14 +118,17 @@
   //Other
   #show: codly-init.with()
   #show: show-theorion
+  #show: show-derivation
   #codly(languages: codly-languages)
 
   //Title page
   #show title: set text(size: 30pt)
-  #align(center)[#title(doc_title) #author]
-
-  #outline()
-  #pagebreak()
+  #if show_title [
+    #align(center)[#title(doc_title) #author]
+    #figure(image("../images/YOTSUBA!!!.webp"), supplement: none, caption: [Yotsuba from Yotsuba&!])
+    #outline()
+    #pagebreak()
+  ]
 
   #body
 ]

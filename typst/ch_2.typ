@@ -37,7 +37,7 @@ With constant acceleration, the following *kinematic equations* hold:
   $
 ]
 
-#note[Displacement Kinematic Derivation][
+#derivation[Displacement Kinematic][
   $
     v &= v_0 + a Delta t
     \

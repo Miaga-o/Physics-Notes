@@ -69,6 +69,7 @@ $
   $
     n=m(g+a_y)
   $
+  
 #example[Table Pulley][
   Block B with mass $m_B = 5.0 "kg"$ rests on block A, with mass $m_A = 8.0 "kg"$, which is on a horizontal frictionless tabletop. The coefficient of static friction between block A and block B is $mu_s = 0.75$. A string attached to block A passes over a massless, frictionless pulley at the edge of the tabletop, and block C is suspended from the other end of the string and is released from rest.
   + Write Newton's second law for each of the three blocks in both directions.

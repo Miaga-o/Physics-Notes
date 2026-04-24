@@ -25,7 +25,7 @@ $
   $
 ]
 
-#note[Relating Impulse to Force][
+#derivation[Relating Impulse to Force][
   Given net force $Sigma arrow(F)$, acceleration $arrow(a)$, and mass $m$:
   $
     Sigma arrow(F) &= m arrow(a)
@@ -39,7 +39,7 @@ $
     m integral_(v_1)^(v_2) dif arrow(v) &= integral_(t_1)^(t_2) Sigma arrow(F) dif t
     \
     m (arrow(v)_2 - arrow(v)_1) &= integral_(t_1)^(t_2) Sigma arrow(F) dif t
-    \
+    \ \
     Delta p = arrow(J) &= integral_(t_1)^(t_2) Sigma arrow(F) dif t
     \
     arrow(J) &= Sigma arrow(F)_"av" Delta t
@@ -118,8 +118,6 @@ $
   }),
 )
 
-- One real-life application of this concept is car crashes. The impulse experienced by a driver colliding with the steering wheel is the same as colliding with an air bag. However, because the air bag takes a longer time to stop the driver, the average force applied to the driver must be less.
-
 #example[Ball Rebounding][
   You throw a $0.40 "kg"$ ball against a brick wall with a horizontal speed of $30 "m"slash"s"$.
   After colliding with the wall, the ball rebounds with a horizontal speed of $20 "m"slash"s"$.
@@ -180,6 +178,7 @@ $
   + What is the rifle's recoil velocity?
   + What are the final momentum and kinetic energy of the bullet and rifle?
   #line(length:100%)
+  
   1) During the shot, the external forces exerted by the marksman are negligible.
   Thus, the system's total momentum is conserved. 
   Now, it follows that the system's total momentum is initially zero, so it should be zero after the shot.
@@ -197,33 +196,34 @@ $
     \
     bold(v_R &= -0.500 "m"slash"s")
   $
+  #continue_box
+]
 
+#example-box[Gun Recoil _continued_][
   2) Now that we have the recoil velocity of the rifle, we can simply plug our values into the momentum and kinetic energy formulas.
-  #figure(
-    table(
-      columns: (25%, 25%, 25%, 25%),
-      stroke: none,
-      $\ \ 
-        p_R &= m_R v_R
-        \
-        bold(p_R &= -1.50 "kg" dot "m"slash"s")
-      $,
-      $
-        K_R &= 1/2 m_R v_R^2
-        \
-        bold(K_R &= 0.375 "J")
-      $,
-      $\ \
-        p_B &= m_B v_B
-        \
-        bold(p_B &= 1.5 "kg" dot "m"slash"s")
-      $,
-      $
-        K_B &= 1/2 m_B v_B^2
-        \
-        bold(K_B &= 225 "J")
-      $
-    )
+  #table(
+    columns: (25%, 25%, 25%, 25%),
+    stroke: none,
+    $\ \ 
+      p_R &= m_R v_R
+      \
+      bold(p_R &= -1.50 "kg" dot "m"slash"s")
+    $,
+    $
+      K_R &= 1/2 m_R v_R^2
+      \
+      bold(K_R &= 0.375 "J")
+    $,
+    $\ \
+      p_B &= m_B v_B
+      \
+      bold(p_B &= 1.5 "kg" dot "m"slash"s")
+    $,
+    $
+      K_B &= 1/2 m_B v_B^2
+      \
+      bold(K_B &= 225 "J")
+    $
   )
 ]
 
@@ -266,10 +266,6 @@ $
   $
 
   Now, the only unknown for conservation of momentum in the $x$-direction is the final velocity of asteroid A in the $x$-direction, which can we express in terms of the final speed of asteroid A using trigonometry.
-  #continue_box
-]
-
-#example-box[Asteroid Deflection _continued_][
   $
     m v_(1A x) &= m v_(2A x) + m v_(2B x)
     \
@@ -280,7 +276,13 @@ $
     v_(1A x) &= v_(2A)cos(30 degree) + v_(2A) sin(30degree)/sin(45degree) cos(45degree)
     \
     v_(1A x) &= (cos(30degree) + sin(30degree)/sin(45degree)cos(45degree)) v_(2A)
-    \
+  $
+
+  #continue_box
+]
+
+#example-box[Asteroid Deflection _continued_][
+  $
     v_(2A) &= v_(1A x) / (cos(30degree) + sin(30degree)/sin(45degree)cos(45degree))
     \
     v_(2A) &= (40 "m"slash"s") / (sqrt(3)/2 + sqrt(2)/2 dot sqrt(2)/2)
@@ -305,7 +307,7 @@ $
 ]
 
 === Completely Inelastic Collisions
-#definition[Loss of Kinetic Energy][
+#derivation[Loss of Kinetic Energy in a Completely Inelastic Collision][
   In order to establish why a system's kinetic energy decreases in completely inelastic collisions, we can first find the velocity after the inelastic collision using conservation of momentum. 
   To simplify it further, we can say that object B is initially at rest.
   $
@@ -331,7 +333,9 @@ $
   Now, it follows that this ratio is always less than one, showing that kinetic energy is always lost in completely inelastic collisions. This holds true even if object B is not originally at rest.
 ]
 
-- Just because a collision is inelastic _does not mean_ that the colliding objects have to stick together. For instance, kinetic energy could be dissipated from deformations.
+#caution-block[
+  Remember that a collision that dissipates kinetic energy is not necessarily completely inelastic. Inelastic collisions can dissipate energy through other means such as deformations.
+]
 
 #example[Ice Collision][
   A $5.00 "kg"$ block of ice is sliding at $12.0 "m"slash"s"$ across the floor of an icy valley when it collides and sticks to another $5.00 "kg"$ block of ice that is initially at rest. After the collision, how high above the valley floor will the combined chunks go?
@@ -367,28 +371,33 @@ $
 === Elastic Collisions
 - Commonly, elastic collision problems start with one object at rest before the collision.
 - Thus, we can establish a relationship between the initial velocity of the moving object and the final velocity of the object initially at rest.
-#note[When a Moving Object Collides with a Still Object][
+#derivation[Final Velocities in an Elastic Collision][
   To establish a relationship between the initial velocity of the moving object and the final velocity of the object initially at rest, we can apply the conservation of energy and momentum.
-  #align(center, table(
+
+  #continue_box
+]
+
+#derivation-box[Final Velocities in an Elastic Collision _continued_][
+  #table(
     columns: (55%, 45%),
     stroke: none,
     $
       1/2 m_A v_(1A)^2 &= 1/2 m_A v_(2A)^2 + 1/2 m_B v_B^2
       \
       1/2 m_A (v_(1A)^2 - v_(2A)^2) &= 1/2 m_B v_B^2
-      \
-      1/2 m_A (v_(1A) + v_(2A)) \
-      dot (v_(1A) - v_(2A)) &= 1/2 m_B v_B^2
     $,
     $\ \
       m_A v_(1A) &= m_A v_(2A) + m_B v_B
       \ \
       m_A (v_(1A) - v_(2A)) &= m_B v_B
     $
-  ))
+  )
 
   Now, by dividing the kinetic energy equation by the momentum equation, we can derive the final velocity of object B in terms of object A's velocities.
   $
+    (1/2 m_A (v_(1A)^2 - v_(2A)^2))/(m_A (v_(1A) - v_(2A))) 
+    &= (1/2 m_B v_B^2) / (m_B v_B)
+    \
     1/2 v_(1A) + 1/2 v_(2A) &= 1/2 v_B
     \
     v_B &= v_(1A) + v_(2A)
@@ -493,7 +502,7 @@ $
   )
 )
 
-#note[Center of Mass of a Uniform Rod][
+#derivation[Center of Mass of a Uniform Rod][
   Intuitively, the center of mass of a uniform rod should be the middle. We can use the center of mass equation for continuous mass distributions to prove this.
 
   We can define the length of any rod as $L$ along the $x$-axis, and define $dif m$ using linear density $lambda$.
@@ -516,10 +525,18 @@ $
   $
 ]
 
-#note[Center of Mass of a Uniform Cube][
+#derivation[Center of Mass of a Uniform Cube][
   Similar to a uniform rod, the center of mass of a uniform cube is at the very center. Again, we can use the center of mass equation for continuous mass distributions to prove this. 
 
   We can define the side lengths of any cube as $L$ and define $dif m$ using volume density $rho$.
+  $
+    arrow(R)_"cm" &= 1 / M_"tot" integral arrow(r) dot dif m
+  $
+
+  #continue_box
+]
+
+#derivation-box[Center of Mass of a Uniform Cube _continued_][
   $
     arrow(R)_"cm" &= 1 / M_"tot" integral arrow(r) dot dif m
     \
@@ -540,12 +557,7 @@ $
     arrow(R)_"cm" &= rho / M_"tot" (L^3/2 z hat(i) + L^3/2 z hat(j) + L^2/2 z^2 hat(k))eval(z=0, z=L)
     \
     arrow(R)_"cm" &= rho / M_"tot" (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
-  $
-  #continue_box
-]
-
-#note-box[Center of Mass of a Uniform Cube _continued_][
-  $
+    \
     arrow(R)_"cm" &= M_"tot" / V dot 1 / M_"tot" (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
     \
     arrow(R)_"cm" &= 1/ V dot (L^4 / 2 hat(i) + L^4 / 2 hat(j) + L^4 / 2 hat(k))
@@ -609,13 +621,7 @@ $
     m_R L + m_B L/2 &= (m_J + m_R + m_B/2)L - (m_J + m_R +m_B)d
     \
     (m_J + m_R +m_B)d &= (m_J + m_R + m_B/2)L - m_R L - m_B L/2
-  $
-
-  #continue_box
-]
-
-#example-box[Romeo and Juliet _continued_][
-  $
+    \
     d &= ((m_J + m_R + m_B/2)L - m_R L - m_B L/2)/(m_J+m_R+m_B)
     \
     d &= (m_J L)/(m_J+m_R+m_B)
@@ -655,8 +661,7 @@ $
   $
 ])
 
-
-#example[Elastic Blocks][
+#example[][
   Initially, block 1 with mass $m_1 = 1 "kg"$ is moving horizontally to the right with velocity \ $v_1 = 1 "m"slash"s"$ and block 2 with mass $m_2 = 0.5 "kg"$ is at rest. Block 1 collides elastically with block 2, and after that, block 2 collides elastically with a wall to the right. What impulse does the wall give to block 2?
   #line(length: 100%)
   Because there are no external forces in the system before block 2 collides with the wall, we can calculate the velocity of the center of mass at the time when block 2 is at rest, as it will remain constant until the collision between block 2 and the wall.
@@ -668,7 +673,12 @@ $
     v_"cm" &= 2/3 "m"slash"s"
   $
 
-  Now that we know the velocity of the center of mass, we know the velocity of the CM reference frame. Thus, we can use the CM reference frame to find the velocity of block 2 after the first collision. First, we find the initial velocity of block 2 in the CM reference frame.
+   Now that we know the velocity of the center of mass, we can use the CM reference frame to find the velocity of block 2 after the first collision. First, we find the initial velocity of block 2 in the CM reference frame.
+
+   #continue_box
+]
+
+#example-box[Elastic Blocks _continued_][
   $
     v_2^* &= v_2 + v_("lab","cm")
     \
@@ -687,11 +697,6 @@ $
     \
     v_(2f)^* &= 2/3 "m"slash"s"
   $
-  #continue_box
-]
-
-#example-box[Elastic Blocks _continued_][
-  
 
   To find the velocity of block 2 after the first collision, we can apply relative velocities again.
   $

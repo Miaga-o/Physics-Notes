@@ -80,11 +80,13 @@
 ]
 
 #example[Rotating Machinery][
-  A machine part has the form of a solid uniform sphere with mass $220 "g"$ and diameter $4.50 "cm"$. The part spins about a frictionless axle through its center, but at one point on its equator, it scrapes against metal, resulting in a friction force of $0.0200 "N"$ at that point.
+  A machine part has the form of a solid uniform sphere with mass $220 "g"$ and diameter $4.50 "cm"$. The part spins about a frictionless axle through its center, but at one point on its equator, it scrapes against metal, resulting in a friction force of $0.0200 "N"$ there.
   + Find its angular acceleration. Let the direction of the sphere's rotation be the positive direction.
   + How long will it take to decrease its rotational speed by $19.0 "rad"slash"s"$?
-  #line(length:100%)
+  #continue_box
+]
 
+#example-box[Rotating Machinery _continued_][
   1) We can rearrange the formula for torque in terms of $I$ and $alpha_z$. We can say that the torque is negative because it results from friction.
   $
     -tau_z &= I alpha_z
@@ -122,8 +124,10 @@
 
   + What is the acceleration of the block down the plane?
   + What is the tension in the string?
-  #line(length:100%)
+  #continue_box
+]
 
+#example-box[Flywheel on an Incline _continued_][
   1) Because we are only given the flywheel's moment of inertia and its mass, we need to solve for the radius using the corresponding moment of inertia equation (disk/cylinder).
   $
     \
@@ -136,25 +140,18 @@
   The only force acting on the flywheel is a tension force from the rope. 
   Thus, we can express the tension force in terms of known quantities. 
   The unknown $a$ will be factored out later.
-
   $
     Sigma tau_z &= I alpha = I (a/R) = T R
     \
     T &= (I a) / R^2
   $
 
-
   Now, we can substitute this value for $T$ into a Newton's second law equation to isolate $a$ and solve.
   $
     Sigma F_x &= m g sin(36.9 degree) - T - mu_k m g cos(36.9 degree)
     \
     m a &= m g sin(36.9 degree) - (I a) / R^2 - mu_k m g cos(36.9 degree)
-  $
-  #continue_box
-]
-
-#example-box[Flywheel on an Incline _continued_][
-  $
+    \
     m a + (I a) / R^2 &= m g sin(36.9 degree) - mu_k m g cos(36.9 degree)
     \
     a &= (m g big( (sin(36.9 degree) - mu_k cos(36.9 degree))) ) / (m + I/R^2)
@@ -163,12 +160,9 @@
     \
     bold(a &= 1.45 "m"slash"s"^2)
   $
-
   2) Now that we've solved for the acceleration $a$, we can solve for $T$ using the equation we derived in part 1.
   $
-    T &= (I a) / R^2
-    \
-    T &= ((0.5 "kg"dot"m"^2)(1.45 "m"slash"s"^2)) / (0.25 "m")
+    T &= (I a) / R^2 = ((0.5 "kg"dot"m"^2)(1.45 "m"slash"s"^2)) / (0.25 "m")
     \
     bold(T &= 11.6 "N")
   $
@@ -210,6 +204,8 @@ $
 #example[Rolling Basketball][
   A basketball, which can be approximated as a hollow sphere, rolls down a mountainside into a valley and then up the opposite side, starting from rest at a height $H_0$ above the bottom. The mountainside the basketball is released on is rough, preventing slipping. Meanwhile, the opposite side is smooth and frictionless. Neglect rolling friction and assume the system's total mechanical energy is conserved. How high, in terms of $H_0$, will the ball go up the other side?
   #figure(image("../images/yg.9.36.jpg", width:56%))
+  #line(length:100%)
+
   We can start by deriving an expression for $H_0$ using conservation of energy between the basketball's initial position and the valley.
   $
     m g H_0 &= 1/2 m v^2 +1/2 I omega^2
@@ -221,16 +217,17 @@ $
     H_0 &= (5v^2)/(6g)
   $
 
-  #continue_box
-]
-
-#example[Rolling Basketball _continued_][
   Now, using the conservation of energy between the basketball's initial position and its final position and our derived $H_0$, we can establish a connection between _only_ $H$ and $H_0$. At the basketball's peak on the other side, it lacks translation kinetic energy but still has rotational kinetic energy from when it rolled down the rough part.
   $
     m g H_0 &= m g H + 1/2 I omega^2
     \
     m g H_0 &= m g H + 1/2 (2/3 m R^2) (v/R)^2
-    \
+  $
+  #continue_box
+]
+
+#example[Rolling Basketball _continued_][
+  $
     m g H_0 &= m g H + 1/3 m v^2
     \
     g ((5v^2)/(6g)) &= g H + 1/3 v^2
@@ -340,10 +337,6 @@ $
   #line(length: 100%)
   1) *Angular momentum is conserved because the net force is just the rope's tension, which always points in the radial direction, parallel to the lever arm, meaning the the net torque is always zero.*
 
-  #continue_box
-]
-
-#example-box[Spinning Block _continued_][
   2) Because we know that angular momentum is conserved, we can use the angular speed definition to solve for the new angular speed.
   $
     L_1 &= L_2
@@ -353,7 +346,12 @@ $
     m r_1^2 omega_1 &= m r_2^2 omega_2
     \
     omega_2 &= omega_1 r_1^2/r_2^2
-    \
+  $
+  #continue_box
+]
+
+#example-box[Spinning Block _continued_][
+  $
     omega_2 &= (2.19 "rad"slash"s") (0.3 "m")^2/(0.15 "m")^2
     \
     bold(omega_2 &= 8.76 "rad"slash"s")
@@ -386,12 +384,6 @@ $
     I_1 omega_1 &= I_2 omega_2
     \
     omega_2 &= omega_1 I_1 / I_2
-  $
-  #continue_box
-]
-
-#example-box[Parachutist on a Turntable _continued_][
-  $
     \
     omega_2 &= omega_1 (1/2 m_t R^2) / (1/2 m_t R^2 + m_p R^2)
     \
@@ -399,7 +391,10 @@ $
     \
     bold(omega_2 &= 1.40 "rad"slash"s")
   $
-  
+  #continue_box
+]
+
+#example-box[Parachutist on a Turntable _continued_][
   2) We can use the angular speed we just found and the definition for rotational kinetic energy.
   #table(columns: (50%, 50%), stroke: none,
     $

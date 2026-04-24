@@ -61,7 +61,9 @@ $
 $
   (13.7)(20.95)=287.015 approx 287 => "three significant figures"
 $
-- In longer physics problems with numerous equations, using the actual values in calculations and only converting the final answer to the correct number of significant figures is best practice.
+#important-block[
+  In longer physics problems with numerous equations, using the actual values in calculations and only converting the final answer to the correct number of significant figures is best practice.
+]
 
 
 

@@ -31,12 +31,9 @@ $
 
 - Because kinetic energy is based on speed, it is either positive or zero.
 - Additionally, work may be expressed as the *change in kinetic energy.*
-$
-  W = Delta K
-$
 
 #theorem([Work-Energy Theorem], [
-  Given work $W$ and kinetic energy $K$:
+  Given work $W$, kinetic energy $K$, and displacement $s$:
   $
     F_(parallel) &= m a = m (v_2^2-v_1^2) / (2s)
     \
@@ -46,8 +43,8 @@ $
   $
 ])
 
-- It follows that energy is also a scalar quantity.
-- However, these formulas only hold when the force remains constant during the displacement.
+#important-block[
+  These formulas only hold when the force remains constant during the displacement.]
 
 #example[Final Velocity of a Sled][
   You push a $30.0 "kg"$ sled with constant horizontal force $F=500 "N"$ for a horizontal distance $d=20.0 "m"$. The sled's initial velocity is $10.0 "m"slash"s"$. What is the final velocity of the sled?

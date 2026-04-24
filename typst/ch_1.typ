@@ -116,5 +116,8 @@ $
     u_x, u_y, u_z;
     v_x, v_y, v_z;
   )
-  = (u_y v_z - u_z v_y) hat(i) - (u_x v_z - u_z v_x) hat(j) + (u_x v_y - u_y v_x) hat(k)
+  \
+  arrow(u) times arrow(v) &= mat(delim: "|", u_y, u_z;v_y, v_z) hat(i) - mat(delim: "|", u_x, u_z;v_x, v_z) hat(j) + mat(delim: "|", u_x, u_y;v_x, v_y) hat(k)
+  \
+  arrow(u) times arrow(v) &= (u_y v_z - u_z v_y) hat(i) - (u_x v_z - u_z v_x) hat(j) + (u_x v_y - u_y v_x) hat(k)
 $

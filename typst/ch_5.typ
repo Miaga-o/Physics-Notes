@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "presets.typ": *
 
 = Applying Newton's Laws
 == Types of Forces
@@ -19,12 +19,13 @@ $
 $
   G = 6.6743 times 10^(-11) space "m"^3 dot "kg"^(-1) dot "s"^(-1)
 $
-#definition([Universal Law of Gravitation], [
+
+#definition[Universal Law of Gravitation][
   The force between any two objects is defined as follows, given that $r$ is the _distance between the objects' centers_:
   $
     F_1 = F_2 = G (m_1 m_2) / r^2
   $
-])
+]
 
 - The *spring force* is from compressing a spring.
   - Springs have differing *spring constants* usually denoted as $k$, and they define the ratio between the force exerted by the spring and the distance compressed from the equilibrium position.
@@ -68,19 +69,16 @@ $
   $
     n=m(g+a_y)
   $
-#example([Table Pulley], [
+#example[Table Pulley][
   Block B with mass $m_B = 5.0 "kg"$ rests on block A, with mass $m_A = 8.0 "kg"$, which is on a horizontal frictionless tabletop. The coefficient of static friction between block A and block B is $mu_s = 0.75$. A string attached to block A passes over a massless, frictionless pulley at the edge of the tabletop, and block C is suspended from the other end of the string and is released from rest.
   + Write Newton's second law for each of the three blocks in both directions.
   + Find the largest mass that block C can have so that blocks A and B slide together when the system is released from rest.
   #line(length: 100%)
   1) Along the direction of the pulley, the vertical forces acting on block A and B are irrelevant.
   $
-    Sigma F_A &= T - f_s
-    \
-    Sigma F_B &= f_s
-    \
-    Sigma F_C &= m_C g - T
+    Sigma F_A = T - f_s #h(3em) Sigma F_B = f_s #h(3em) Sigma F_C = m_C g - T
   $
+
   2) Now, blocks A and B will slip once the maximum static friction is exceeded, so we can use their net force equations to find the acceleration of the system when $m_C$ is maximized.
   $
     m_B a &= mu_s m_B g
@@ -89,10 +87,7 @@ $
     \
     a &= (0.75)(9.81 "m"slash"s"^2) = 7.36 "m"slash"s"^2
   $
-  #continue_box
-])
-
-#example([Table Pulley _continued_], [
+  
   Using this, we can find an expression for $T$. 
   $
     T - f_s + f_s &= (m_A + m_B) a
@@ -113,10 +108,10 @@ $
     \
     bold(m_C &= 39 "kg")
   $
-])
+]
 
 
-
+\
 == Dynamics of Circular Motion
 - Based on Newton's Second Law, circular motion can result from many different forces.
 $
@@ -128,14 +123,11 @@ $
 - Additionally, problems involving *circular motion of vehicles* have less obvious forces contributing to the circular motion.
   - Along a curved road with friction, _static friction is what maintains the vehicle's circular motion_ because at any given moment, the tires of the car are stationary relative to the pavement.
   - Along a banked curve without friction (sort of like an inclined plane from the inner curve to the outer curve), _the $x$-component of the normal force is what maintains the vehicle's circular motion_.
-#example([Rounding a Flat Curve], [
+
+#example[Rounding a Flat Curve][
   A sports car is rounding a flat, unbanked curve with radius $R$. If the coefficient of static friction between the tires is $mu_s$, what is the maximum speed $v_"max"$ the driver can complete the curve without sliding off?
   #line(length: 100%)
   Here, the only force contributing to the circular motion is static friction, so we can just use the given formula for maximum static friction to find $v_max$.
-  #continue_box
-])
-
-#example([Rounding a Flat Curve _continued_], [
   $
     m a_c &= f_s
     \
@@ -144,9 +136,9 @@ $
     bold(v_"max" &= sqrt(R mu_s g))
   $
   Note that the maximum speed needed is not based on the mass of the vehicle at all.
-])
+]
 
-#example([Rounding a Banked Curve], [
+#example[Rounding a Banked Curve][
   You are planning to create a road banked at the perfect angle to allow cars to complete turns without friction. At what angle $alpha$  should the road be banked to allow for this?
   #line(length:100%)
   We can imagine this from a straight back perspective of the car. While similar to an inclined plane problem, we are evaluating components parallel to the horizontal rather than the incline. As a result, the only inward force is the $x$-component of the normal force because the curve is banked from the inside-out. 
@@ -173,6 +165,6 @@ $
     \
     bold(alpha &= arctan(v^2 / (R g)))
   $
-])
+]
 
 #pagebreak()

@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "presets.typ": *
 
 = Motion in Two or Three Dimensions
 == Vector Quantities
@@ -48,7 +48,7 @@ $
   t = (-v_0 plus.minus sqrt(v_0^2 + 4a Delta r)) / (2a)
 $
 - Now, we can derive a general formula for a projectile's *range* and *maximum height.*
-#derivation([Range Formula], [
+#note[Range Formula Derivation][
   Let $Delta x$ equal $R$ and let $Delta y$ equal 0.
   $
 
@@ -60,13 +60,15 @@ $
     \
     t &= (v_0sin theta - (-v_0 sin theta)) / g
     \
-    t &= (2v_0sin theta) / g
-    \
+    
   $
   #continue_box
-])
+]
 
-#derivation([Range Formula _continued_], [
+#note[Range Formula _continued_][
+  $
+    t &= (2v_0sin theta) / g
+  $
   Now, we can plug this value for $t$ into a horizontal kinematic equation.
   $
     \
@@ -78,9 +80,9 @@ $
     \
     R &= (v_0^2 sin (2theta)) / g
   $
-])
+]
 
-#derivation([Maximum Height Formula], [
+#note[Maximum Height Formula Derivation][
   Let $Delta y$ equal $h_"max"$ and $v_y = 0$.
   $
     
@@ -94,9 +96,9 @@ $
     \
     h_"max" &= (v_0^2 sin^2 theta) / (2g)
   $
-])
+]
 - In later chapters, there will be other ways of finding the range or maximum height of a projectile, but these may still be useful depending on what is known in a problem.
-#example([Fireworks Display], [
+#example[Fireworks Display][
   During a fireworks display, a shell is shot into the air with an initial speed $v_0 = 70.0 "m"slash"s"$ at an angle of $75 degree$ above the horizontal. The fuse is timed to ignite the shell just as it reaches its highest point above the ground.
   + How much time has passed between the launch of the shell and the explosion?
   + What is the horizontal displacement of the shell before it explodes?
@@ -115,10 +117,7 @@ $
     \
     bold(t &= 6.89 "s")
   $
-  #continue_box
-])
 
-#example([Fireworks Display _continued_], [
   2) We can calculate the firework's displacement using the time we just calculated.
   $
     Delta x &= v_(0x)t
@@ -129,7 +128,7 @@ $
     \
     bold(Delta x &= 125 "m")
   $
-])
+]
 
 
 
@@ -153,16 +152,16 @@ $
 $
 T= 1 / f
 $
-#definition([Circular Motion Equations], [
+#definition[Circular Motion Equations][
   Given radius of the circular motion $R$:
   $
   v &= (2 pi R) / T = 2 pi R f
   \
   a_c &= v^2 / R = (4pi^2 R) / T = 4pi^2 R f
   \
-  a_"tot" &= lr(|| drv(arrow(v),t)||) = sqrt(a_c^2 +a_t^2)
+  a_"tot" &= lr(|| dv(arrow(v),t)||) = sqrt(a_c^2 +a_t^2)
 $
-])
+]
 
 
 
@@ -177,14 +176,14 @@ $
 - This is essentially vector addition.
 - The *Law of Sines* and the *Law of Cosines* are useful formulas for relative motion problems whenever angles are needed.
 
-#definition([Law of Sines], [
+#definition[Law of Sines][
   Given sides $a$, $b$, and $c$ opposite of angles $A$, $B$, and $C$, respectively,
   $
     (sin A) / a = (sin B) / b = (sin C) / c
   $
-])
+]
 
-#definition([Law of Cosines], [
+#definition[Law of Cosines][
   Given sides $a$, $b$, and $c$ opposite of angles $A$, $B$, and $C$, respectively,
   $
     a^2 = b^2 + c^2 - 2b c cos A
@@ -193,9 +192,9 @@ $
     \
     c^2 = a^2 + b^2 - 2a b cos C
   $
-])
+]
 
-#example([Metro Trains],[
+#example[Metro Trains][
   Two metro trains pass by each other on the red line. 
   The northbound train is moving at a speed of $25.0 "m"slash"s"$ and the southbound train is moving at a speed of $20.0 "m"slash"s"$.
   In the northbound train, Cecilia is walking toward the front of the train at $2.0 "m"slash"s"$, and in the southbound one, Jack is moving toward the back of the train also at $2.0 "m"slash"s"$.
@@ -223,4 +222,4 @@ $
     \
     bold(v_"Jack,Cecilia" &= 45.0 "m"slash"s")
   $
-])
+]

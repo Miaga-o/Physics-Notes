@@ -1,10 +1,5 @@
-#import "template.typ": *
-#set heading(numbering: custom_numbering)
-#show: formatting 
-
-#align(center, [#title([PHYS 161 Notes])#author])
-#outline()
-#pagebreak()
+#import "presets.typ": *
+#show: template.with(doc_title: "PHYS 161 Notes", numbering_depth: 2)
 
 #include("ch_1.typ")
 #include("ch_2.typ")

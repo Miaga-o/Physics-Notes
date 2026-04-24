@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "presets.typ": *
 
 = Work and Kinetic Energy
 == Work
@@ -34,7 +34,8 @@ $
 $
   W = Delta K
 $
-#derivation([Work-Energy Theorem], [
+
+#theorem([Work-Energy Theorem], [
   Given work $W$ and kinetic energy $K$:
   $
     F_(parallel) &= m a = m (v_2^2-v_1^2) / (2s)
@@ -47,7 +48,8 @@ $
 
 - It follows that energy is also a scalar quantity.
 - However, these formulas only hold when the force remains constant during the displacement.
-#example([Final Velocity of a Sled], [
+
+#example[Final Velocity of a Sled][
   You push a $30.0 "kg"$ sled with constant horizontal force $F=500 "N"$ for a horizontal distance $d=20.0 "m"$. The sled's initial velocity is $10.0 "m"slash"s"$. What is the final velocity of the sled?
   #line(length: 100%)
   1) Because we can calculate the work done and we are given the initial velocity, we can use the work-energy theorem to derive an expression for the final velocity.
@@ -68,7 +70,7 @@ $
     \
     bold(v_2 &= 27.7 "m"slash"s")
   $
-])
+]
 
 
 
@@ -155,12 +157,12 @@ $
   W = integral_(r_1)^(r_2) arrow(F) dot dif arrow(r)
 $
 - This is also the definition for work done by a spring because it varies depending on the displacement.
-#derivation([Work Done by a Spring], [
+#definition[Work Done by a Spring][
 $
   W_s &= integral_(x_1)^(x_2) (-k x) dif x \
   W_s &= -1/2 k Delta x^2
 $
-])
+]
 
 == Power
 - *Power* is the rate at which work is done, measured in watts $"(W)"$ or joules per second $("J"slash"s")$.
@@ -174,11 +176,9 @@ $
   P_"av" = (Delta W) / (Delta t)
 $
 
-#definition([Power], [
+#definition[Power][
   Given power $P$, work $W$, velocity $arrow(v)$, and force $arrow(F)$:
   $
-    P = drv(W,t) = arrow(F) dot arrow(v) = F v cos theta
+    P = dv(W,t) = arrow(F) dot arrow(v) = F v cos theta
   $
-])
-
-#pagebreak()
+]

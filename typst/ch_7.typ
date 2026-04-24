@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "presets.typ": *
 
 = Potential Energy and Energy Conservation
 - *Potential energy* is energy based on position, and may be _converted_ into other forms of energy depending on the change in position.
@@ -25,13 +25,13 @@ $
 == Elastic Potential Energy
 - *Elastic potential energy* is potential energy stored in deformable objects such as springs when they are stretched or compressed from equilibrium.
   - Denoted $U_s$.
-#definition([Elastic Potential Energy], [
+#definition[Elastic Potential Energy][
   Given elastic potential energy $U_s$, spring constant $k$, and elongation of object $x$:
   $
     U_s = 1/2 k x^2 
   $
-])
-
+]
+\
 - Similarly to work done by gravity, because an object's elastic potential energy increases the more it is displaced from equilibrium, the work done by the spring force is equal to the negative change in elastic potential energy.
 $
   W_s = - Delta U_s
@@ -50,12 +50,12 @@ $
 - Thus, as long as the net work done by nonconservative forces in a system is zero, the change in total mechanical energy is zero.
 - As a result, we can equate the total mechanical energy at different points in a system.
 - Thus, work done by nonconservative forces should be subtracted.
-#definition([Law of Conservation of Energy], [
+#definition[Law of Conservation of Energy][
   Given kinetic energy $K$, potential energy $U$, and work from nonconservative forces $W_"nc"$:
   $
     Delta K + Delta U - W_"nc" = 0
   $
-])
+]
 
 - For conservation of energy problems, the following form is often used:
 $
@@ -65,7 +65,7 @@ $
 $
   Delta U_"int" = -W_"nc"
 $
-#example([Block on a Globe], [
+#example[Block on a Globe][
   A small block of mass $m$ sits on top of a globe with radius $R$. The small block begins sliding from the top of the globe with negligible speed. The block leaves the surface of the globe when it reaches a height $h_"crit"$ above the ground.
   Derive a formula for $v_"crit"$, the speed of the block the moment it falls off the globe, in terms of $R$, $h_"crit"$, and $g$.
   #figure(image("/images/MWE_we_9.jpg", width: 31%))
@@ -81,27 +81,31 @@ $
     \
     bold(v_"crit" &= sqrt(4g R - 2 g h_"crit"))
   $
-])
+]
 
-#example([Throwing a  Baseball], [
+#example[Throwing a  Baseball][
   The maximum horizontal distance you can throw a $0.145 "kg"$ baseball is $25 "m"$ at an angle of $alpha = 45 degree$ above the horizontal.
   
   + Ignoring air resistance and the small distance the baseball is above the ground when it is thrown, what is the kinetic energy of the baseball the moment it is thrown?
   + At the ball's maximum height, what fraction of its total mechanical energy is kinetic energy?
+  #line(length:100%)
 
-  #line(length: 100%)
   1) Because we are given the range of the baseball but not the initial velocity, we can use our previously derived range formula to find the initial velocity.
+
+  #continue_box
+]
+
+#example-box[Throwing a Baseball _continued_][
   $
     R &= (v_0^2 sin (2 alpha)) / g
     \
     v_0^2 &= (R g) / sin(2 alpha)
     \
-    v_0 &= sqrt((R g) / sin(2 alpha))
-    \
-    v_0 &= sqrt(((25 "m")(9.81 "m"slash"s"^2)) / (sin 90 degree))
+    v_0 &= sqrt((R g) / sin(2 alpha)) = sqrt(((25 "m")(9.81 "m"slash"s"^2)) / (sin 90 degree))
     \
     v_0 &= 15.7 "m"slash"s"
   $
+
   Now we can plug this back into the kinetic energy formula.
   $
     K_0 &= 1/2 m v_0 ^2
@@ -125,9 +129,9 @@ $
     \
     bold(K_1 / E_"tot" &= 1/2)
   $
-])
+]
 
-#example([Rough Patch], [
+#example[Rough Patch][
   A small block is sent through point A with a speed of $7 "m"slash"s"$. 
   Point A is at height $h_1 = 6 "m"$.
   The block then slides down to point B, which is at a height of zero. 
@@ -156,6 +160,7 @@ $
     \
     v_C^2 &= 127.48 space "m"^2slash"s"^2
   $
+
   Now, we can equate the kinetic energy at point C to the work done by friction and solve for the distance needed to fully dissipate it.
   $
     K_C &= W_f
@@ -171,11 +176,10 @@ $
     d &= 9.28 "m"
   $
   *Thus, the block cannot reach point D, and will instead travel $9.28 "m"$ across the rough patch.*
-])
+]
 
 
 
-\
 == Force and Potential Energy
 - Recall that the work done by a conservative force equals the negative change in potential energy.
 $
@@ -185,13 +189,13 @@ $
 - Thus, given force $arrow(F)$ and potential energy $U$:
 #figure(
   $
-    arrow(F) = -arrow(nabla) U= -pdrv(U,x) hat(i) -pdrv(U,y) hat(j) -pdrv(U,z) hat(k) 
+    arrow(F) = -arrow(nabla) U= -pdv(U,x) hat(i) -pdv(U,y) hat(j) -pdv(U,z) hat(k) 
   $
   , supplement: none,
   caption: [The "$partial$" symbol refers to taking a derivative with respect to one variable, holding everything else constant, known as a _partial derivative_. The nabla vector is known as the gradient vector, and is a vector consisting of all partial derivatives.]
 )
 
-#example([Object's Potential Energy Function], [
+#example[Object's Potential Energy Function][
   A small object with mass $m = 0.0900 "kg"$ moves along the $+x$-axis. 
   The only force applied to the object is a conservative force with potential energy function $U(x) = -alpha x^2 + beta x^3$ where 
   \ $alpha=9.50 "J"slash"m"^2$ and $beta=0.300 "J"slash"m"^3$. The object is released from rest at negligible $x$.
@@ -212,6 +216,10 @@ $
     \
     bold(v&=54.3 "m"slash"s")
   $
+  #continue_box
+]
+
+#example-box[Object's Potential Energy Function _continued_][
   2) We can start by finding the negative derivative to get the the force function, then use the force function to get the acceleration function.
   $
     F &= -(dif U) / (dif x)
@@ -225,6 +233,4 @@ $
     bold(a(4) &= 684 "m"slash"s"^2)
   $
   3) Similarly to our logic for part one, we can use the fact that $K=W=-U(x)$. By finding the zeros of $-U(x)$, we find that $x_max$ is whenever the kinetic energy is zero again: $bold(x_max=31.7 "m")$.
-])
-
-#pagebreak()
+]

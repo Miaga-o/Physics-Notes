@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "presets.typ": *
 
 = Newton's Laws of Motion
 == Newton's First Law
@@ -24,14 +24,14 @@
 
 
 == Newton's Third Law
-#definition([Newton's Third Law], [
+#definition[Newton's Third Law][
   For every action there is an equal and opposite reaction.
   
   Given objects $A$ and $B$, where the subscript $A B$ means "exerted from $A$ on $B$":
   $
     arrow(F)_(A B) = -arrow(F)_(B A)
   $
-])
+]
 
 - For example, when two objects collide, they experience the same magnitude of force from the collision.
 

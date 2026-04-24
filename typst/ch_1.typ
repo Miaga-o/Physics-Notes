@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "presets.typ": *
 
 = Units, Physical Quantities, and Vectors
 == SI Units
@@ -118,6 +118,3 @@ $
   )
   = (u_y v_z - u_z v_y) hat(i) - (u_x v_z - u_z v_x) hat(j) + (u_x v_y - u_y v_x) hat(k)
 $
-
-
-#pagebreak()

@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "presets.typ": *
 
 = Motion Along a Straight Line
 == Displacement, Time, Velocity, and Acceleration
@@ -16,17 +16,17 @@
   \
   v_("av") &= (Delta x) / (Delta t)
   \
-  v &= lim_(Delta t -> 0) (Delta x) / (Delta t) = drv(x,t)
+  v &= lim_(Delta t -> 0) (Delta x) / (Delta t) = dv(x,t)
   \
   a_("av") &= (Delta v) / (Delta t)
   \
-  a &= lim_(Delta t -> 0)(Delta v) / (Delta t) = drv(v,t) = ndrv(x,t,2)
+  a &= lim_(Delta t -> 0)(Delta v) / (Delta t) = dv(v,t) = ndv(x,t,2)
 $
 
 
 
 == Motion with Constant Acceleration
-#definition([Kinematic Equations], [
+#definition[Kinematic Equations][
 With constant acceleration, the following *kinematic equations* hold:
   $
     v = v_0 + a Delta t
@@ -35,20 +35,18 @@ With constant acceleration, the following *kinematic equations* hold:
     \
     v ^2 = v_0^2 + 2a Delta x
   $
-])
+]
 
-#derivation([Displacement Kinematic Equation], [
+#note[Displacement Kinematic Derivation][
   $
     v &= v_0 + a Delta t
     \
     integral_(t_1)^(t_2) v dif t &= integral_(t_1)^(t_2) (v_0 + a Delta t) dif t
     \
-    integral_(t_1)^(t_2) drv(x,t) dif t &= integral_(t_1)^(t_2) (v_0 + a Delta t) dif t
+    integral_(t_1)^(t_2) dv(x,t) dif t &= integral_(t_1)^(t_2) (v_0 + a Delta t) dif t
     \
     integral_(x_1)^(x_2) dif x &= integral_(t_1)^(t_2) (v_0 + a Delta t) dif t
     \
     Delta x &= v_0 Delta t + 1/2 a Delta t^2
   $
-])
-
-#pagebreak()
+]

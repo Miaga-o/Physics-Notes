@@ -47,11 +47,27 @@
 */
 
 //Leibniz derivative
-#let dv(derivative_of, respect_to) = $(dif #derivative_of) / (dif #respect_to)$
-//nth order leibniz derivative
-#let ndv(derivative_of, respect_to, order) = $(dif^order #derivative_of) / (dif #respect_to^order)$
+#let dv(derivative_of, respect_to, ..args) = {
+  let order = none
+  if args.pos().len() > 0 {
+    order = args.pos().first()
+  }
+
+  if order == 1 {
+    order = none
+  }
+  $(dif^#order #derivative_of)/(dif #respect_to^order)$
+}
 //Leibniz partial derivative
-#let pdv(derivative_of, respect_to) = $(partial #derivative_of) / (partial #respect_to)$
+#let pdv(derivative_of, ..respect_to) = {
+  let vars = respect_to.pos()
+  let order = none
+  if vars.len() > 1 {
+    order = vars.len()
+  }
+  $(partial^#order #derivative_of)/(partial #vars.join(partial))$
+}
+
 //Evaluated integral
 #let eval(lower_bound, upper_bound) = $bigg(|)_#lower_bound^#upper_bound$
 //Magnitude of a vector

@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 
 = Potential Energy and Energy Conservation
 - *Potential energy* is energy based on position, and may be _converted_ into other forms of energy depending on the change in position.
@@ -73,7 +73,7 @@ $
 #example[Block on a Globe][
   A small block of mass $m$ sits on top of a globe with radius $R$. The small block begins sliding from the top of the globe with negligible speed. The block leaves the surface of the globe when it reaches a height $h_"crit"$ above the ground.
   Derive a formula for $v_"crit"$, the speed of the block the moment it falls off the globe, in terms of $R$, $h_"crit"$, and $g$.
-  #figure(image("/images/MWE_we_9.jpg", width: 31%))
+  #figure(image("../../images/mc-phys161/MWE_we_9.jpg", width: 31%))
   #line(length: 100%)
   
   The first step is to identify two points in the system that would include the desired terms. One of them should be when the block is falling off because it is at height $h_"crit"$. The other point should be at the top of the globe because the height above the ground is just the diameter of the globe.
@@ -199,6 +199,10 @@ $
   , supplement: none,
   caption: [The "$partial$" symbol refers to taking a derivative with respect to one variable, holding everything else constant, known as a _partial derivative_. The nabla vector is known as the gradient vector, and is a vector consisting of all partial derivatives.]
 )
+
+#note-block[
+  This is a multivariable calculus concept.
+]
 
 #example[Object's Potential Energy Function][
   A small object with mass $m = 0.0900 "kg"$ moves along the $+x$-axis. 

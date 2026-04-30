@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 
 = Work and Kinetic Energy
 == Work
@@ -73,8 +73,12 @@ $
 
 
 == Work and Energy with Varying Force
-- If an object is experiencing a varying net force, then the total work can be approximated using the average force per increment of the total displacement.
-- Thus, as the increment tends to zero, work may be defined as follows:
+- Given a constant net force $F_"av"$, we can define work as follows:
+$
+  W &= F_"av" Delta s
+$
+
+- Thus, we can use an integral to calculate work done by a net force.
 $
   W = integral_(s_1)^(s_2) F dif s
 $

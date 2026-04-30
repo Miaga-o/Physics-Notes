@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 
 = Rotation of Rigid Bodies
 - *Rigid bodies* are objects that do not experience deformations from forces.
@@ -54,7 +54,7 @@ $
   \
   alpha_("av-"z) &= (Delta omega_z) / (Delta t)
   \
-  alpha_z &= lim_(Delta t -> 0)(Delta omega_z) / (Delta t) = dv(omega_z,t) = ndv(theta,t,2)
+  alpha_z &= lim_(Delta t -> 0)(Delta omega_z) / (Delta t) = dv(omega_z,t) = dv(theta,t,2)
 $
 
 #definition[Angular Kinematic Equations][
@@ -370,7 +370,7 @@ $
 
 #example[Unwinding Cable][
   A light, nonstretching cable is wrapped around a solid cylinder of mass $50 "kg"$ and diameter $0.120 "m"$ that rotates in frictionless bearings about a stationary horizontal axis. The cable's free end is pulled with a constant $9.0 "N"$ force for a distance of $2.0 "m"$, turning the cylinder as it unwinds without slipping. The cylinder is initially at rest. Find its final angular speed and the final speed of the cable.
-  #figure(image("../images/Screenshot 2026-04-06 at 2.48.09 PM.png", width: 40%))
+  #figure(image("../../images/mc-phys161/Screenshot 2026-04-06 at 2.48.09 PM.png", width: 40%))
   #line(length: 100%)
   Because we are just given the total mass of the solid cylinder, we can use the derived formula for a cylinder's moment of inertia.
   $

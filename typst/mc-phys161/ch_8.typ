@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 
 = Momentum, Impulse, and Collisions
 == Momentum and Impulse
@@ -247,7 +247,7 @@ $
 
 #example[Asteroid Deflection][
   Two asteroids of equal mass in the asteroid belt between Mars and Jupiter collide. Asteroid A initially travels with $v_(1A) = 40.0 "m"slash"s"$ with respect to an inertial frame where asteroid B is at rest. After the collision, asteroid A is deflected $30.0 degree$ from its original direction, while asteroid B is deflected $45.0 degree$ from asteroid A's original direction.
-  #figure(image("/images/YF-08-36.jpg", width: 30%))
+  #figure(image("../../images/mc-phys161/YF-08-36.jpg", width: 30%))
   + Find the speed of asteroid A after the collision.
   + Find the speed of asteroid B after the collision.
   #line(length: 100%) 

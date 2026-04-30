@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 
 = Motion Along a Straight Line
 == Displacement, Velocity, and Acceleration
@@ -20,7 +20,7 @@
   \
   a_("av") &= (Delta v) / (Delta t)
   \
-  a &= lim_(Delta t -> 0)(Delta v) / (Delta t) = dv(v,t) = ndv(x,t,2)
+  a &= lim_(Delta t -> 0)(Delta v) / (Delta t) = dv(v,t) = dv(x,t, 2)
 $
 
 

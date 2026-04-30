@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 
 = Motion in Two or Three Dimensions
 == Vector Quantities
@@ -139,7 +139,7 @@ $
 == Circular Motion
 - Even if a particle's speed is constant, its velocity cannot be constant in circular motion because _its direction is constantly changing._
 - The direction of the velocity changes due to acceleration directed toward the center of its rotation, known as *centripetal acceleration.*
-  - Denoted $a_t$ or $a_"rad"$.
+  - Denoted $a_c$ or $a_"rad"$.
   - Thus, when centripetal acceleration is the only acceleration vector acting on a particle, the particle undergoes *uniform circular motion* because it will always be perpendicular to the particle's velocity vector.
 - An acceleration vector parallel to the particle's velocity vector is known as *tangential acceleration.*
   - Denoted $a_t$.
@@ -165,6 +165,9 @@ $
   \
   a_"tot" &= lr(|| dv(arrow(v),t)||) = sqrt(a_c^2 +a_t^2)
 $
+]
+#note-block[
+  In later chapters, we will often incorporate angular speed $omega$ into these equations.
 ]
 
 

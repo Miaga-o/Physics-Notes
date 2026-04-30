@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 
 = Dynamics of Rotational Motion
 - We established in earlier chapters that forces induce acceleration in objects.
@@ -25,7 +25,7 @@
 
 #example[Rotating a Square Plate][
   A square metal plate with $0.180 "m"$ side lengths is pivoted about an axis through point $O$ at its center and perpendicular to the plate. Calculate the net torque about this axis due to the three forces shown in the figure given $F_1 = 28.0 "N"$, $F_2 = 14.9 "N"$, and $F_3=16.1 "N"$.
-  #figure(image("../images/yf_Figure_10_40.jpg", width: 28%))
+  #figure(image("../../images/mc-phys161/yf_Figure_10_40.jpg", width: 28%))
   #continue_box
 ]
 
@@ -120,7 +120,7 @@
   The coefficient of kinetic friction is $0.27$. A string attached to the block is wrapped around a flywheel on a fixed axis through $O$. 
   The flywheel has a mass $m_f = 16.0 "kg"$ and a moment of inertia \ $I_f = 0.500 "kg"dot"m"^2$ with respect to the axis of rotation. 
   The string pulls without slipping a distance of $0.250 "m"$ from that axis.
-  #figure(image("../images/YF-10-55.jpg", width:21%))
+  #figure(image("../../images/mc-phys161/YF-10-55.jpg", width:21%))
 
   + What is the acceleration of the block down the plane?
   + What is the tension in the string?
@@ -203,7 +203,7 @@ $
 
 #example[Rolling Basketball][
   A basketball, which can be approximated as a hollow sphere, rolls down a mountainside into a valley and then up the opposite side, starting from rest at a height $H_0$ above the bottom. The mountainside the basketball is released on is rough, preventing slipping. Meanwhile, the opposite side is smooth and frictionless. Neglect rolling friction and assume the system's total mechanical energy is conserved. How high, in terms of $H_0$, will the ball go up the other side?
-  #figure(image("../images/yg.9.36.jpg", width:56%))
+  #figure(image("../../images/mc-phys161/yg.9.36.jpg", width:56%))
   #line(length:100%)
 
   We can start by deriving an expression for $H_0$ using conservation of energy between the basketball's initial position and the valley.
@@ -329,7 +329,7 @@ $
   It is attached to a massless cord passing through a hole in the surface.
   The block is originally revolving at a distance of $0.300 "m"$ from the hole with an angular speed of $2.19 "rad"slash"s"$.
   The cord is then pulled from below, shortening the radius of the circle in which the block revolves to $0.150 "m"$. Model the block as a particle.
-  #figure(image("../images/YF-10-48.jpg", width: 30%))
+  #figure(image("../../images/mc-phys161/YF-10-48.jpg", width: 30%))
   + Is the angular momentum of the block conserved?
   + What is the new angular speed?
   + Find the change in kinetic energy of the block.

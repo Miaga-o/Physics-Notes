@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 #show: template.with(doc_title: "PHYS 161 Notes", numbering_depth: 2)
 
 #include("ch_1.typ")

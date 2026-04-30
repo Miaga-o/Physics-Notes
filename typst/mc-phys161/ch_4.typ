@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 
 = Newton's Laws of Motion
 == Newton's First Law

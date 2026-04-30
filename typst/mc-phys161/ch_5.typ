@@ -1,4 +1,4 @@
-#import "presets.typ": *
+#import "../../presets.typ": *
 
 = Applying Newton's Laws
 == Types of Forces
@@ -118,8 +118,10 @@ $
 $
   Sigma F = m a_c = (m v^2) / R
 $
-- As a result, denoting a singular "centrifugal force" is generally not accurate.
-  - For example, if an object is moving vertically with uniform circular motion, the weight force points toward the center of rotation at the top, but away from the center of rotation at the bottom.
+#caution-block[
+  Denoting a singular "centrifugal force" is generally not accurate.
+]
+- For example, if an object is moving vertically with uniform circular motion, the weight force points toward the center of rotation at the top, but away from the center of rotation at the bottom.
 - Additionally, direction should be considered relative to the center of rotation---generally, the positive direction is toward the center.
 - Additionally, problems involving *circular motion of vehicles* have less obvious forces contributing to the circular motion.
   - Along a curved road with friction, _static friction is what maintains the vehicle's circular motion_ because at any given moment, the tires of the car are stationary relative to the pavement.

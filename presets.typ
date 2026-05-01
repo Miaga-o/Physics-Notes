@@ -90,11 +90,10 @@
   //Page
   #set page(page_style, numbering: "1 of 1", header: context {
     if show_header {
-      emph(hydra(1, skip-starting: true))
+      emph(hydra(1))
       h(1fr)
-      if hydra(3) == none {
-        emph(hydra(2, skip-starting: true))
-      } else {emph(hydra(3, skip-starting: true))}
+      emph(hydra(2))
+      
       
       if here().page() != 1 {line(length: 100%, stroke: (thickness: 2pt, dash: "dotted"))}
     }

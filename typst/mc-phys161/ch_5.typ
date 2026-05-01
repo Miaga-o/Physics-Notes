@@ -169,5 +169,3 @@ $
     bold(alpha &= arctan(v^2 / (R g)))
   $
 ]
-
-#pagebreak()

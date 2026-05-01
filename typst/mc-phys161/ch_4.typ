@@ -72,5 +72,3 @@
   caption: [Free-body diagram of a block being pulled at an angle $theta$ by a rope.
   Note how the vertical components of the forces are all balanced, signifying that it is being dragged horizontally.]  
 )
-
-#pagebreak()

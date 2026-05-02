@@ -15,7 +15,8 @@
 ]
 - *Amplitude* is the maximum magnitude of displacement from equilibrium, measured in meters $("m")$.
   - Denoted $A$.
-- A *cycle* or complete vibration is entire round trip either directly or transitively from $A$ to $A$.
+- A *cycle* or complete vibration is entire round trip.
+  - Starting at point $A$, a cycle would be $A -> -A -> A.$
 - *Period* is the time needed to complete a cycle, measured in seconds $("s")$, or sometimes seconds per cycle.
   - Denoted $T$.
 - *Frequency* is the number of cycles per unit of time, measured in hertz $("Hz") = "s"^(-1)$, or sometimes cycles per second.
@@ -72,23 +73,27 @@ $
     let amplitude = calc.sqrt(2)/2*0.75
 
     set-style(
-      legend: (stroke: none, orientation: ttb, scale: 120%)
+      legend: (stroke: none, orientation: ttb, scale: 120%),
+      axes: (shared-zero: false)
     )
 
     plot.plot(
       size: (8,8),
       x-tick-step: none,
       y-tick-step: none,
-      axis-equal: true,
       axis-style: "school-book",
       legend: "north-east",
       {
+
         plot.add(domain: (-0.9,0.9), x=>x, style: (stroke: none))
 
         plot.annotate({
+          content((-0.075, -0.075))[$O$]
+
           line(name: "Phasor", (0,0), (amplitude - 0.0, amplitude -0.025), mark: (end: "stealth", scale: 0.3), fill: black)
           line((amplitude, 0), (amplitude, amplitude), stroke: (dash: "dashed"))
-          content((0.2,0.1), text(size: 15pt)[$theta$])
+          content((0.2,0.1), text(size: 14pt)[$theta$])
+          arc((0.75*.4,0), start: 0deg, stop: 45deg, radius: 0.75*0.4*1cm)
           content("Phasor.mid", anchor:"north", $A$)
 
 
@@ -132,18 +137,16 @@ $
     })
   })
 )
-- Using this relationship, we can derive simple harmonic motion equations.
-- Using circular motion, we can establish the following:
+- Using a *reference circle* and *phasor* (rotating vector), we can prove this to be true.
 $
   a_Q &= omega^2 A
   \
   R &= A
 $
 - Now, the $x$-components of these values will refer to the acceleration and displacement, respectively, of the projection $P$.
-- Thus, we can say that these are _simple harmonic motion_ definitions for displacement and acceleration.
 
 #definition[SHM Equations][
-  Let the radius of $Q$'s motion and the amplitude of $P$'s motion equal $A$.
+  Let $A$ be amplitude, $k$ be the restoring force constant, $omega$ be angular frequency, and $m$ be the harmonic oscillator's mass.
   $
     x &= A cos (theta)
     \
@@ -153,6 +156,7 @@ $
   $
 ]
 
+- This proves that the projection is in simple harmonic motion because $P$'s acceleration is directly proportional to $A cos(theta) = x$, the displacement.
 - The definition for angular frequency comes from equating our new definition for SHM acceleration to our old one, $a_x = -k/m x$.
 
 #remark-block[
@@ -160,10 +164,15 @@ $
 ]
 
 #definition[SHM Equations][
-  Let $f$ and $T$ be the frequency and period, respectively, in simple harmonic motion. Additionally, let $omega$ be angular frequency, $k$ be the restoring force constant, and $m$ be the harmonic oscillator's mass:
+  Let $f$ and $T$ be the frequency and period, respectively, in simple harmonic motion:
   $
     f &= omega/(2pi) = 1/(2pi)sqrt(k/m)
     \
     T &= (2pi)/omega = 2pi sqrt(m/k)
   $
 ]
+
+Tn tun tu sahurrjrilerjf
+$
+  t^3
+$

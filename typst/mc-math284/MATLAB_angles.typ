@@ -123,6 +123,8 @@ Combining two of the above, what does ```matlab sum(A.*A)``` do, and why would t
     \
     &= mat(mag(bf(a)_1)^2, mag(bf(a)_2)^2, mag(bf(a)_3)^2, mag(bf(a)_4)^2)
   $
+
+  A dot product of a vector with itself is used in orthogonal projections.
 ]
 #v(2em)
 
@@ -172,7 +174,15 @@ vertcat(A,B')
 R = rand(4,6)
 ```
 #effect[
-  Creates a $4 $$times$$ 6$ matrix $bf(R)$ where each entry is given by $0 <= R_(i j) < 1$.
+  Creates a $4 $$times$$ 6$ matrix $bf(R)$ where each entry is given by $0 < R_(i j) < 1$.
+  $
+    bf(R)_"ex" = mat(column-gap: #10pt,
+      0.8147, 0.6324, 0.9575, 0.9572, 0.4218, 0.6557;
+      0.9058, 0.0975, 0.9649, 0.4854, 0.9157, 0.0357;
+      0.1270, 0.2785, 0.1576, 0.8003, 0.7922, 0.8491;
+      0.9134, 0.5469, 0.9706, 0.1419, 0.9595, 0.9340;
+    )
+  $
 ]
 #v(2em)
 

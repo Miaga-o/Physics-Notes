@@ -5,7 +5,7 @@
 - *Momentum* is an object's _quantity of motion_, measured in $"kg" dot "m"slash"s"$ or $"N" dot "s"$
   - Denoted $p$.
 #definition[Momentum][
-  Given momentum $arrow(p)$, mass $m$, and velocity $arrow(v)$:
+  Given mass $m$ and velocity $arrow(v)$, momentum is defined as follows:
   $
     arrow(p) = m arrow(v)
   $
@@ -653,7 +653,7 @@ $
 - Another use case of the CM reference frame is for defining the kinetic energy of a system.
 
 #definition([Kinetic Energy of a System], [
-  Given kinetic energy of a system $K_"sys"$ and masses of the system $m_i$ each with velocity $v_i^*$:
+  Given masses of the system $m_i$ each with velocity $v_i^*$:
   $
     K_"sys" &= sum_(i=1)^N 1/2 m_i v_i^(*2) + 1/2 M_"tot" v_"cm"^2
     \

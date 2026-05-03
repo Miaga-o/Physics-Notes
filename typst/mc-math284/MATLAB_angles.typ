@@ -283,7 +283,7 @@ Try to predict what it will compute, then enter it into MATLAB to check.
   end
   ```,
   answer[
-    This routine converts each column vector of $bf(R)$ into a unit vector.
+    This routine generates a $4$$times$$6$ matrix of randomly generated numbers, each between $0$ and $1$, exclusive. Then, each column vector in $bf(R)$ is divided by its magnitude, converting each of them into unit vectors. The end result is a matrix $bf(R)$ of only $RR^4$ unit vectors.
   ]
 )
 

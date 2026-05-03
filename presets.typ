@@ -15,6 +15,7 @@
 
 
 
+
 /*
 * Organization functions
 */
@@ -79,6 +80,7 @@
 */
 #let template(
   doc_title: "",
+  doc_subtitle: "",
   show_title: true,
   show_header: true,
   doc_font: "Libertinus Serif",
@@ -136,8 +138,17 @@
 
   //Title page
   #show title: set text(size: 30pt)
+  #set outline.entry(fill: line(length: 100%, stroke: black.lighten(70%)))
   #if show_title [
-    #align(center)[#title(doc_title) #author]
+    #align(center)[
+      #title(doc_title)
+      #if doc_subtitle != "" {
+        text(size: 20pt, doc_subtitle)
+        linebreak()
+      }
+      
+      #text(size: 16pt, author)
+    ]
     #figure(image("images/YOTSUBA!!!.webp"), supplement: none, caption: [Yotsuba from Yotsuba&!])
     #outline()
     #pagebreak()

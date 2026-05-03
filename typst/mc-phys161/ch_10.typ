@@ -12,7 +12,7 @@
 - Torque is caused by a force acting along its *line of action* on an object some perpendicular distance from the reference point known as the *lever arm* or *moment arm*.
 
 #definition[Torque][
-  Given torque $arrow(tau)$, force $arrow(F)$, and lever arm $r$:
+  Given force $arrow(F)$ and lever arm $arrow(r)$, let torque be defined as follows:
   $
     arrow(tau) &= arrow(r) times arrow(F) = r F sin(theta) hat(n)_perp
     \
@@ -73,7 +73,7 @@
 - Because force and linear acceleration are related to torque and angular acceleration, respectively, by a perpendicular distance from the origin, we can use Newton's second law to establish a relationship between torque and angular acceleration.
 
 #definition[Rotational Analog of Newton's Second Law][
-  Let all values reference some rigid body which rotates about a rotational axis $z$. Given net torque $Sigma tau_z$, moment of inertia $I$, and angular acceleration $alpha_z$:
+  Let all values reference some rigid body which rotates about a rotational axis $z$. Given moment of inertia $I$ and angular acceleration $alpha_z$, let net torque be defined as follows:
   $
     Sigma tau_z &= I alpha_z
   $
@@ -256,7 +256,7 @@ $
 - Now, by integrating both sides, we can reach a definition for work in rotational motion.
 
 #definition[Work in Rotational Motion][
-  Given work $W$, torque $tau_z$, and angular positions $theta_1$ and $theta_2$:
+  Given torque $tau_z$, and angular positions $theta_1$ and $theta_2$, let work be defined as follows:
   $
     W = integral_(theta_1)^(theta_2) tau_z dif theta
   $
@@ -264,7 +264,7 @@ $
 - By taking the derivative with respect to time from both sides, we can also reach a definition for power in rotational motion.
 
 #definition[Power in Rotational Motion][
-  Given power $P$, torque $tau_z$, and angular velocity $omega_z$:
+  Given torque $tau_z$, and angular velocity $omega_z$ about some rotational axis $z$, let power be defined as follows:
   $
     P &= tau_z omega_z
   $
@@ -278,7 +278,7 @@ $
   - Its relationship to momentum is analogous to torque's relationship to force.
 
 #definition[Angular Momentum][
-  Given angular moment $arrow(L)$, position vector $arrow(r)$ (relative to some reference point), and momentum $arrow(p)$:
+  Given position vector $arrow(r)$ (relative to some reference point), and momentum $arrow(p)$, let angular momentum be defined as follows:
   $
     arrow(L) &= arrow(r) times arrow(p) = arrow(r) times m arrow(v)
   $
@@ -307,7 +307,7 @@ $
 $
 
 #definition[Angular Momentum on a Rigid Body][
-  On some rigid body, given angular momentum $arrow(L)$, moment of inertia $I$, and angular velocity $arrow(omega)$:
+  On some rigid body, given moment of inertia $I$, and angular velocity $arrow(omega)$, let angular momentum be defined as follows:
   $
     arrow(L) &= I arrow(omega)
   $

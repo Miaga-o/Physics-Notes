@@ -300,7 +300,7 @@ $
 - *Moment of inertia* is an object's resistance to angular acceleration, measured in $("kg" dot "m"^2)$.
   - Denoted $I$.
 #definition[Moment of Inertia with Point Masses][
-  Given moment of inertia $I$ and point masses $m_i$ on a rigid body, each a distance $r_i$ from the axis of rotation:
+  Given point masses $m_i$ on a rigid body, each a distance $r_i$ from the axis of rotation, let moment of inertia be defined as follows:
   $
     I = sum_(i=1)^N m_i r_i^2
   $
@@ -308,7 +308,7 @@ $
 
 - Moment of inertia is applied in a definition for *rotational kinetic energy* $K$ of a rigid body.
 #definition[Rotational Kinetic Energy of a Rigid Body][
-  Given rotational kinetic energy $K_"rot"$, moment of inertia for some rotational axis $I$, and angular speed of rigid body $omega$:
+  Given moment of inertia for some rotational axis $I$ and angular speed of rigid body $omega$, let rotational kinetic energy be defined as follows:
   $
     K_"rot" = 1/2 I omega^2
   $
@@ -320,7 +320,7 @@ $
 - According to this equation, the more resistant an object is to rotational acceleration, the greater its kinetic energy for some given $omega$.
 
 #definition[Moment of Inertia with Continuous Mass Distributions][
-  Given moment of inertia $I$ and the distance of each infinitesimally small mass on the rigid body from the axis of rotation $r$:
+  Given the distance of each infinitesimally small mass on the rigid body from the axis of rotation $r$, let moment of inertia be defined as follows:
   $
     I = integral r^2 dif m
   $
@@ -439,7 +439,7 @@ $
 
 === Gravitational Potential Energy of Extended Bodies
 #definition[Gravitational Potential Energy][
-  Given gravitational potential energy $U$, total mass of extended body $M_"tot"$, and vertical coordinate $y_"cm"$:
+  Given total mass of extended body $M_"tot"$ and vertical coordinate $y_"cm"$, let gravitational potential energy be defined as follows:
   $
     U = M_"tot" g y_"cm"
   $

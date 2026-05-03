@@ -84,7 +84,6 @@ $
       axis-style: "school-book",
       legend: "north-east",
       {
-
         plot.add(domain: (-0.9,0.9), x=>x, style: (stroke: none))
 
         plot.annotate({
@@ -137,7 +136,7 @@ $
     })
   })
 )
-- Using a *reference circle* and *phasor* (rotating vector), we can prove this to be true.
+- Using a *reference circle* and *phasor* (rotating vector), we can prove that $Q$ can be used to model simple harmonic motion.
 $
   a_Q &= omega^2 A
   \
@@ -172,7 +171,155 @@ $
   $
 ]
 
-Tn tun tu sahurrjrilerjf
-$
-  t^3
-$
+
+
+=== Kinematics in SHM
+#definition[Kinematics in SHM][
+  Let $phi.alt$ be the phase angle, that is, the angle of the phasor at $t=0$.
+  $
+    x &= A cos(omega t + phi.alt)
+    \
+    v_x &= -omega A sin(omega t+phi.alt)
+    \
+    a_x &= -omega^2 A cos(omega t+phi.alt)
+  $
+]
+
+#table(
+  columns: (50%, 50%),
+  fill: (x,y) => if y == 0 {white.darken(5%)},
+  inset: 8pt,
+  align(center)[*Graph*], align(center)[*Description*],
+  cetz.canvas({
+    import cetz.draw: *
+    import cetz-plot: *
+
+    let func = x => calc.cos(x)
+
+    plot.plot(
+      size: (5.5,2.75),
+      x-label: $t$,
+      x-tick-step: none,
+      x-ticks: ((2*calc.pi, $T$), (4*calc.pi, $2T$)),
+      x-grid: true,
+      x-max: 5*calc.pi,
+      y-label: $x$,
+      y-tick-step: none,
+      y-ticks: ((-1, $-A$), (1, $A$)),
+      y-grid: true,
+      y-min: -1,
+      axis-style: "school-book",
+      {
+        plot.add(
+          domain: (0, 5*calc.pi), 
+          func,
+          samples: 200,
+          style: (stroke: (thickness: 2pt, paint: blue))
+        )
+    })
+  }),
+  [
+    - SHM displacement graph with $phi.alt = 0$.
+    - Oscillates between $-A$ and $+A$.
+    - In other words, between $-x_"max"$ and $+x_"max"$.
+  ],
+  cetz.canvas({
+    import cetz.draw: *
+    import cetz-plot: *
+
+    let func = x => -calc.sin(x)
+
+    plot.plot(
+      size: (5.5,2.75),
+      x-label: $t$,
+      x-tick-step: none,
+      x-ticks: ((2*calc.pi, $T$), (4*calc.pi, $2T$)),
+      x-grid: true,
+      x-max: 5*calc.pi,
+      y-label: $v_x$,
+      y-tick-step: none,
+      y-ticks: ((-1, $-omega A$), (1, $omega A$)),
+      y-grid: true,
+      y-min: -1,
+      y-max: 1,
+      axis-style: "school-book",
+      {
+        plot.add(
+          domain: (0, 5*calc.pi), 
+          func,
+          samples: 200,
+          style: (stroke: (thickness: 2pt, paint: red))
+        )
+    })
+  }),
+  [
+    - SHM velocity graph with $phi.alt = 0$.
+    - Oscillates between $-omega A$ and $+omega A$.
+    - In other words, between $-v_"max"$ and $+v_"max"$.
+  ],
+  cetz.canvas({
+    import cetz.draw: *
+    import cetz-plot: *
+
+    let func = x => -calc.cos(x)
+
+    plot.plot(
+      size: (5.5,2.75),
+      x-label: $t$,
+      x-tick-step: none,
+      x-ticks: ((2*calc.pi, $T$), (4*calc.pi, $2T$)),
+      x-grid: true,
+      x-max: 5*calc.pi,
+      y-label: $a_x$,
+      y-tick-step: none,
+      y-ticks: ((-1, $-omega^2 A$), (1, $omega^2 A$)),
+      y-grid: true,
+      y-min: -1,
+      axis-style: "school-book",
+      {
+        plot.add(
+          domain: (0, 5*calc.pi), 
+          func,
+          samples: 200,
+          style: (stroke: (thickness: 2pt, paint: purple))
+        )
+    })
+  }),
+  [
+    - SHM acceleration graph with $phi.alt = 0$.
+    - Oscillates between $-omega^2 A$ and $+omega^2 A$.
+    - In other words, between $-a_"max"$ and $+a_"max"$.
+  ],
+)
+
+- This is further justification that our displacement and velocity functions are correct, as we verified this acceleration equation in the previous chapter.
+- Now, if we are given an initial displacement and velocity, we can find $A$ and $phi.alt$ by rearranging our equations.
+#table(columns: (50%, 50%), stroke:none,
+  $
+    v_(0x)/x_0 &= (-omega A sin(phi.alt))/(A cos(phi.alt))
+    \
+    -v_(0x)/(x_0 omega) &= tan(phi.alt)
+    \
+    phi.alt &= arctan(-v_(0x)/(x_0 omega))
+  $,
+  $
+    x_0^2 + v_(0x)^2/omega^2 &= (A cos(phi.alt))^2 + (-omega A sin(phi.alt))^2/omega^2
+    \
+    x_0^2 + v_(0x)^2/omega^2 &= A^2
+    \
+    A &= sqrt(x_0^2 + v_(0x)^2/omega^2)
+  $
+)
+
+
+
+== Energy in SHM
+- In simple harmonic motion, the total mechanical energy is conserved.
+- As we've observed with springs in chapter 7, a harmonic oscillator reaches its maximum kinetic energy when at equilibrium.
+- Meanwhile, a harmonic oscillator reaches its maximum potential energy when $|x|=|A|$, the amplitude.
+#definition[Total Energy in SHM][
+  $
+    E_"SHM" = 1/2m v_x^2 + 1/2k x^2= 1/2 k A^2
+  $
+]
+

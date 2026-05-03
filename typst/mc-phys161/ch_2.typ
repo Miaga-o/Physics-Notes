@@ -54,7 +54,7 @@ With constant acceleration, the following *kinematic equations* hold:
   $
 ]
 
-#derivation[Timeless Kinematic Equation][
+#derivation[Velocity Squared Kinematic Equation][
   $
     v &= v_0 + a Delta t
     \

@@ -29,7 +29,7 @@ $
   $
     omega = 2pi f
   $
-  - We can say the units are radians per cycle $("rad"slash"cycle")$.
+  - The units are radians per cycle $("rad"slash"s")$.
   - Like angular velocity, angular frequency is denoted $omega$.
 
 #note-block[
@@ -39,7 +39,7 @@ $
 
 
 == Simple Harmonic Motion
-- In *simple harmonic motion (SHM)*, some restoring force $F_x$ is _directly proportional_ to the displacement from equilibrium.
+- In *simple harmonic motion (SHM)*, the net force is some restoring force $F_x$ which is _directly proportional_ to the displacement from equilibrium.
 $
   F_x &prop x
   \
@@ -188,13 +188,17 @@ $
 #table(
   columns: (50%, 50%),
   fill: (x,y) => if y == 0 {white.darken(5%)},
-  inset: 8pt,
+  inset: 10pt,
+  stroke: 1pt,
   align(center)[*Graph*], align(center)[*Description*],
   cetz.canvas({
     import cetz.draw: *
     import cetz-plot: *
 
-    let func = x => calc.cos(x)
+    let angular_freq = 1
+    let phase = 0
+    let amplitude = 1
+    let func = x => amplitude*calc.cos(angular_freq*x+phase)
 
     plot.plot(
       size: (5.5,2.75),
@@ -205,9 +209,10 @@ $
       x-max: 5*calc.pi,
       y-label: $x$,
       y-tick-step: none,
-      y-ticks: ((-1, $-A$), (1, $A$)),
+      y-ticks: ((-amplitude, $-A$), (amplitude, $A$)),
       y-grid: true,
-      y-min: -1,
+      y-min: -amplitude,
+      y-max: amplitude,
       axis-style: "school-book",
       {
         plot.add(
@@ -219,7 +224,11 @@ $
     })
   }),
   [
-    - SHM displacement graph with $phi.alt = 0$.
+    - SHM displacement graph with: 
+    $
+      phi.alt &= 0 \
+      omega &= 1 "rad"slash"s"
+    $
     - Oscillates between $-A$ and $+A$.
     - In other words, between $-x_"max"$ and $+x_"max"$.
   ],
@@ -227,7 +236,10 @@ $
     import cetz.draw: *
     import cetz-plot: *
 
-    let func = x => -calc.sin(x)
+    let angular_freq = 1
+    let phase = 0
+    let amplitude = 1
+    let func = x => -angular_freq*amplitude*calc.sin(angular_freq*x+phase)
 
     plot.plot(
       size: (5.5,2.75),
@@ -238,10 +250,10 @@ $
       x-max: 5*calc.pi,
       y-label: $v_x$,
       y-tick-step: none,
-      y-ticks: ((-1, $-omega A$), (1, $omega A$)),
+      y-ticks: ((-amplitude*angular_freq, $-omega A$), (amplitude*angular_freq, $omega A$)),
       y-grid: true,
-      y-min: -1,
-      y-max: 1,
+      y-min: -amplitude*angular_freq,
+      y-max: amplitude*angular_freq,
       axis-style: "school-book",
       {
         plot.add(
@@ -253,7 +265,11 @@ $
     })
   }),
   [
-    - SHM velocity graph with $phi.alt = 0$.
+    - SHM velocity graph with: 
+    $
+      phi.alt &= 0 \
+      omega &= 1 "rad"slash"s"
+    $
     - Oscillates between $-omega A$ and $+omega A$.
     - In other words, between $-v_"max"$ and $+v_"max"$.
   ],
@@ -261,7 +277,10 @@ $
     import cetz.draw: *
     import cetz-plot: *
 
-    let func = x => -calc.cos(x)
+    let angular_freq = 1
+    let phase = 0
+    let amplitude = 1
+    let func = x => -calc.pow(angular_freq, 2)*amplitude*calc.cos(angular_freq*x+phase)
 
     plot.plot(
       size: (5.5,2.75),
@@ -272,9 +291,10 @@ $
       x-max: 5*calc.pi,
       y-label: $a_x$,
       y-tick-step: none,
-      y-ticks: ((-1, $-omega^2 A$), (1, $omega^2 A$)),
+      y-ticks: ((-calc.pow(angular_freq, 2)*amplitude, $-omega^2 A$), (calc.pow(angular_freq, 2)*amplitude, $omega^2 A$)),
       y-grid: true,
-      y-min: -1,
+      y-min: -calc.pow(angular_freq, 2)*amplitude,
+      y-max: calc.pow(angular_freq, 2)*amplitude,
       axis-style: "school-book",
       {
         plot.add(
@@ -286,13 +306,20 @@ $
     })
   }),
   [
-    - SHM acceleration graph with $phi.alt = 0$.
+    - SHM acceleration graph with: 
+    $
+      phi.alt &= 0 \
+      omega &= 1 "rad"slash"s"
+    $
     - Oscillates between $-omega^2 A$ and $+omega^2 A$.
     - In other words, between $-a_"max"$ and $+a_"max"$.
   ],
 )
 
 - This is further justification that our displacement and velocity functions are correct, as we verified this acceleration equation in the previous chapter.
+- These equations also show how changes in $A$, $k$, and $m$ impact a harmonic oscillator's motion.
+  - $A$ impacts the maximum values in SHM kinematics.
+  - $k$ and $m$ impact the period and maximum values for acceleration and velocity.
 - Now, if we are given an initial displacement and velocity, we can find $A$ and $phi.alt$ by rearranging our equations.
 #table(columns: (50%, 50%), stroke:none,
   $
@@ -303,7 +330,7 @@ $
     phi.alt &= arctan(-v_(0x)/(x_0 omega))
   $,
   $
-    x_0^2 + v_(0x)^2/omega^2 &= (A cos(phi.alt))^2 + (-omega A sin(phi.alt))^2/omega^2
+    x_0^2 + v_(0x)^2/omega^2 &= (A cos(phi.alt))^2 + big((-omega A sin(phi.alt)))^2/omega^2
     \
     x_0^2 + v_(0x)^2/omega^2 &= A^2
     \
@@ -323,3 +350,122 @@ $
   $
 ]
 
+
+
+== Applications of SHM
+- In the previous subchapters, we covered SHM in solely horizontal scenarios.
+- However, we defined SHM to be any system with any restoring force acting directly proportional to displacement from equilibrium.
+- By finding values of $k$ in different scenarios, we can show that they model SHM.
+
+=== Vertical SHM
+- Say an object of mass $m$ is hanging vertically from a spring with spring constant $k$. The object is at equilibrium when _the spring is stretched enough to balance the weight force_.
+- Lets say that stretch distance is $Delta l$, so:
+$
+  k Delta l = m g
+$
+- Now, let $x$ be the distance from the equilibrium position. Using the previous equality we established, it follows that:
+$
+  "Above equilibrium" quad quad Sigma F = k(Delta l - x) - m g &= -k x
+  \
+  "Below equilibrium" quad quad Sigma F = k(Delta l + x) - m g &= k x
+$
+- The object still oscillates with $omega=sqrt(k/m)$ despite being vertical.
+- The main difference between horizontal and vertical SHM is the difference in equilibrium.
+
+=== Angular SHM
+- In angular SHM, we define a *restoring torque* similarly to a restoring force.
+  - The constant $kappa$ is known as the *torsion constant*.
+$
+  Sigma tau_z &prop theta
+  \
+  Sigma tau_z &= -kappa theta 
+  \
+  alpha_z &= -kappa/I theta
+$
+
+- Additionally, we define angular frequency, period, and frequency similarly, albeit with the torsion constant and moment of inertia.
+#definition[Angular SHM Equations][
+  Let $kappa$ be the torsion constant:
+  $
+    omega &= sqrt(kappa/I)
+    \
+    f &= omega/(2pi) = 1/(2pi)sqrt(kappa/I)
+    \
+    T &= (2pi)/omega = 2pi sqrt(I/kappa)
+  $
+]
+
+- We also define angular displacement similarly to displacement.
+#definition[Angular Displacement in SHM][
+  Let $theta.alt$ be the angular amplitude and let the other variables be defined as in (14.2.2).
+  $
+    theta &= theta.alt cos(omega t + phi.alt)
+  $
+]
+
+- An example of this is a mechanical watch that keeps track of time using a balance wheel. A coil spring exerts a restoring torque proportional to the angular displacement of the wheel, returning it back to equilibrium.
+- Here, the oscillations are used to keep track of time, essentially being an angular pendulum.
+
+
+
+== Simple Pendulum
+- A *simple pendulum* is an idealized model where a point mass is suspended by a massless, unstretchable string.
+- When released from either side of its straight-down equilibrium position, it oscillates along an arc of radius $L$, the length of the string.
+- Now, let $theta$ be the angle between the string and the equilibrium position of the string.
+- Thus, the angle between $w$ and $w_y$ must also be $theta$ because $w$ is parallel to the equilibrium position and $w_y$ is parallel to the string's current orientation.
+$
+  Sigma F_x = m g sin(theta) quad Sigma F_y = T-m g cos(theta) = 0
+$
+
+- Now, because $sin(theta) approx theta$ as $theta -> 0$, the motion of a simple pendulum is _approximately harmonic_.
+
+#definition[Simple Pendulum Approximation][
+  Given a small angle $theta$ and a displacement $x$ from equilibrium, the restoring force for a simple pendulum can be approximated as follows:
+  $
+    F_theta &= -m g theta = -(m g)/L x
+  $
+]
+
+- Here, the restoring force constant is approximately $(m g)/L$, which simplifies nicely in our previous SHM equations.
+#definition[Simple Pendulum Equations][
+  $
+    omega &= sqrt(L/g)
+    \
+    f &= omega/(2pi) = 1/(2pi)sqrt(L/g)
+    \
+    T &= (2pi)/omega = 2pi sqrt(g/L)
+  $
+]
+
+- However, if we want an exact value for $T$ or have large angular displacements, we need to use a series.
+$
+  T=2pi sqrt(g/L) (1 + 1^2/2^2sin^2(Theta/2) + (1^2 dot 3^2)/(2^2 dot 4^2)sin^4(Theta/2) + dots.c)
+$
+
+- This shows why pendulums are great at keeping time, as changes in amplitude over time have little impact on the period.
+
+
+
+== Physical Pendulum
+- A *physical pendulum* refers to a _real pendulum_ using an extended body.
+- Thus, the restoring force acts on the pendulum's center of gravity, causing a restoring torque at some angle $theta$.
+$
+  Sigma tau_z = -m g d sin(theta)
+$
+
+- Again, we can use the approximation $sin(theta) approx theta$ when $theta -> 0$ to simplify this equation.
+$
+  Sigma tau_z &= -m g d theta
+  \
+  alpha_z &= -(m g d)/I theta
+$
+
+#definition[Physical Pendulum Equations][
+  $
+    omega &= sqrt((m g d)/I)
+    \
+    f &= omega/(2pi) = 1/(2pi)sqrt((m g d)/I)
+    \
+    T &= (2pi)/omega = 2pi sqrt(I/(m g d))
+  $
+]

@@ -59,12 +59,7 @@ $
     t &= (v_0sin theta - v sin theta) /g
     \
     t &= (v_0sin theta - (-v_0 sin theta)) / g
-  $
-  #continue_box
-]
-
-#derivation-box[Range Formula _continued_][
-  $
+    \
     t &= (2v_0sin theta) / g
   $
   Now, we can plug this value for $t$ into a horizontal kinematic equation.

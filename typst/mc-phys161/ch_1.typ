@@ -8,7 +8,7 @@
   table(
     fill: (x, y) => if y == 0 {white.darken(5%)},
     columns: (auto, auto, auto),
-    inset: 8pt,
+    inset: 10pt,
     [*Application*], [*Unit*], [*Shorthand*],
     [Time], [Seconds], [$"s"$],
     [Length], [Meter], [$"m"$],
@@ -22,7 +22,7 @@
   table(
     fill: (x, y) => if y == 0 {white.darken(5%)},
     columns: (auto, auto, auto),
-    inset: 8pt,
+    inset: 10pt,
     [*Length*], [*Mass*], [*Time*],
     [1 nanometer $= 1 "nm" = 10^(-9) "m"$], [1 microgram $= 1 space mu"g" = 10^(-9) "kg"$], [1 nanosecond$= 1 "ns" = 10^(-9) "s"$],
     [1 micrometer $=1 space mu"m" = 10^(-6) "m"$], [1 milligram $=1 "mg" = 10^(-6) "kg"$], [1 microsecond $=1 space mu"s" = 10^(-6) "s"$],
@@ -36,7 +36,7 @@
 - In equations, quantities may only be added if they have the same dimension.
 - When multiplying two quantities, the product's dimension is the product of the operands' dimensions.
 $
-  ("m"/"s")("s") = "m"
+  ("m"slash"s")("s") = "m"
 $
 
 

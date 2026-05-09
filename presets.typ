@@ -22,11 +22,23 @@
 
 //Emphasis box continuation
 #let continue_box = align(center, [_Continued on next page_])
-
 //Derivation box using Theorion
 #let (derivation-counter, derivation-box, derivation, show-derivation) = make-frame(
   "derivation",
   "Derivation",
+  counter: theorem-counter,
+  inherited-levels: 2, 
+  inherited-from: heading,  
+  render: fancy-box.with(
+    get-border-color: get-tertiary-border-color,
+    get-body-color: get-tertiary-body-color,
+    get-symbol: get-tertiary-symbol,
+  ),
+)
+//Derivation box using Theorion
+#let (algorithm-counter, algorithm-box, algorithm, show-algorithm) = make-frame(
+  "algorithm",
+  "Algorithm",
   counter: theorem-counter,
   inherited-levels: 2, 
   inherited-from: heading,  
@@ -71,7 +83,9 @@
 //Magnitude of a vector
 #let mag(vector) = $lr(||#vector||)$
 //Boldface emphasis
-#let bf(matrix) = $upright(bold(#matrix))$
+#let bf(variable) = $upright(bold(#variable))$
+//Matrix transpose
+#let transpose = $upright(sans(T))$
 
 
 
@@ -81,8 +95,9 @@
 #let template(
   doc_title: "",
   doc_subtitle: "",
-  show_title: true,
-  show_header: true,
+  show_title: false,
+  show_contents: true,
+  show_header: false,
   doc_font: "Libertinus Serif",
   math_font: "New Computer Modern Math",
   numbering_depth: 0,
@@ -105,6 +120,7 @@
   //Text
   #set text(font: doc_font, size: 12pt)
   #show math.equation: set text(font: math_font)
+  #show sym.nothing: set text(font: "XITS Math")
 
 
   //Headings
@@ -133,6 +149,7 @@
   #show: codly-init.with()
   #show: show-theorion
   #show: show-derivation
+  #show: show-algorithm
   #codly(languages: codly-languages)
 
 
@@ -150,9 +167,9 @@
       #text(size: 16pt, author)
     ]
     #figure(image("images/YOTSUBA!!!.webp"), supplement: none, caption: [Yotsuba from Yotsuba&!])
-    #outline()
-    #pagebreak()
+    #if show_contents [#outline()]
   ]
+
 
   #body
 ]

@@ -569,7 +569,7 @@ $
 ]
 
 
-
+#pagebreak()
 === Motion of the Center of Mass
 - Like we've previously established, we can find the velocity and acceleration of the center of mass using derivatives.
 #definition[Velocity of the Center of Mass][

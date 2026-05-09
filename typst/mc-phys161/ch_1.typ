@@ -106,13 +106,13 @@ $
 $
 
 === Vector Multiplication
-- The *dot product* or *scalar product* involves multiplying corresponding components, then summing them up. There also exists an alternate definition using the angle between the operands.
+- The *dot product* results in a scalar representing the alignment of the vector operands.
 $
   arrow(u) dot arrow(v) = u_x v_x + u_y v_y + u_z v_z = mag(arrow(u)) mag(arrow(v)) cos(theta)
 $
-- The *cross product* or *vector product* is perpendicular to the plane formed by the operands, and its magnitude is calculated using the angle between the operands, albeit with sine. There also exists a determinant definition, generally done with a cofactor expansion down the first row.
+- The *cross product* results in a vector perpendicular to the plane both vector operands lie on.
 $
-  arrow(u) times arrow(v) &= mag(arrow(u)) mag(arrow(v)) sin(theta) hat(u)_perp 
+  arrow(u) times arrow(v) &= mag(arrow(u)) mag(arrow(v)) sin(theta) hat(n) 
   = mat(delim: "|", 
     hat(i), hat(j), hat(k);
     u_x, u_y, u_z;

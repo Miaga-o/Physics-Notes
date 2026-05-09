@@ -285,7 +285,7 @@ $
 - Some materials are resistant compressive stress but falter against similar tensile stress and vice versa.
 
 
-
+#pagebreak()
 == Elasticity and Plasticity
 - When observing larger stresses and strains, we graph stress as a function of strain.
 - Strain is generally shown as the _percent elongation_.

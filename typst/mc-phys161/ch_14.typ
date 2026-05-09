@@ -29,7 +29,7 @@ $
   $
     omega = 2pi f
   $
-  - The units are radians per cycle $("rad"slash"s")$.
+  - The units are radians per second $("rad"slash"s")$.
   - Like angular velocity, angular frequency is denoted $omega$.
 
 #note-block[
@@ -170,6 +170,18 @@ $
     T &= (2pi)/omega = 2pi sqrt(m/k)
   $
 ]
+- Additionally, recall this relationship:
+$
+  Delta theta &= omega Delta t
+$
+
+- In periodic motion, the *phase shift* refers to the horizontal shift of the oscillation graph due to some initial angle known as the *phase angle*, generally denoted $phi.alt$. Thus:
+$
+  theta - phi.alt &= omega t
+  \
+  theta &= omega t + phi.alt
+$
+- Using this, we can establish new equations for the displacement, velocity, and acceleration in SHM>
 
 
 
@@ -338,6 +350,70 @@ $
   $
 )
 
+#example[Displacement and Amplitude][
+  A harmonic oscillator has angular frequency $omega$ and amplitude $A$. Express answers in terms of $A$ and $omega$.
+  #enum.item(1)[What is the magnitude of the displacement when the elastic potential energy is equal to the kinetic energy? (Assume that $U=0$ at equilibrium).]
+  $
+    1/2 k x^2 &= 1/2 m v_x^2
+    \
+    x^2 &= m/k v_x^2
+    \
+    x^2 &= 1/omega^2 (-A omega sin(omega t))^2
+    \
+    x^2 &= A^2 sin^2(omega t)
+    \
+    x^2 &= A^2 - A^2 cos^2(omega t)
+    \
+    x^2 &= A^2 - x^2
+    \
+    2x^2 &= A^2
+    \
+    bold(x &= sqrt(1/2A^2))
+  $
+
+  #enum.item(2)[What is the magnitude of the velocity when the elastic potential energy is equal to the kinetic energy? (Assume that $U=0$ at equilibrium).]
+  $
+    1/2m v_x^2 &= 1/2 k x^2
+    \
+    v_x^2 &= k/m x^2
+    \
+    v_x &= sqrt(k/m x^2)
+    \
+    bold(v_x &= sqrt(1/2omega^2 A^2))
+  $
+]
+
+#example[Stack of Blocks in SHM][
+  A block with mass $M$ rests on a frictionless surface and is connected to a horizontal spring of force constant k. The other end of the spring is attached to a wall. A second block with mass $m$ rests on top of the first block. The coefficient of static friction between the blocks is $mu_s$.
+
+  Find the maximum amplitude of oscillation such that the top block will not slip on the bottom block. Express the answer in terms of $m$, $M$, $k$, $mu_s$, and other constants, as needed.
+  #line(length: 100%)
+  We can use the net force equations on each block to isolate the spring force and express the system's acceleration using the coefficient of friction.
+  #table(columns: (50%, 50%), stroke: none,
+    $
+      Sigma F_("top") = f_s &= m a
+      \
+      mu_s m g &= m a
+      \
+      a &= mu_s g
+    $,
+    $
+      Sigma F_"bot" = F_"spr" - f_s &= M a
+      \
+      Sigma F_"bot" = k A_"max" - f_s &= M a
+    $
+  )
+  $
+    Sigma F = k A_"max" - f_s + f_s &= M a + m a
+    \
+    k A_"max" &= (M+m)a
+    \
+    k A_"max" &= (M+m) mu_s g
+    \
+    bold(A_"max" &= ((M+m) mu_s g)/k)
+  $
+]
+
 
 
 == Energy in SHM
@@ -347,6 +423,34 @@ $
 #definition[Total Energy in SHM][
   $
     E_"SHM" = 1/2m v_x^2 + 1/2k x^2= 1/2 k A^2
+  $
+]
+
+#example[Fractions of Total Energy in SHM][
+  A harmonic oscillator has angular frequency $omega$ and amplitude $A$.
+  #enum.item(1)[At an instant when the displacement is equal to $A/2$, what fraction of the total energy of the system is kinetic?]
+  $
+    K/E_"tot" &= (1/2 m v_x^2)/(1/2 k A^2)
+    \
+    K/E_"tot" &= (1/2 m big( (-A omega sin(omega t + phi.alt)) )^2)/(1/2 k A^2)
+    \
+    K/E_"tot" &= (1/2 m (A^2 omega^2 sin^2(omega t + phi.alt)))/(1/2 k A^2)
+    \
+    K/E_"tot" &= (1/2 m (A^2 k/m - A^2 k/m cos^2(omega t + phi.alt)))/(1/2 k A^2)
+    \
+    K/E_"tot" &= (1/2k A^2 - 1/2k x^2)/(1/2 k A^2)
+    \
+    K/E_"tot" &= (1/2k A^2 - 1/2k (1/2A)^2)/(1/2 k A^2)
+    \
+    K/E_"tot" &= (3/8k A^2)/(1/2 k A^2)
+    \
+    bold(K/E_"tot" &= 3/4)
+  $
+
+  #enum.item(2)[At an instant when the displacement is equal to $A/2$, what fraction of the total energy of the system is potential?]
+  $
+    bold(U/E_"tot" &= 1-(K_"tot")/E_"tot" = 1/4)
+    
   $
 ]
 
@@ -428,21 +532,47 @@ $
 
 - Here, the restoring force constant is approximately $(m g)/L$, which simplifies nicely in our previous SHM equations.
 #definition[Simple Pendulum Equations][
+  Let $L$ be the length of the pendulum's string.
   $
-    omega &= sqrt(L/g)
+    omega &= sqrt(g/L)
     \
-    f &= omega/(2pi) = 1/(2pi)sqrt(L/g)
+    f &= omega/(2pi) = 1/(2pi)sqrt(g/L)
     \
-    T &= (2pi)/omega = 2pi sqrt(g/L)
+    T &= (2pi)/omega = 2pi sqrt(L/g)
   $
 ]
 
 - However, if we want an exact value for $T$ or have large angular displacements, we need to use a series.
 $
-  T=2pi sqrt(g/L) (1 + 1^2/2^2sin^2(Theta/2) + (1^2 dot 3^2)/(2^2 dot 4^2)sin^4(Theta/2) + dots.c)
+  T&=2pi sqrt(g/L) (1 + 1^2/2^2sin^2(Theta/2) + (1^2 dot 3^2)/(2^2 dot 4^2)sin^4(Theta/2) + dots.c) \
+  T &= 2pi sqrt(L/g) sum_(n=0)^infinity (((2n)!)/((2^n n!)^2))^2 sin^(2n)(Theta/2)
 $
 
 - This shows why pendulums are great at keeping time, as changes in amplitude over time have little impact on the period.
+
+#example[Amplitude and Period][
+  You pull a simple pendulum of length $0.260 "m"$ to the side through an angle of $3.50 degree$ and release it.
+  #enum.item(1)[How much time does it take the pendulum bob to reach its highest speed?]
+  $
+    T &= 2pi sqrt(L/g)
+    \
+    T &= 2pi sqrt((0.26 "m")/(9.81 "m"slash"s"^2))
+    \
+    T &= 1.02 "s"
+  $
+  Now, it follows that the bob reaches it highest speed at the pendulum's equilibrium position. The motion from the point of release (maximum displacement) to the straight-down equilibrium position is a fourth of a period. Thus:
+  $
+    t &= T/4 = (1.02 "s")/4
+    \
+    bold(t &= 0.256 "s")
+  $
+
+  #enum.item(2)[How much time does it take if the pendulum is released at an angle of $1.75 degree$ instead of $3.50 degree$?]
+  The period is independent of the amplitude, thus:
+  $
+    bold(t &= 0.256 "s")
+  $
+]
 
 
 
@@ -461,6 +591,7 @@ $
 $
 
 #definition[Physical Pendulum Equations][
+  Let $I$ be the moment of inertia of the harmonic oscillator and $d$ be the harmonic oscillator's distance from the point of rotation:
   $
     omega &= sqrt((m g d)/I)
     \
@@ -469,3 +600,108 @@ $
     T &= (2pi)/omega = 2pi sqrt(I/(m g d))
   $
 ]
+- Essentially, this is an angular SHM case where $kappa = m g d$.
+
+#example[Simple Pendulum versus Physical Pendulum][
+  Two pendulums each consist of a uniform solid ball of mass $M$ supported by a massless string. But, the ball for pendulum A is very tiny while the ball for pendulum B has a radius of $L/2$. The center of both balls are a distance $L$ away from their strings' ends.
+  + Find the period of pendulum A for small displacements.
+  + Find the period of pendulum B for small displacements.
+  For both answers, express the periods in terms of $M$, $L$, and other constants, if needed.
+  #line(length: 100%)
+  1) Because the ball in A is very small, we will use the simple pendulum formula.
+  $
+    bold(T_A &= 2pi sqrt(L/g))
+  $
+
+  2) Because the size of the ball in B is not negligible, we'll have to use the physical pendulum formula.
+  $
+    T_B &= 2pi sqrt(I/(M g L))
+    \
+    T_B &= 2pi sqrt((I_"cm" + M L^2)/(M g L))
+    \
+    T_B &= 2pi sqrt((2/5M (L/2)^2 + M L^2)/(M g L))
+    \
+    T_B &= 2pi sqrt((11/10M L^2)/(M g L))
+    \
+    bold(T_B &= 2pi sqrt((11L)/(10g)))
+  $
+]
+
+
+
+== Damped Oscillations
+- In real-world systems, dissipative forces cause decreases in amplitude over time, known as *damping*.
+- This motion is known as *damped oscillation*.
+- An simple example of this is a frictional damping force directly proportional to a harmonic oscillator's velocity:
+  - The *damping constant* is denoted by $b$.
+$
+  F_d &prop v_x \
+  F_d &= - b v_x
+$
+
+- Thus, we can describe the net force of a simple damped oscillation as follows:
+$
+  Sigma F_x &= -k x -b v_x \
+$
+#columns(2)[
+  $
+    -k x - b v_x &= m a_x
+  $
+  #colbreak()
+  $
+    -k x - b dv(x,t) &= m dv(x,t,2)
+  $
+]
+
+- Now, if we solve for the general solution of the differential equation above, we can get a displacement formula for damped oscillations.
+- Below, we will solve for the general solution _when the damping force is relatively small._
+$
+  -k x - b dv(x,t) &= m dv(x,t,2) \
+  m dv(x,t,2) + b dv(x,t) + k x  &= 0 \
+  m (e^(lambda t))'' + b (e^(lambda t))' + k e^(lambda t) &= 0 \
+  m lambda^2 e^(lambda t) + b lambda e^(lambda t) + k e^(lambda t) &= 0 \
+  m lambda^2 + b lambda + k &= 0 \ 
+  lambda &= (-b plus.minus sqrt(b^2 - 4 m k))/(2m) \
+  lambda &= -b/(2m) plus.minus sqrt(b^2/(4m^2) - k/m) \
+  lambda &= -b/(2m) plus.minus i sqrt(k/m - b^2/(4m^2)) \
+$
+
+- We pull out an $i$ because when the damping force is small, $b^2 / (4m^2) < k/m$.
+$
+  e^(lambda_1 t) &= e^(-b/(2m) t) e^(i sqrt(k/m - b^2/(4m^2)) t) \
+  e^(lambda_1 t) &= e^(-b/(2m) t) (cos(sqrt(k/m - b^2/(4m^2)) t) + i sin(sqrt(k/m - b^2/(4m^2)) t) ) \ \ \
+
+  e^(lambda_2 t) &= e^(-b/(2m) t) e^(-i sqrt(k/m - b^2/(4m^2)) t) \
+  e^(lambda_2 t) &= e^(-b/(2m) t) (cos(-sqrt(k/m - b^2/(4m^2)) t) + i sin(-sqrt(k/m - b^2/(4m^2)) t) ) \ 
+  e^(lambda_2 t) &= e^(-b/(2m)) (cos(sqrt(k/m - b^2/(4m^2)) t) - i sin(sqrt(k/m - b^2/(4m^2)) t) )
+$
+
+- Now, the only solution we are interested in is one where $c_1=c_2$.
+$
+  therefore x &= c_1 e^(lambda_1 t) + c_2 e^(lambda_2 t) \
+  x &= A e^(-b/(2m)t)cos(sqrt(k/m - b^2/(4m^2)) t) 
+$
+
+- We can let $phi.alt$ be decided by an initial condition of the differential equation.
+
+#definition[Underdamping SHM Equations][
+  Let $omega'$ be the *damped frequency* when the damping is small.
+  $
+    omega' &= sqrt(k/m - b^2/(4m^2)) \
+    x &= A e^(-b/(2m)t)cos(omega't + phi.alt)
+  $
+]
+
+- Notice how angular frequency's value can be positive, zero, or imaginary. In each case, there is a specific name for the condition.
+  - *Underdamping:* The system will oscillate with decreasing amplitude. This is because $lambda$ is given by a complex conjugate pair.
+  $
+    b^2 < 4 m k
+  $
+  - *Critical damping:* The system will no longer oscillate, but will tend to its equilibrium condition.
+  $
+    b^2 = 4 m k
+  $
+  - *Overdamping:* The system will no longer oscillate, but will tend to its equilibrium condition, albeit at a slower rate than with critical damping.
+  $
+    b^2 > 4 m k
+  $

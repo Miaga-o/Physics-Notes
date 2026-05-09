@@ -1,5 +1,5 @@
 #import "../../presets.typ": *
-#show: template.with(doc_title: "PHYS 161 Notes", doc_subtitle: "Mechanics and Heat", numbering_depth: 2, math_font: "XITS Math")
+#show: template.with(doc_title: "PHYS 161 Notes", doc_subtitle: "Mechanics and Heat", show_title: true, show_header: true,  numbering_depth: 2, math_font: "XITS Math")
 
 #include("ch_1.typ")
 #include("ch_2.typ")

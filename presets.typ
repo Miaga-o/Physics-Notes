@@ -80,12 +80,14 @@
 }
 //Integral evaluation bar
 #let eval(lower_bound, upper_bound) = $bigg(|)_#lower_bound^#upper_bound$
-//Magnitude of a vector
-#let mag(vector) = $lr(||#vector||)$
+//Magnitude bars
+#let mag(var) = $lr(||#var||)$
 //Boldface emphasis
-#let bf(variable) = $upright(bold(#variable))$
+#let bf(var) = $upright(bold(#var))$
 //Matrix transpose
 #let transpose = $upright(sans(T))$
+//Adjugate of a matrix
+#let adj = $op("adj")$
 
 
 

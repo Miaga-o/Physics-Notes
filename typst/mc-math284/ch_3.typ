@@ -68,7 +68,7 @@ A *cofactor expansion* is a method of calculating a determinant using any row or
     det U' &= u'_(11) det U'_11 - 0 dot det U'_21 + dots.c + (-1)^(n+1)det U'_(n 1) \
     det U' &=u'_11 det U \
     det U' &=u'_11 (u_11 u_22 dots u_(n n)) \
-    det U' &=u'_11 u'_22 u_33 dots u'_((n+1),(n+1)) \
+    det U' &=u'_11 u'_22 u'_33 dots u'_((n+1),(n+1)) \
   $
 
   It follows that we can apply the same process to a diagonal matrix $D$, and apply a similar process to a lower triangular matrix $L$, albeit using the first column of each consecutive minor rather than the first row.
@@ -94,11 +94,9 @@ A *cofactor expansion* is a method of calculating a determinant using any row or
   If an $n times n$ matrix $A$ is multiplied by some scalar $k$ to produce $B$, then $det B = k^n det A$.
 ]
 
-#theorem[Invertible Matrix Theorem Amendment][
-  #set enum(numbering: "a)")
+#theorem[Invertible Matrix Theorem _continued_][
   Let $A$ be an $n times n$ matrix. Then, the following statements are equivalent:
-  + $A$ is invertible.
-  + ...
+  #enum.item(12)[_The first twelve statements of the theorem in (2.3)._]
   #enum.item(13, $det A eq.not 0$)
 ]
 
@@ -114,7 +112,7 @@ A *cofactor expansion* is a method of calculating a determinant using any row or
 #theorem[Multiplicative Property][
   If $A$ and $B$ are $n times n$ matrices, then $det A B = (det A)(det B)$.
 ]
-- Thinking back to $L U$ factorizations, we can also say that $det A = det L det U$.
+- So, if we do an $L U$ factorization for some $n times n$ matrix $A$, we can find its determinant using $det L det U$.
 
 
 === Linearity Property of the Determinant Function
@@ -125,7 +123,7 @@ $
 This is a linear transformation.
 - Because all columns (aside from the $j^"th"$ column) are held fixed, doing cofactor expansions along the $j^"th"$ row shows the linearity properties:
 $
-  forall bf(u), bf(v) in RR^n "and" forall k in RR
+  forall bf(u), bf(v) in RR^n quad"and"quad forall k in RR
 $
 $
   T(bf(u+v)) &= (u_1+v_1)C_(1 j) + dots.c + (u_n+v_n)C_(n j) \

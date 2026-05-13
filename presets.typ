@@ -88,6 +88,33 @@
 #let transpose = $upright(sans(T))$
 //Adjugate of a matrix
 #let adj = $op("adj")$
+//Null space of a matrix
+#let nul = $op("Nul")$
+//Column space of a matrix
+#let col = $op("Col")$
+//Row space of a matrix
+#let row = $op("Row")$
+//Kernel of a transformation
+#let ker = $op("ker")$
+//Dimension of a vector space
+#let dim = $op("dim")$
+//Rank of a matrix
+#let rank = $op("rank")$
+//Nullity of a matrix
+#let nullity = $op("nullity")$
+//Roundhand font style
+#let scr(it) = text(
+  stylistic-set: 1,
+  $cal(it)$,
+)
+//Real part
+#let re = $op("Re")$
+//Imaginary part
+#let im = $op("Im")$
+//Distance between vectors
+#let dist = $op("dist")$
+//Projection onto vector
+#let proj = $op("proj")$
 
 
 

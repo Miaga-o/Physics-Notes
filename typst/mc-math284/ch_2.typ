@@ -231,7 +231,7 @@ An *elementary matrix* is a matrix obtained from performing a single elementary 
 === An Algorithm for $A^(-1)$
 We can augment any $n times n$ matrix $A$ with $I$, then reduce $A$, if possible, to $I$. By the previous theorem, it follows that the augmented columns will form $A^(-1)$ once $A$ is reduced to $I$.
 $
-  mat(A, I) ~ mat(I, A)
+  mat(A, I) ~ mat(I, A^(-1))
 $
 
 #example[
@@ -294,8 +294,6 @@ $
 #pagebreak(weak: true)
 == Characteristics of Invertible Matrices
 #theorem[Invertible Matrix Theorem][
-  #set enum(numbering: "a)")
-
   Let $A$ be an $n times n$ matrix. The following statements are equivalent:
   + $A$ is invertible.
   + A is row equivalent to $I_n$.
@@ -501,7 +499,7 @@ $
 
 
 === Homogeneous 3D Coordinates
-In general, the homogeneous coordinates of a point $(x,y,z) in RR^3$ is $(X/H, Y/H,Z/H, H) in RR^4$ where $h eq.not 0$ and $x=X/H$, $y=Y/H$, and $z=Z/H$.
+In general, the homogeneous coordinates of a point $(x,y,z) in RR^3$ is $(X/H, Y/H,Z/H, H) in RR^4$ where $H eq.not 0$ and $x=X/H$, $y=Y/H$, and $z=Z/H$.
 - Thus, nonzero scalar multiples of $(x,y,z,1)$ would also be homogeneous coordinates for $(x,y,z)$.
 
 

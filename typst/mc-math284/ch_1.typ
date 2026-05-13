@@ -163,7 +163,6 @@ For vectors in $RR^2$ and $RR^3$, we can interpret vectors $bf(u)=vec(a,b)$ and 
 
 === Vectors in $RR^n$
 #property[Algebraic Properties of $RR^n$][
-  #set enum(numbering: "i)")
   $forall bf(u), bf(v), bf(w) in RR^n$ and all scalars $c$ and $d$:
   + $bf(u) + bf(v) = bf(v) + bf(u)$
   + $(bf(u) + bf(v)) + bf(w) = bf(u) + (bf(v) + bf(w))$
@@ -433,7 +432,7 @@ $
 Earlier, we asserted that every linear transformation requires some standard matrix $A$. We can prove this using identity matrix and *standard basis vectors* $bf(e)_1, bf(e)_2, dots, bf(e)_n$ (the columns of $I$, essentially).
 
 #theorem[
-  Let $T: R^n -> R^m$ be a linear transformation. Then, there exists a unique matrix $A$ such that
+  Let $T: RR^n -> RR^m$ be a linear transformation. Then, there exists a unique matrix $A$ such that
   $
     T(bf(x)) = A bf(x) quad forall bf(x) in RR^n
   $
@@ -455,163 +454,70 @@ Earlier, we asserted that every linear transformation requires some standard mat
 - Essentially, we can define any standard matrix for a linear transformation based on what they do to standard basis vectors.
 
 
+#pagebreak(weak: true)
 === Geometric Linear Transformations of $RR^2$
-In $RR^2$, lets imagine $bf(e)_1=vec(1,0)$ and $bf(e)_2=vec(0,1)$ as the unit square. This will make it easier to interpret the following linear transformations geometrically.
-
-#pagebreak(weak: true)
-#table(columns: (1fr, 1fr, 1fr), fill: (x,y) => if y<=1 {white.darken(10%)}, inset: 10pt,
-  table.cell(colspan: 3,align(center)[*Reflections*]),
-  align(center)[*Transformation*], align(center)[*Unit Square Image*], align(center)[*Standard Matrix*],
-  [Reflection over the $x$-axis.], 
-  cetz.canvas({
-    import cetz.draw: *
-    import cetz-plot: *
-
-    set-style(axes: (shared-zero: false))
-
-    plot.plot(
-      size: (4,4),
-      x-tick-step: none,
-      x-grid: true,
-      x-min: -1.5,
-      x-max: 1.5,
-      y-tick-step: none,
-      y-min:-1.5,
-      y-max: 1.5,
-      axis-style: "school-book",
-      {
-        plot.add(
-          domain: (0, 1), 
-          x => 0,
-          samples: 200,
-          style: (stroke: none)
-        )
-
-        plot.add-hline(1, min: 0, max: 1, style: (stroke: (dash: "dashed")))
-        plot.add-vline(1, min: 0, max: 1, style: (stroke: (dash: "dashed")))
-
-        plot.add-hline(-1, min: 0, max: 1, style: (stroke: (paint: blue)))
-        plot.add-vline(1, min: -1, max: 0, style: (stroke: (paint: blue)))
-    })
-  }), 
-  $ mat(align: #right, 1,0;0,-1) $,
-  [Reflection over the $y$-axis.], 
-  cetz.canvas({
-    import cetz.draw: *
-    import cetz-plot: *
-
-    set-style(axes: (shared-zero: false))
-
-    plot.plot(
-      size: (4,4),
-      x-tick-step: none,
-      x-grid: true,
-      x-min: -1.5,
-      x-max: 1.5,
-      y-tick-step: none,
-      y-min:-1.5,
-      y-max: 1.5,
-      axis-style: "school-book",
-      {
-        plot.add(
-          domain: (0, 1), 
-          x => 0,
-          samples: 200,
-          style: (stroke: none)
-        )
-
-        plot.add-hline(1, min: 0, max: 1, style: (stroke: (dash: "dashed")))
-        plot.add-vline(1, min: 0, max: 1, style: (stroke: (dash: "dashed")))
-
-        plot.add-hline(1, min: -1, max: 0, style: (stroke: (paint: blue)))
-        plot.add-vline(-1, min: 0, max: 1, style: (stroke: (paint: blue)))
-    })
-  }), 
-  $ mat(align: #right, -1,0;0,1) $,
-)
-
-
-#pagebreak(weak: true)
-#table(columns: (1fr, 1fr, 1fr), fill: (x,y) => if y<=1 {white.darken(10%)}, inset: 10pt,
-  table.cell(colspan: 3,align(center)[*Contractions and Expansions*]),
-  align(center)[*Transformation*], align(center)[*Unit Square Image*], align(center)[*Standard Matrix*],
-  [Horizontal contraction and expansion.], 
-  cetz.canvas({
-    import cetz.draw: *
-    import cetz-plot: *
-
-    set-style(axes: (shared-zero: false))
-
-    plot.plot(
-      size: (4,4),
-      x-tick-step: none,
-      x-grid: true,
-      x-min: -1.5,
-      x-max: 1.5,
-      y-tick-step: none,
-      y-min:-1.5,
-      y-max: 1.5,
-      axis-style: "school-book",
-      {
-        plot.add(
-          domain: (0, 1), 
-          x => 0,
-          samples: 200,
-          style: (stroke: none)
-        )
-
-        plot.add-hline(1, min: 0, max: 1.5, style: (stroke: (paint: red)))
-        plot.add-vline(1.5, min: 0, max: 1, style: (stroke: (paint: red)))
-
-        plot.add-hline(1, min: 0, max: 1, style: (stroke: (dash: "dashed")))
-        plot.add-vline(1, min: 0, max: 1, style: (stroke: (dash: "dashed")))
-
-        plot.add-hline(1, min: 0, max: 0.5, style: (stroke: (paint: blue)))
-        plot.add-vline(0.5, min: 1, max: 0, style: (stroke: (paint: blue)))
-
-        
-    })
-  }), 
-  $ mat(align: #right, k,0;0,1) $,
-  [Vertical contraction and expansion.], 
-  cetz.canvas({
-    import cetz.draw: *
-    import cetz-plot: *
-
-    set-style(axes: (shared-zero: false))
-
-    plot.plot(
-      size: (4,4),
-      x-tick-step: none,
-      x-grid: true,
-      x-min: -1.5,
-      x-max: 1.5,
-      y-tick-step: none,
-      y-min:-1.5,
-      y-max: 1.5,
-      axis-style: "school-book",
-      {
-        plot.add(
-          domain: (0, 1), 
-          x => 0,
-          samples: 200,
-          style: (stroke: none)
-        )
-
-        plot.add-hline(1.5, min: 0, max: 1, style: (stroke: (paint: red)))
-        plot.add-vline(1, min: 0, max: 1.5, style: (stroke: (paint: red)))
-
-        plot.add-hline(1, min: 0, max: 1, style: (stroke: (dash: "dashed")))
-        plot.add-vline(1, min: 0, max: 1, style: (stroke: (dash: "dashed")))
-
-        plot.add-hline(0.5, min: 0, max: 1, style: (stroke: (paint: blue)))
-        plot.add-vline(1, min: 0, max: 0.5, style: (stroke: (paint: blue)))
-
-        
-    })
-  }), 
-  $ mat(align: #right, 1,0;0,k) $,
-)
+For each of the following transformations, let $A$ denote the standard matrix. Additionally, imagine that basis vectors $bf(e)_1$ and $bf(e)_2$ form a _unit square_.
+- The *identity transformation* maps a vector to itself. Thus, we can base all other geometric transformations on this transformation.
+$
+  A &= mat(1,0;0,1)
+$
+- *Reflection transformations* reflect a vector over an axis.
+#columns(2)[
+  $
+    "Over the "x"-axis" \
+    A = mat(align: #right, 1,0;0,-1)
+  $
+  #colbreak()
+  $
+    "Over the "y"-axis" \
+    A = mat(align: #right, -1,0;0,1)
+  $
+]
+- *Contraction* and *dilation transformations* scale a vector by some constant $k$. 
+#columns(2)[
+  $
+    "Horizontal contraction if "k<1 \
+    "Horizontal expansion if "k>1 \
+    A = mat(align: #right, k,0;0,1)
+  $
+  #colbreak()
+  $
+    "Vertical contraction if "k<1 \
+    "Vertical expansion if "k>1 \
+    A = mat(align: #right, 1,0;0,k)
+  $
+]
+- *Shear transformations* slant a vector up to some constant $k$.
+#columns(2)[
+  $
+    "Horizontal shear for "k eq.not 0 \
+    A = mat(align: #right, 1,k;0,1)
+  $
+  #colbreak()
+  $
+    "Vertical shear for "k eq.not 0 \
+    A = mat(align: #right, 1,0;k,1)
+  $
+]
+- *Projection transformations* project a vector onto an axis.
+#columns(2)[
+  $
+    "Onto the "x"-axis"\
+    A = mat(align: #right, 1,0;0,0)
+  $
+  #colbreak()
+  $
+    "Onto the "y"-axis"\
+    A = mat(align: #right, 0,0;0,1)
+  $
+]
+- *Rotational transformations* rotate vectors by some angle $theta$.
+$
+  A = mat(align: #right, cos(theta), -sin(theta);sin(theta), cos(theta))
+$
+#note-block[
+When performing a series of geometric transformations, left multiply for each consecutive transformation.
+]
 
 
 === One-to-One and Onto

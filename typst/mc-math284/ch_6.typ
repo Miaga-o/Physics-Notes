@@ -199,7 +199,7 @@ Thus, this decomposition only holds for $hat(bf(y)) = (bf(y) dot bf(u))/(bf(u) d
 	An $m times n$ matrix $U$ has orthonormal columns $<=>$ $U^transpose U = I_n$.
 ]
 #proof[
-	Let $U$ be an $m times n$ orthonormal matrix with columns $bf(u)_1, dots, bf(u)_n$.
+	Let $U$ be an $m times n$ matrix with orthonormal columns $bf(u)_1, dots, bf(u)_n$.
 	$
 		U^transpose U &= mat(bf(u)_1^transpose;bf(u)_2^transpose;dots.v;bf(u)_n^transpose) mat(bf(u)_1, bf(u)_2, dots.c, bf(u)_n) \
 		U^transpose U &= mat(
@@ -224,9 +224,14 @@ Thus, this decomposition only holds for $hat(bf(y)) = (bf(y) dot bf(u))/(bf(u) d
 	+ $(U bf(x)) dot (U bf(y)) = 0 <=> bf(x) dot bf(y) = 0$
 ]
 - Properties (1) and (3) indicate that the linear mapping $bf(x) mapsto U bf(x)$ preserves magnitude and orthogonality. The rotational transformation from (1.9) follows those properties, and the associated standard matrix is indeed orthonormal by the Pythagorean identity.
-#note-block[
-	An *orthogonal matrix* refers to a matrix with _orthonormal columns_.
+
+#definition[
+	An *orthogonal matrix* is an $n times n$ matrix $U$ with orthonormal columns such that 
+	$
+		U^(-1) = U^transpose
+	$
 ]
+
 
 
 
@@ -263,6 +268,18 @@ In (6.2), we covered orthogonal projections onto vectors. Now, we will generaliz
 		bf(hat(y)) &= 4/2vec(1,0,1) + 2/6vec(align: #right, 1,2,-1) = vec(2,0,2) + vec(align: #right, 1 slash 3,2 slash 3,-1 slash 3) \
 		bf(hat(y)) &= vec(7 slash 3, 2 slash 3, 5 slash 3)
 	$
+]
+
+#theorem[
+	Let $W$ be a subspace of $RR^n$ and let $bf(y) in W$. If ${bf(u)_1, bf(u)_2, dots, bf(u)_p}$ is an orthonormal basis for $W$: 
+	$
+		proj_W bf(y) = (bf(y) dot bf(u)_1) bf(u)_1 + dots.c + (bf(y) dot bf(u)_p) bf(u)_p
+	$
+
+	Let $U$ be an orthogonal matrix such that $U=mat(bf(u)_1, bf(u)_2, dots, bf(u)_p)$. Then,
+	$
+		 proj_W bf(y) &= U U^transpose bf(y)
+	 $
 ]
 
 

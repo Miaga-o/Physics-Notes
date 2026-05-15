@@ -279,8 +279,8 @@ Often, finding bases for vector spaces different from $RR^n$ can be difficult du
 #definition[
   The *dimension* of a vector space $V$, denoted $dim V$, is the number of vectors in a basis for $V$.
 ]
-#important-block[
-  The dimension of the vector space ${bf(0)}$ is defined as zero.
+#note-block[
+  $dim {bf(0)} = 0$ because the only basis for the zero subspace is the empty set, $emptyset$.
 ]
 - Now, it follows that the dimension of $RR^n$ is $n$, as the standard basis has $n$ basis vectors.
 

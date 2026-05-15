@@ -65,13 +65,13 @@ A *cofactor expansion* is a method of calculating a determinant using any row or
   $ det U = u_11u_22-u_12 dot 0= u_11 u_22 $
   Now, suppose that if $U$ is $n times n$, $det U =u_11 u_22 dots.c u_(n n)$. Let $U'$ be an $(n+1) times (n+1)$ upper triangular matrix such that $U'_(1 1)=U$. If we do a cofactor expansion down the first column of $U'$, we get:
   $
-    det U' &= u'_(11) det U'_11 - 0 dot det U'_21 + dots.c + (-1)^(n+1)det U'_(n 1) \
+    det U' &= u'_(11) det U'_11 - 0 dot det U'_21 + dots.c + 0 dot (-1)^(n+1)det U'_(n 1) \
     det U' &=u'_11 det U \
     det U' &=u'_11 (u_11 u_22 dots u_(n n)) \
     det U' &=u'_11 u'_22 u'_33 dots u'_((n+1),(n+1)) \
   $
 
-  It follows that we can apply the same process to a diagonal matrix $D$, and apply a similar process to a lower triangular matrix $L$, albeit using the first column of each consecutive minor rather than the first row.
+  It follows that we can apply the same process to a diagonal matrix $D$, and apply a similar process to a lower triangular matrix $L$, albeit using the first row of each consecutive minor rather than the first column.
 ]
 #important-block[
   Because the identity matrix is a diagonal matrix consisting solely of $1s$, for any $n times n$ identity matrix, $det I_n = 1$.

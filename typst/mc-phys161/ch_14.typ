@@ -705,3 +705,18 @@ $
   $
     b^2 > 4 m k
   $
+
+
+
+== Forced Oscillations and Resonance
+- A *driving force* is a force intended to maintain the amplitude of a damped oscillator.
+- *Forced oscillation* or *driven oscillation* refers to a damped harmonic oscillator receiving a periodic driving force with an angular frequency $omega_"d"$.
+
+#definition[Amplitude of a Forced Oscillator][
+  Let $F_"max"$ denote the driving force' maximum value and $omega_"d"$ be the driving force's frequency.
+  $
+    A &= (F_"max")/(sqrt((k-m omega_"d"^2)^2 + b^2 omega_"d"^2))
+  $
+]
+
+- *Resonance* refers to amplitude reaching peaks when driving frequency tends to the system's *natural angular frequency* $omega = sqrt(k/m)$.

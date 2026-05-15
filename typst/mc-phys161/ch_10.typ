@@ -417,3 +417,14 @@ $
     $,
   )
 ]
+
+#note-block[
+  Conservation of angular momentum holds even for linear motion. This is because of the first angular momentum equation we established, $arrow(L) = arrow(r) times arrow(p)$, and by extension,\ $L = r p sin(theta)$. Say that $d$ is the component of the lever arm $r$ that is _perpendicular_ to a particle's linear trajectory. Then, the particle's angular momentum is:
+  $
+    L = r p sin(theta) = r p (d/r) = p d
+  $
+  At the point when $r=d$:
+  $
+    L = d p sin(90degree) = d p = p d
+  $
+]

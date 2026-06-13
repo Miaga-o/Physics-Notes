@@ -158,7 +158,7 @@ Cramer's rule is used to solve for singular entries of a solution to $A bf(x) = 
     A(I_i (bf(x))) &= A_i (bf(b))\
   $
   $
-    therefore det A(I_i (bf(x))) &= det A_i (bf(b)) \
+    therefore det (A I_i (bf(x))) &= det A_i (bf(b)) \
     det A det I_i (bf(x)) &= det A_i (bf(b)) \
     det I_i (bf(x)) &= (det A_i (bf(b)))/(det A) \
     x_i &= (det A_i (bf(b)))/(det A) \

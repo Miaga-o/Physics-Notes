@@ -179,7 +179,19 @@
   #show: show-theorion
   #show: show-derivation
   #show: show-algorithm
-  #codly(languages: codly-languages)
+  #codly(
+    languages: codly-languages + (
+      c: (
+        name: "C",
+        icon: box(
+          image("images/c.svg", height: 0.9em),
+          baseline: 0.05em,
+          inset: 0pt,
+          outset: 0pt,
+        ) + h(0.3em), 
+        color: rgb("#4c2bce")),
+    )
+  )
 
 
   //Title page
@@ -196,7 +208,7 @@
       #text(size: 16pt, author)
     ]
     #figure(image("images/YOTSUBA!!!.webp"), supplement: none, caption: [Yotsuba from Yotsuba&!])
-    #if show_contents [#outline()]
+    #if show_contents [#outline(indent: 2em)]
   ]
 
 

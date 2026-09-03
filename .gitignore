@@ -2,3 +2,7 @@
 **/fonts
 **/test
 images
+typst/umd-cmsc216/test.dSYM/Contents/Info.plist
+.gitignore
+typst/umd-cmsc216/test.dSYM/Contents/Resources/Relocations/aarch64/test.yml
+.vscode/tasks.json
